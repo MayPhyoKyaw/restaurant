@@ -12,9 +12,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="css/menu.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href='//fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
-    <!--===============================================================================================-->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <!--===============================================================================================-->
         <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
     <!--===============================================================================================-->
@@ -43,17 +40,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 <div class="wrap"> 
 	<div class="total">
-		<div class="header">
-				<div class="clear"></div> 
-				<div class="header-bot">
-						<div class="logo">
-							<a href="index.html"><img src="images/logo1.png" alt="" width="300" height="110" /></a>
-						</div>
-				    	<div class="clear"></div> 
-				</div>
-				<div class="clear"></div> 
-		</div>	
-		<div class="menu"> 	
+        <div class="header row1">
+            <div class="header-bot column">
+                    <div class="logo">
+                        <a href="index.html"><img src="images/logo1.png" alt="" width="300" height="110" /></a>
+                    </div>
+                    <div class="clear"></div> 
+            </div>
+            <div class="column">
+                <a href="#menu" id="toggle"><span></span></a>
+                        <div id="menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Drink</a></li>
+                                <li><a href="#">Buffet</a></li>
+                            </ul>
+                        </div>
+            </div>
+            <div class="clear"></div>
+        </div>	
+		<div class="menu1"> 	
 			<div class="top-nav" role="tabpanel" data-example-id="togglable-tabs"> 
 					<ul id="myTab" class="nav nav-tabs" role="tablist">
 						<li role="presentation" class="active"><a href="#dish" id="dish-tab" role="tab" data-toggle="tab" aria-controls="dish">Dish</a></li>
@@ -63,7 +69,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li role="presentation"><a href="#roast" role="tab" id="roast-tab" data-toggle="tab" aria-controls="roast">Roast</a></li>
 						<li role="presentation"><a href="#vegetable" role="tab" id="vegetable-tab" data-toggle="tab" aria-controls="vegetable">Vegetable</a></li>
 					</ul>
-					<div class="clear"></div> 
+                    <div class="clear"></div>
 			</div>
 		</div>		
 		<div class="main">
@@ -1032,7 +1038,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <span class="left">Tax </span>
                                 <i class="right">450 MMK</i>
                             </li>
-                            <li class="list-group-item total bill bill-b-top">
+                            <li class="list-group-item total-bill bill bill-b-top">
                                 <span class="left">Total (incl. tax) </span>
                                 <i class="right">12000 MMK</i>
                             </li>
@@ -1056,43 +1062,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  	</div>
 </div>
 <!-- Back to top -->
-        <button class="btn-back-to-top bg0-hov symbol-btn-back-to-top" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-double-up"></i></button>
-
-<script>
-    //Get the button
-    var mybutton = document.getElementById("myBtn");
-    
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-    
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-
-    function increaseValue() {
-        var value = parseInt(document.getElementById('number').value, 10);
-        value = isNaN(value) ? 0 : value;
-        value++;
-        document.getElementById('number').value = value;
-    }
-
-    function decreaseValue() {
-        var value = parseInt(document.getElementById('number').value, 10);
-        value = isNaN(value) ? 0 : value;
-        value < 1 ? value = 1 : '';
-        value--;
-        document.getElementById('number').value = value;
-    }
-</script>
+        <button class="btn-back-to-top symbol-btn-back-to-top" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-double-up"></i></button>
+    <script src="./js/design.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="menu-opener.js"></script>
 </body>
 </html>

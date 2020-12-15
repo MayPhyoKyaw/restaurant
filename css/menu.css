@@ -14,10 +14,11 @@
     border-bottom:2px solid #c7c4bf;
     padding-bottom: 3%;
 }
-.total{
+.total-bill{
 		border-bottom:2px solid #c7c4bf;
 		padding: 5% 0 10% 0;
 		background-color: #ece5b9;
+		padding-left: 1%;
 }
 .order-item{
     border-bottom:1px solid #dad0c1;
@@ -41,11 +42,12 @@
     color:#555555;
     font-size:24px;
 }
+
+/*----- increase/decrease input for dish quantity ----*/
 form {
     width: 70px;
     margin: auto;
     text-align: center;
-    padding-top: 1.5%;
   }
   
   .value-button {
@@ -101,6 +103,7 @@ form {
       -webkit-appearance: none;
       margin: 0;
   }
+/*----- end increase/decrease input for dish quantity ----*/
 /*[ BACK TO TOP ]
 ///////////////////////////////////////////////////////////
 */
@@ -111,7 +114,7 @@ form {
     height: 40px;
     bottom: 40px;
     right: 40px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.39);
     opacity: 0.5;
     justify-content: center;
     align-items: center;
@@ -140,6 +143,115 @@ form {
       right: 15px;
     }
   }
+/*[End BACK TO TOP ]
+///////////////////////////////////////////////////////////
+*/
+.row1 {
+	display: flex;
+}
+  
+/* Create two equal columns that sits next to each other */
+.column {
+	flex: 50%;
+}
+/* ------------------------ Menu ------------------------------*/
+/* Important styles */
+#toggle {
+	display: block;
+	width: 28px;
+	height: 30px;
+	float: right;
+	padding-top: 10%;
+	padding-right: 2%;
+  }
+  
+  #toggle span:after,
+  #toggle span:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: -9px;
+  }
+  #toggle span:after{
+	top: 9px;
+  }
+  #toggle span {
+	position: relative;
+	display: block;
+  }
+  
+  #toggle span,
+  #toggle span:after,
+  #toggle span:before {
+	width: 100%;
+	height: 5px;
+	background-color: #99261F;
+	transition: all 0.3s;
+	backface-visibility: hidden;
+	border-radius: 2px;
+  }
+  
+  /* on activation */
+  #toggle.on span {
+	background-color: transparent;
+  }
+  #toggle.on span:before {
+	transform: rotate(45deg) translate(5px, 5px);
+  }
+  #toggle.on span:after {
+	transform: rotate(-45deg) translate(7px, -8px);
+  }
+  #toggle.on + #menu {
+	opacity: 1;
+	visibility: visible;
+  }
+  
+  /* menu appearance*/
+  #menu {
+	position: relative;
+	color: #999;
+	width: 200px;
+	padding: 10px;
+	margin: auto 18px;
+	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+	text-align: center;
+	border-radius: 4px;
+	background: #f8e8c9;
+	box-shadow: 0 1px 8px rgba(0, 0, 0, 0.116);
+	/* just for this demo */
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .4s;
+	float: right;
+  }
+  #menu:after {
+	position: absolute;
+	right: -15px;
+	bottom: 40%;
+	content: "";
+	display: block;
+	border-top: 15px solid transparent;
+	border-left: 15px solid#f8e8c9;
+	border-bottom: 15px solid transparent;
+  }
+  ul, li, li a {
+	list-style: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+  }
+  li a {
+	padding: 5px;
+	color: #888;
+	text-decoration: none;
+	transition: all .2s;
+  }
+  li a:hover,
+  li a:focus {
+	background: #99261F;
+	color: #fff;
+  }
+/* ------------------------ End Menu ------------------------------*/
 .fs-1 {font-size: 1px;}
 .fs-2 {font-size: 2px;}
 .fs-3 {font-size: 3px;}
@@ -3705,7 +3817,6 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 .bg1 {background-color: #222222;}
 .bg2 {background-color: #111111;}
 
-.bg0-hov:hover {background-color: #ec1d25;}
 
 .bg1-overlay {background-color: rgba(0,0,0,0.35);}
 

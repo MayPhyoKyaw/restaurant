@@ -114,8 +114,9 @@ body{
 	color:#99261F;
 }
 /*--menu--*/
-.menu{
+.menu1{
 	border-top:1px solid #EBE4D6;
+	box-shadow:  2px 4px 4px 4px rgba(0,0,0,.2);
 }
 .top-nav li {
 	color: #FBFAFA;
@@ -129,11 +130,11 @@ body{
 }
 .top-nav li.active a, .top-nav li a:hover {
 	color: #FFF;
-	background: #000;
+	background: #99261F;
 }
 .top-nav li a {
 	display: block;
-	color: #000;
+	color: #99261F;
 	padding: 20px 0 20px;
 	height: auto !important;
 	text-align: center;
@@ -393,7 +394,7 @@ span.black{
 	font-family: 'Patua One', cursive;
 	-webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
 	-moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
-	box-shadow: inset 0px 1.5px 0px #4ec52a, 0px 1px 2px #000;
+	box-shadow: inset 0px 1.5px 0px #C5312A, 0px 1px 2px #000;
 	background-color: #EEE;
 	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FBFBFB), color-stop(100%, #E1E1E1));
 	background: -webkit-linear-gradient(top, #FBFBFB, #E1E1E1);
@@ -403,7 +404,7 @@ span.black{
 	display: -moz-inline-stack;
 }
 .btn-9 {
-	background:#46991f;
+	background:#99261f;
 	width: 100%;
 	-webkit-transform-style: preserve-20d;
 	-moz-transform-style: preserve-20d;
