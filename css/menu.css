@@ -42,6 +42,47 @@
     color:#555555;
     font-size:24px;
 }
+/*------------------ Sticky top Nav -----------------------*/
+#stickynav {
+	overflow: hidden;
+	background: #fff9ed;
+}
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 90%;
+}
+
+#stickynav{
+	border-top:1px solid #EBE4D6;
+	box-shadow:  2px 4px 4px 4px rgba(0,0,0,.2);
+}
+
+#stickynav li {
+	color: #FBFAFA;
+	border: none;
+	float: left;
+	width: 16.6666%;
+	line-height: 20px;
+}
+#stickynav li:last-child{
+	border-right:none;
+}
+#stickynav li.active a, #stickynav li a:hover {
+	color: #FFF;
+	background: #99261F;
+}
+#stickynav li a {
+	display: block;
+	color: #99261F;
+	padding: 20px 0 20px;
+	height: auto !important;
+	text-align: center;
+	font-size: 18px;
+	font-family: 'Patua One', cursive;
+	text-transform: uppercase;
+}
 
 /*----- increase/decrease input for dish quantity ----*/
 form {
@@ -2488,8 +2529,8 @@ form {
 
 /* ------------------------------------ */
 .t-center {text-align: center;}
-.t-left {text-align: left;}
-.t-right {text-align: right;}
+.t-left {text-align: left; padding-left: 3%;}
+.t-right {text-align: right; padding-right: 3%;}
 .t-middle {vertical-align: middle;}
 
 /* ------------------------------------ */

@@ -1,5 +1,8 @@
 //Get the button
 var mybutton = document.getElementById("myBtn");
+
+var stickynav = document.getElementById("stickynav");
+var sticky = stickynav.offsetTop;
     
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
@@ -9,6 +12,12 @@ function scrollFunction() {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
+  }
+
+  if (window.pageYOffset >= sticky) {
+    stickynav.classList.add("sticky")
+  } else {
+    stickynav.classList.remove("sticky");
   }
 }
 
