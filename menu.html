@@ -52,8 +52,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div id="menu">
                             <ul>
                                 <li><a href="#">Home</a></li>
-                                <li><a href="#">Drink</a></li>
-                                <li><a href="#">Buffet</a></li>
+                                <li><a href="#">Drinks</a></li>
+                                <li><a href="#">Desserts</a></li>
+                                <li><a href="#">Snack</a></li>
                             </ul>
                         </div>
             </div>
@@ -988,42 +989,50 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <li class="list-group-item order-item">
                                 <span class="left">Nullam maximus</span>
                                 <i class="right">2200 MMK</i>
-                                <i class="fa fa-close close right"></i>
-                                <form class="right">
-                                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                                    <input type="number" id="number" value="0" />
-                                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                                </form>
+                                <div class="right">
+                                    <span class="stepper">
+                                        <button>–</button>
+                                        <input type="number" id="stepper1" value="1" min="1" max="100" step="1" readonly>
+                                        <button>+</button>
+                                    </span>
+                                    <i class="fa fa-close close"></i>
+                                </div>
                             </li>
                             <li class="list-group-item order-item">
                                 <span class="left">tempus aliquet</span>
                                 <i class="right">3500 MMK</i>
-                                <i class="fa fa-close close right"></i>
-                                <form class="right">
-                                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                                    <input type="number" id="number" value="0" />
-                                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                                </form>
+                                <div class="right">
+                                    <span class="stepper">
+                                        <button>–</button>
+                                        <input type="number" id="stepper2" value="1" min="1" max="100" step="1" readonly>
+                                        <button>+</button>
+                                    </span>
+                                    <i class="fa fa-close close"></i>
+                                </div>
                             </li>
                             <li class="list-group-item order-item">
                                 <span class="left">CRAS EGET MAGNA</span>
                                 <i class="right">4500 MMK</i>
-                                <i class="fa fa-close close right"></i>
-                                <form class="right">
-                                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                                    <input type="number" id="number" value="0" />
-                                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                                </form>
+                                <div class="right">
+                                    <span class="stepper">
+                                        <button>–</button>
+                                        <input type="number" id="stepper3" value="1" min="1" max="100" step="1" readonly>
+                                        <button>+</button>
+                                    </span>
+                                    <i class="fa fa-close close"></i>
+                                </div>
                             </li>
                             <li class="list-group-item order-item">
                                 <span class="left">Nullam maximus</span>
                                 <i class="right">2200 MMK</i>
-                                <i class="fa fa-close close right"></i>
-                                <form class="right">
-                                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                                    <input type="number" id="number" value="0" />
-                                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                                </form>
+                                <div class="right">
+                                    <span class="stepper">
+                                        <button>–</button>
+                                        <input type="number" id="stepper4" value="1" min="1" max="100" step="1" readonly>
+                                        <button>+</button>
+                                    </span>
+                                    <i class="fa fa-close close"></i>
+                                </div>
                             </li>
 
                             <li class="list-group-item order-item bill bill-b-top">
