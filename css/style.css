@@ -423,13 +423,12 @@ span.black{
 /*--content-bottom--*/
 /*  GRID OF THREE   ============================================================================= */
 .content-bottom{
-	padding:20px 0;
-	border-bottom: 1px solid #EBE4D6;
+	margin: 20px auto;
 }
-.col_1_of_3{
+/* .col_1_of_3{
 	display: block;
 	float:left;
-	margin: 1% 0 1% 1.6%;
+	margin: 1% 0 1% 1%;
 }
 .col_1_of_3:first-child { margin-left: 0; }
 .span_1_of_3 {
@@ -443,15 +442,37 @@ span.black{
 }
 .but{
 	text-align:center;
+} */
+.box{
+	position: relative;
+	display: inline-block; /* Make the width of box same as image */
 }
-.bottom-head{
-	margin-top: -44px;
+.box img{
+	border-radius: 100%; 
+	opacity: 0.8;
+	height: 300px;
+	width: 300px;
+}
+.imgfilter{
+	filter: brightness(0.8)
+}
+.box .text{
+	position: absolute;
+	z-index: 999;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 40%; /* Adjust this value to move the positioned div up and down */
+	text-align: center;
+	width: 50%; /* Set the width of the positioned div */
+}
+.center-head{
 	font-family: 'Patua One', cursive;
 	text-align: center;
 }
-.bottom-head h5{
-	color:#fff;
-	font-size:1.2em;
+.center-head h2{
+	color:rgb(254, 255, 200);
+	font-size:2.5em;
 }
 /*  GRID OF FOUR   ============================================================================= */
 .col_1_of_4{
