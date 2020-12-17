@@ -3,9 +3,9 @@ var mybutton = document.getElementById("myBtn");
 
 var stickynav = document.getElementById("stickynav");
 var sticky = stickynav.offsetTop;
-    
+
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -44,38 +44,38 @@ function topFunction() {
 // }
 
 var inc = document.getElementsByClassName("stepper");
-        for (i = 0; i < inc.length; i++) {
-        var incI = inc[i].querySelector("input"),
-            id = incI.getAttribute("id"),
-            min = incI.getAttribute("min"),
-            max = incI.getAttribute("max"),
-            step = incI.getAttribute("step");
-        document
-            .getElementById(id)
-            .previousElementSibling.setAttribute(
-            "onclick",
-            "stepperInput('" + id + "', -" + step + ", " + min + ")"
-            ); 
-        document
-            .getElementById(id)
-            .nextElementSibling.setAttribute(
-            "onclick",
-            "stepperInput('" + id + "', " + step + ", " + max + ")"
-            ); 
-        }
+for (i = 0; i < inc.length; i++) {
+  var incI = inc[i].querySelector("input"),
+    id = incI.getAttribute("id"),
+    min = incI.getAttribute("min"),
+    max = incI.getAttribute("max"),
+    step = incI.getAttribute("step");
+  document
+    .getElementById(id)
+    .previousElementSibling.setAttribute(
+      "onclick",
+      "stepperInput('" + id + "', -" + step + ", " + min + ")"
+    );
+  document
+    .getElementById(id)
+    .nextElementSibling.setAttribute(
+      "onclick",
+      "stepperInput('" + id + "', " + step + ", " + max + ")"
+    );
+}
 
-        function stepperInput(id, s, m) {
-        var el = document.getElementById(id);
-        if (s > 0) {
-            if (parseInt(el.value) < m) {
-            el.value = parseInt(el.value) + s;
-            }
-        } else {
-            if (parseInt(el.value) > m) {
-            el.value = parseInt(el.value) + s;
-            }
-        }
-        }
+function stepperInput(id, s, m) {
+  var el = document.getElementById(id);
+  if (s > 0) {
+    if (parseInt(el.value) < m) {
+      el.value = parseInt(el.value) + s;
+    }
+  } else {
+    if (parseInt(el.value) > m) {
+      el.value = parseInt(el.value) + s;
+    }
+  }
+}
 
 //toggle menu
 var theToggle = document.getElementById('toggle');
@@ -85,38 +85,38 @@ var theToggle = document.getElementById('toggle');
 
 // hasClass
 function hasClass(elem, className) {
-	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+  return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
 }
 // addClass
 function addClass(elem, className) {
-    if (!hasClass(elem, className)) {
-    	elem.className += ' ' + className;
-    }
+  if (!hasClass(elem, className)) {
+    elem.className += ' ' + className;
+  }
 }
 // removeClass
 function removeClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
-	if (hasClass(elem, className)) {
-        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-            newClass = newClass.replace(' ' + className + ' ', ' ');
-        }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+  var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+  if (hasClass(elem, className)) {
+    while (newClass.indexOf(' ' + className + ' ') >= 0) {
+      newClass = newClass.replace(' ' + className + ' ', ' ');
     }
+    elem.className = newClass.replace(/^\s+|\s+$/g, '');
+  }
 }
 // toggleClass
 function toggleClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
-    if (hasClass(elem, className)) {
-        while (newClass.indexOf(" " + className + " ") >= 0 ) {
-            newClass = newClass.replace( " " + className + " " , " " );
-        }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    } else {
-        elem.className += ' ' + className;
+  var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, " ") + ' ';
+  if (hasClass(elem, className)) {
+    while (newClass.indexOf(" " + className + " ") >= 0) {
+      newClass = newClass.replace(" " + className + " ", " ");
     }
+    elem.className = newClass.replace(/^\s+|\s+$/g, '');
+  } else {
+    elem.className += ' ' + className;
+  }
 }
 
-theToggle.onclick = function() {
-   toggleClass(this, 'on');
-   return false;
+theToggle.onclick = function () {
+  toggleClass(this, 'on');
+  return false;
 }
