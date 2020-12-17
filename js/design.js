@@ -1,6 +1,7 @@
 //Get the button
 var mybutton = document.getElementById("myBtn");
 
+//get sticky nav bar
 var stickynav = document.getElementById("stickynav");
 var sticky = stickynav.offsetTop;
 
@@ -26,22 +27,6 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
-//increase/decrease input for dish quantity
-// function increaseValue() {
-//     var value = parseInt(document.getElementById('number').value, 10);
-//     value = isNaN(value) ? 0 : value;
-//     value++;
-//     document.getElementById('number').value = value;
-// }
-
-// function decreaseValue() {
-//     var value = parseInt(document.getElementById('number').value, 10);
-//     value = isNaN(value) ? 0 : value;
-//     value < 1 ? value = 1 : '';
-//     value--;
-//     document.getElementById('number').value = value;
-// }
 
 var inc = document.getElementsByClassName("stepper");
 for (i = 0; i < inc.length; i++) {
@@ -119,4 +104,32 @@ function toggleClass(elem, className) {
 theToggle.onclick = function () {
   toggleClass(this, 'on');
   return false;
+}
+
+// buffet menu 
+// Add active class to the current button (highlight it)
+var header = document.getElementById("buffet-nav");
+var items = header.getElementsByClassName("buffet-nav-item");
+for (var i = 0; i < items.length; i++) {
+  items[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("buffet-nav-active");
+    current[0].className = current[0].className.replace(" buffet-nav-active", "");
+    this.className += " buffet-nav-active";
+  });
+}
+
+// document.getElementById("buffet-plan-nav").style.display = "none";
+
+function buffetMenuChange1(){
+  var originNav = document.getElementById("buffet-nav");
+  var planNav = document.getElementById("buffet-plan-nav");
+  planNav.style.display = "block";
+  originNav.style.display = "none";
+}
+
+function buffetMenuChange2(){
+  var originNav = document.getElementById("buffet-nav");
+  var planNav = document.getElementById("buffet-plan-nav");
+  planNav.style.display = "none";
+  originNav.style.display = "block";
 }
