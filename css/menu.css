@@ -1371,7 +1371,7 @@ li a:hover, li a:focus {
 }
 
 .p-t-65 {
-	padding-top: 65px;
+	/* padding-top: 65px; */
 }
 
 .p-t-66 {
@@ -2315,7 +2315,7 @@ li a:hover, li a:focus {
 }
 
 .p-b-50 {
-	padding-bottom: 50px;
+	/* padding-bottom: 50px; */
 }
 
 .p-b-51 {
@@ -9186,7 +9186,7 @@ li a:hover, li a:focus {
 /* ------------------------------------ */
 
 .t-center {
-	text-align: center;
+	text-align: left;
 }
 
 .t-left {
@@ -10141,13 +10141,14 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 .tit4 {
 	font-family: Poppins;
-	font-weight: 700;
-	font-size: 50px;
+	font-weight: 500;
+	font-size: 35px;
 	line-height: 1.2;
-	color: white;
+	color: #99261F;
 	text-transform: uppercase;
-	letter-spacing: 10px;
+	letter-spacing: 4px;
 	word-spacing: 6px;
+	background-color: #f8e8c9;
 }
 
 .tit5 {
