@@ -118,6 +118,16 @@ for (var i = 0; i < items.length; i++) {
   });
 }
 
+var header = document.getElementById("stickynav");
+var items = header.getElementsByClassName("nav-item");
+for (var i = 0; i < items.length; i++) {
+  items[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("nav-active");
+    current[0].className = current[0].className.replace(" nav-active", "");
+    this.className += " nav-active";
+  });
+}
+
 // document.getElementById("buffet-plan-nav").style.display = "none";
 
 function buffetMenuChange1(){

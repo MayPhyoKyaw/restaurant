@@ -516,7 +516,6 @@ span.black {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	outline: none;
-	position: relative;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -536,9 +535,9 @@ span.black {
 
 .btn-8 {
 	background: #99261f;
-	-webkit-transform-style: preserve-20d;
-	-moz-transform-style: preserve-20d;
-	transform-style: preserve-20d;
+	-webkit-transform-style: preserve-10d;
+	-moz-transform-style: preserve-10d;
+	transform-style: preserve-10d;
 }
 
 .btn-8a:hover {
@@ -558,7 +557,6 @@ span.black {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	outline: none;
-	position: relative;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
