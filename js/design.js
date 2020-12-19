@@ -6,7 +6,9 @@ var stickynav = document.getElementById("stickynav");
 var sticky = stickynav.offsetTop;
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () { scrollFunction() };
+window.onscroll = function () {
+  scrollFunction();
+};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -16,7 +18,7 @@ function scrollFunction() {
   }
 
   if (window.pageYOffset >= sticky) {
-    stickynav.classList.add("sticky")
+    stickynav.classList.add("sticky");
   } else {
     stickynav.classList.remove("sticky");
   }
@@ -63,81 +65,58 @@ function stepperInput(id, s, m) {
 }
 
 //toggle menu
-var theToggle = document.getElementById('toggle');
+var theToggle = document.getElementById("toggle");
 
 // based on Todd Motto functions
 // https://toddmotto.com/labs/reusable-js/
 
 // hasClass
 function hasClass(elem, className) {
-  return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+  return new RegExp(" " + className + " ").test(" " + elem.className + " ");
 }
 // addClass
 function addClass(elem, className) {
   if (!hasClass(elem, className)) {
-    elem.className += ' ' + className;
+    elem.className += " " + className;
   }
 }
 // removeClass
 function removeClass(elem, className) {
-  var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
-  if (hasClass(elem, className)) {
-    while (newClass.indexOf(' ' + className + ' ') >= 0) {
-      newClass = newClass.replace(' ' + className + ' ', ' ');
-    }
-    elem.className = newClass.replace(/^\s+|\s+$/g, '');
-  }
-}
-// toggleClass
-function toggleClass(elem, className) {
-  var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, " ") + ' ';
+  var newClass = " " + elem.className.replace(/[\t\r\n]/g, " ") + " ";
   if (hasClass(elem, className)) {
     while (newClass.indexOf(" " + className + " ") >= 0) {
       newClass = newClass.replace(" " + className + " ", " ");
     }
-    elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    elem.className = newClass.replace(/^\s+|\s+$/g, "");
+  }
+}
+// toggleClass
+function toggleClass(elem, className) {
+  var newClass = " " + elem.className.replace(/[\t\r\n]/g, " ") + " ";
+  if (hasClass(elem, className)) {
+    while (newClass.indexOf(" " + className + " ") >= 0) {
+      newClass = newClass.replace(" " + className + " ", " ");
+    }
+    elem.className = newClass.replace(/^\s+|\s+$/g, "");
   } else {
-    elem.className += ' ' + className;
+    elem.className += " " + className;
   }
 }
 
 theToggle.onclick = function () {
-  toggleClass(this, 'on');
+  toggleClass(this, "on");
   return false;
-}
+};
 
-// buffet menu 
-// Add active class to the current button (highlight it)
-var header = document.getElementById("buffet-nav");
-var items = header.getElementsByClassName("buffet-nav-item");
-for (var i = 0; i < items.length; i++) {
-  items[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("buffet-nav-active");
-    current[0].className = current[0].className.replace(" buffet-nav-active", "");
-    this.className += " buffet-nav-active";
-  });
-}
-
-var header = document.getElementById("stickynav");
-var items = header.getElementsByClassName("nav-item");
-for (var i = 0; i < items.length; i++) {
-  items[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("nav-active");
-    current[0].className = current[0].className.replace(" nav-active", "");
-    this.className += " nav-active";
-  });
-}
-
-// document.getElementById("buffet-plan-nav").style.display = "none";
-
-function buffetMenuChange1(){
+// buffet menu
+function buffetMenuChange1() {
   var originNav = document.getElementById("buffet-nav");
   var planNav = document.getElementById("buffet-plan-nav");
   planNav.style.display = "block";
   originNav.style.display = "none";
 }
 
-function buffetMenuChange2(){
+function buffetMenuChange2() {
   var originNav = document.getElementById("buffet-nav");
   var planNav = document.getElementById("buffet-plan-nav");
   planNav.style.display = "none";

@@ -1,140 +1,165 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-<title>Chinese Food Restaurant</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--slider-->
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
-<script src="js/modernizr.js"></script>
-<!-- jQuery -->
- <script src="js/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
-  <!-- FlexSlider -->
-  <script defer src="js/jquery.flexslider.js"></script>
-  <script type="text/javascript">
-    $(function(){
-      SyntaxHighlighter.all();
-    });
-    $(window).load(function(){
-      $('.flexslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
+  <head>
+    <title>Chinese Food Restaurant</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--slider-->
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
+    <script src="js/modernizr.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>');
+    </script>
+    <!-- FlexSlider -->
+    <script defer src="js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        SyntaxHighlighter.all();
       });
-    });
-  </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
-<div class="wrap"> 
-	<div class="total">
-		<div class="header">
-				<div class="clear"></div> 
-				<div class="header-bot">
-						<div class="logo">
-							<a href="index.html"><img src="images/logo1.png" alt="" width="300" height="110" /></a>
-						</div>
-						<ul class="follow_icon">
-							<li>
-								<p><i class="fa fa-map-marker" style="color: #99261F;"></i>  : 500 Lorem Ipsum Dolor Sit,</p>
-								<p><i class="fa fa-phone" style="color: #99261F;"></i> : (00) 222 666 444</p>
-								<p><i class="fa fa-phone" style="color: #99261F;"></i> : (00) 222 666 333</p>
-							</li>
-						</ul>
-				    	<div class="clear"></div> 
-				</div>
-				<div class="clear"></div> 
-		 </div>	
-			
-		 <div class="banner">
-			<div class="flexslider">
-				<ul class="slides">
-					<li><img src="images/banner1.jpg" alt=""/></li>
-					<li><img src="images/banner2.jpg"  alt=""/></li>
-					<li><img src="images/banner3.jpg"  alt=""/></li>
-					<li><img src="images/banner4.jpg"  alt=""/></li>
-				</ul>
-	        </div>
-			<div class="flex-caption">								
-					<h2>Today Special</h2>
-					<div class="clear"></div> 
-			</div>
-		</div>
-		 
-		<div class="main">
-			<div class="content-bottom">
-				<div class="row">
-					<div class="col-sm-4 text-center p-t-25 p-b-35">
-						<a href="buffet.html">	
-							<div class="box">
-								<img src="images/photo-gallery-02.jpg" alt="Buffet" class="imgfilter"/>
-								<div class="center-head text"><h2>Buffet</h2></div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-4 text-center p-t-25 p-b-35">
-						<a href="#">
-							<div class="box">
-								<img src="images/our-menu-10.jpg" alt="Dishes" class="imgfilter"/>
-								<div class="center-head text"><h2>Dishes</h2></div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-4 text-center p-t-25 p-b-35">
-						<a href="#">
-							<div class="box">
-								<img src="images/photo-gallery-04.jpg" alt="Snack" class="imgfilter"/>
-								<div class="center-head text"><h2>Snack</h2></div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-6 text-center p-t-25 p-b-35">
-						<a href="#">
-							<div class="box">
-								<img src="images/pic7.jpg" alt="Desserts" class="imgfilter"/>
-								<div class="center-head text"><h2>Desserts</h2></div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-6 text-center p-t-25 p-b-35">
-						<a href="#">
-							<div class="box">
-								<img src="images/pic8.jpg" alt="Drinks" class="imgfilter"/>
-								<div class="center-head text"><h2>Drinks</h2></div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="clear"></div> 
-			</div>
-		</div>
-	</div>
-</div>
-<div class="footer-bottom">
- 	<div class="wrap">
- 		 <div class="copy">
-			<p> © 2013 Spicy Food. All Rights Reserved | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
-		</div>
- 	</div>
- </div>
-</body>
-</html>
+      $(window).load(function () {
+        $(".flexslider").flexslider({
+          animation: "slide",
+          start: function (slider) {
+            $("body").removeClass("loading");
+          },
+        });
+      });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="total">
+        <div class="header">
+          <div class="clear"></div>
+          <div class="header-bot">
+            <div class="logo">
+              <a href="index.html"
+                ><img src="images/logo1.png" alt="" width="300" height="110"
+              /></a>
+            </div>
+            <ul class="follow_icon">
+              <li>
+                <p>
+                  <i class="fa fa-map-marker" style="color: #99261f"></i> : 500
+                  Lorem Ipsum Dolor Sit,
+                </p>
+                <p>
+                  <i class="fa fa-phone" style="color: #99261f"></i> : (00) 222
+                  666 444
+                </p>
+                <p>
+                  <i class="fa fa-phone" style="color: #99261f"></i> : (00) 222
+                  666 333
+                </p>
+              </li>
+            </ul>
+            <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+        </div>
 
-    	
-    	
-            
+        <div class="banner">
+          <div class="flexslider">
+            <ul class="slides">
+              <li><img src="images/banner1.jpg" alt="" /></li>
+              <li><img src="images/banner2.jpg" alt="" /></li>
+              <li><img src="images/banner3.jpg" alt="" /></li>
+              <li><img src="images/banner4.jpg" alt="" /></li>
+            </ul>
+          </div>
+          <div class="flex-caption">
+            <h2>Today Special</h2>
+            <div class="clear"></div>
+          </div>
+        </div>
+
+        <div class="main">
+          <div class="content-bottom">
+            <div class="row">
+              <div class="col-sm-4 text-center p-t-25 p-b-35">
+                <a href="buffet.html">
+                  <div class="box">
+                    <img
+                      src="images/photo-gallery-02.jpg"
+                      alt="Buffet"
+                      class="imgfilter"
+                    />
+                    <div class="center-head text"><h2>Buffet</h2></div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-4 text-center p-t-25 p-b-35">
+                <a href="#">
+                  <div class="box">
+                    <img
+                      src="images/our-menu-10.jpg"
+                      alt="Dishes"
+                      class="imgfilter"
+                    />
+                    <div class="center-head text"><h2>Dishes</h2></div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-4 text-center p-t-25 p-b-35">
+                <a href="#">
+                  <div class="box">
+                    <img
+                      src="images/photo-gallery-04.jpg"
+                      alt="Snack"
+                      class="imgfilter"
+                    />
+                    <div class="center-head text"><h2>Snack</h2></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 text-center p-t-25 p-b-35">
+                <a href="#">
+                  <div class="box">
+                    <img
+                      src="images/pic7.jpg"
+                      alt="Desserts"
+                      class="imgfilter"
+                    />
+                    <div class="center-head text"><h2>Desserts</h2></div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-6 text-center p-t-25 p-b-35">
+                <a href="#">
+                  <div class="box">
+                    <img src="images/pic8.jpg" alt="Drinks" class="imgfilter" />
+                    <div class="center-head text"><h2>Drinks</h2></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap">
+        <div class="copy">
+          <p>
+            © 2013 Spicy Food. All Rights Reserved | Design by
+            <a href="http://w3layouts.com">W3Layouts</a>
+          </p>
+        </div>
+      </div>
+	</div>
+	
+	<!----- Script ----->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
