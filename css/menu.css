@@ -322,6 +322,11 @@ li a {
   transition: all 0.2s;
 }
 
+#menu li:hover a{
+    color: #fffbfb;
+    background: #99261f;
+}
+
 /* ------------------------ End Menu ------------------------------*/
 
 /*--------- Buffet menu ----------*/
@@ -10288,7 +10293,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
   font-family: Poppins;
   font-weight: 500;
   font-size: 35px;
-  line-height: 1.2;
+  line-height: 2;
   color: #99261f;
   text-transform: uppercase;
   letter-spacing: 4px;
