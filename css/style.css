@@ -361,7 +361,7 @@ body::-webkit-scrollbar {
 }
 
 
-/* .top-nav li {
+.top-nav li {
     color: #FBFAFA;
     border: none;
     float: left;
@@ -374,13 +374,13 @@ body::-webkit-scrollbar {
 }
 
 .top-nav li a:hover {
-    color: #FFF;
-    background: #f5ccc9b2;
+    color: #fff;
+    background: #99251f50;
 }
 
-.top-nav .active {
-    color: #FFF;
-    background: #99261F;
+.top-nav li.active a {
+    color: #fff;
+    background: #99261f;
 }
 
 .top-nav li a {
@@ -392,7 +392,7 @@ body::-webkit-scrollbar {
     font-size: 18px;
     font-family: 'Patua One', cursive;
     text-transform: uppercase;
-} */
+}
 
 .header {
     padding: 0% 1.5% 0% 1.5%;
