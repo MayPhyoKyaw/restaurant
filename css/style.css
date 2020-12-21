@@ -389,7 +389,7 @@ body::-webkit-scrollbar {
     padding: 20px 0 20px;
     height: auto !important;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Patua One', cursive;
     text-transform: uppercase;
 }
@@ -1164,7 +1164,7 @@ p.paragraph {
 .span_1_of_3 h3 {
     color: #c94848;
     /* margin-bottom: 0.5em; */
-    font-size: 2em;
+    font-size: 25px;
     line-height: 1.2;
     font-weight: normal;
     margin-top: 0px;
@@ -1467,7 +1467,7 @@ p.paragraph {
     }
     .span_2_of_3 h3,
     .span_1_of_3 h3 {
-        font-size: 1.3em;
+        font-size: 25px;
     }
 }
 
@@ -1508,7 +1508,7 @@ p.paragraph {
     }
     .span_2_of_3 h3,
     .span_1_of_3 h3 {
-        font-size: 1.3em;
+        font-size: 25px;
     }
     .span_1_of_about1 h3 {
         font-size: 1.5em;
@@ -1595,7 +1595,7 @@ p.paragraph {
     }
     .span_2_of_3 h3,
     .span_1_of_3 h3 {
-        font-size: 1.3em;
+        font-size: 25px;
     }
     .flex-caption h2 {
         font-size: 30px;
@@ -1719,7 +1719,7 @@ p.paragraph {
     }
     .span_2_of_3 h3,
     .span_1_of_3 h3 {
-        font-size: 1.3em;
+        font-size: 25px;
     }
     .flex-caption h2 {
         font-size: 30px;
@@ -1825,7 +1825,7 @@ p.paragraph {
     }
     .span_2_of_3 h3,
     .span_1_of_3 h3 {
-        font-size: 1.3em;
+        font-size: 25px;
     }
     .flex-caption h2 {
         font-size: 20px;
@@ -1989,7 +1989,7 @@ p.paragraph {
     }
     .span_2_of_3 h3,
     .span_1_of_3 h3 {
-        font-size: 1.3em;
+        font-size: 25px;
     }
     .flex-caption h2 {
         font-size: 19px;
@@ -2066,7 +2066,7 @@ p.paragraph {
     }
     .span_2_of_3 h3,
     .span_1_of_3 h3 {
-        font-size: 1.2em;
+        font-size: 25px;
     }
     .contact-form input[type="text"],
     .contact-form textarea {
