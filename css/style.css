@@ -381,6 +381,7 @@ body::-webkit-scrollbar {
 .top-nav li.active a {
     color: #fff;
     background: #99261f;
+    line-height: 20px;
 }
 
 .top-nav li a {
@@ -490,7 +491,7 @@ body::-webkit-scrollbar {
 }
 
 .flex-caption {
-    top: 60%;
+    top: 40%;
 }
 
 .flex-caption {
@@ -1319,7 +1320,7 @@ p.paragraph {
 
 @media (max-width: 1440px) {
     .flex-caption {
-        top: 71%;
+        top: 65%;
     }
     .bottom-head h5 {
         font-size: 1em;
@@ -1345,9 +1346,9 @@ p.paragraph {
     .menu ul {
         max-height: 990px !important;
     }
-    /* body {
+    body {
         padding-bottom: 3%;
-    } */
+    }
     .view .mask,
     .view .content {
         left: 4px;
@@ -1360,7 +1361,7 @@ p.paragraph {
         margin-bottom: 25px !important;
     }
     .footer-bottom {
-        padding-top: 1.7%;
+        padding-top: 1%;
     }
 }
 
@@ -1385,6 +1386,10 @@ p.paragraph {
     .order-list ul {
         max-height: 600px;
     }
+    .order-item {
+        border-bottom: 1px solid #dad0c1;
+        padding: 5% 0 18% 0;
+    }
 }
 
 @media (max-width: 1280px) {
@@ -1408,7 +1413,7 @@ p.paragraph {
         font-size: 40px;
     }
     .flex-caption {
-        top: 62%;
+        top: 25%;
     }
     span.black {
         font-size: 1.5em;
@@ -1488,7 +1493,7 @@ p.paragraph {
         width: 55.4%;
     }
     .flex-caption {
-        top: 54%;
+        top: 25%;
     }
     span.black {
         font-size: 1.6em;
