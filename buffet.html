@@ -63,25 +63,25 @@
                 <div class="clear"></div>
             </div>
             <hr style="width: 95%; color: #ebe4d6; border-top: 1px solid #ebe4d6" />
-            <nav class="buffet-nav" role="navigation" id="buffet-nav">
+            <nav class="sec-nav" role="navigation" id="buffet-nav">
                 <ol>
-                    <li class="buffet-nav-item buffet-nav-active">
+                    <li class="sec-nav-item sec-nav-active">
                         <a href="#">Buffet</a>
                     </li>
-                    <li class="buffet-nav-item"><a href="#">Dishes</a></li>
-                    <li class="buffet-nav-item"><a href="#">Snacks</a></li>
-                    <li class="buffet-nav-item"><a href="#">Desserts</a></li>
-                    <li class="buffet-nav-item"><a href="#">Drinks</a></li>
+                    <li class="sec-nav-item"><a href="#">Dishes</a></li>
+                    <li class="sec-nav-item"><a href="#">Snacks</a></li>
+                    <li class="sec-nav-item"><a href="#">Desserts</a></li>
+                    <li class="sec-nav-item"><a href="#">Drinks</a></li>
                 </ol>
             </nav>
-            <nav class="buffet-nav" role="navigation" id="buffet-plan-nav" style="display: none">
+            <nav class="sec-nav" role="navigation" id="buffet-plan-nav" style="display: none">
                 <ol>
-                    <li class="buffet-nav-item buffet-nav-active" onclick="buffetMenuChange2()" style="margin-right: 5%">
+                    <li class="sec-nav-item sec-nav-active" onclick="buffetMenuChange2()" style="margin-right: 5%">
                         <a href="#">Buffet</a>
                     </li>
-                    <li class="buffet-nav-item"><a href="#">Plan A</a></li>
-                    <li class="buffet-nav-item"><a href="#">Plan B</a></li>
-                    <li class="buffet-nav-item"><a href="#">Plan C</a></li>
+                    <li class="sec-nav-item"><a href="#">Plan A</a></li>
+                    <li class="sec-nav-item"><a href="#">Plan B</a></li>
+                    <li class="sec-nav-item"><a href="#">Plan C</a></li>
                 </ol>
             </nav>
             <div class="main">
@@ -188,9 +188,9 @@
     <script type="text/javascript">
         $(document).on("click", "ol li", function() {
             $(this)
-                .addClass("buffet-nav-active")
+                .addClass("sec-nav-active")
                 .siblings()
-                .removeClass("buffet-nav-active");
+                .removeClass("sec-nav-active");
         });
     </script>
 </body>

@@ -32,65 +32,107 @@
     <link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css" />
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
 </head>
 
 <body class="menu-body">
     <div class="wrap">
         <div class="total">
-            <div class="header row1">
-                <div class="header-bot column">
+            <div class="header">
+                <div class="header-bot">
                     <div class="logo">
                         <a href="index.html"><img src="images/logo1.png" alt="" width="300" height="90" /></a>
                     </div>
+                    <ul class="follow_icon">
+                        <li>
+                            <p>
+                                <i class="fa fa-map-marker" style="color: #99261f"></i> : 500 Lorem Ipsum Dolor Sit,
+                            </p>
+                            <p>
+                                <i class="fa fa-phone" style="color: #99261f"></i> : (00) 222 666 444
+                            </p>
+                            <p>
+                                <i class="fa fa-phone" style="color: #99261f"></i> : (00) 222 666 333
+                            </p>
+                        </li>
+                    </ul>
                     <div class="clear"></div>
-                </div>
-                <div class="column">
-                    <a href="#menu" id="toggle"><span></span></a>
-                    <div id="menu" class="menu">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Drinks</a></li>
-                            <li><a href="#">Desserts</a></li>
-                            <li><a href="#">Snack</a></li>
-                        </ul>
-                    </div>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="menu1">
                 <div class="top-nav" data-example-id="togglable-tabs">
                     <ul class="nav nav-tabs nav-center" role="tablist">
-                        <li class="nav-item active">
-                            <a href="#dish" id="dish-tab" data-toggle="tab" aria-controls="dish">
-                                    Buffet
-                                </a>
-                        </li>
                         <li class="nav-item">
-                            <a href="#soup" id="soup-tab" data-toggle="tab" aria-controls="soup">
-                                    Dishes
-                                </a>
+                            <a href="#" id="dish-tab" data-toggle="tab" aria-controls="dish">
+                                Buffet
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#ricenoodle" id="ricenoodle-tab" data-toggle="tab" aria-controls="ricenoodle">
-                                    Snacks
-                                </a>
+                        <li class="nav-item active" onclick="dishNav()">
+                            <a href="#" id="soup-tab" data-toggle="tab" aria-controls="soup">
+                                Dishes
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#dumpling" id="dumpling-tab" data-toggle="tab" aria-controls="dumpling">
-                                    Deeserts
-                                </a>
+                        <li class="nav-item" onclick="snackNav()">
+                            <a href="#" id="ricenoodle-tab" data-toggle="tab" aria-controls="ricenoodle">
+                                Snacks
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#roast" id="roast-tab" data-toggle="tab" aria-controls="roast">
-                                    Drinks
-                                </a>
+                        <li class="nav-item" onclick="dessertNav()">
+                            <a href="#" id="dumpling-tab" data-toggle="tab" aria-controls="dumpling">
+                                Deeserts
+                            </a>
+                        </li>
+                        <li class="nav-item" onclick="drinkNav()">
+                            <a href="#" id="roast-tab" data-toggle="tab" aria-controls="roast">
+                                Drinks
+                            </a>
                         </li>
                     </ul>
                     <div class="clear"></div>
                 </div>
             </div>
+            <nav class="sec-nav" role="navigation" id="dish-nav">
+                <ol>
+                    <li class="sec-nav-item sec-nav-active">
+                        <a href="#">Rice Dishes</a>
+                    </li>
+                    <li class="sec-nav-item"><a href="#">Noodle</a></li>
+                    <li class="sec-nav-item"><a href="#">Soup</a></li>
+                    <li class="sec-nav-item"><a href="#">Curry</a></li>
+                    <li class="sec-nav-item"><a href="#">Salad</a></li>
+                </ol>
+            </nav>
+            <nav class="sec-nav" role="navigation" id="snack-nav" style="display: none">
+                <ol>
+                    <li class="sec-nav-item sec-nav-active">
+                        <a href="#">Dumpling</a>
+                    </li>
+                    <li class="sec-nav-item"><a href="#">Sandwich</a></li>
+                    <li class="sec-nav-item"><a href="#">Fried</a></li>
+                    <li class="sec-nav-item"><a href="#">Burger and Hotdog</a></li>
+                </ol>
+            </nav>
+            <nav class="sec-nav" role="navigation" id="dessert-nav" style="display: none">
+                <ol>
+                    <li class="sec-nav-item sec-nav-active">
+                        <a href="#">Cake</a>
+                    </li>
+                    <li class="sec-nav-item"><a href="#">Cookies and Crackers</a></li>
+                    <li class="sec-nav-item"><a href="#">Puff and Pie</a></li>
+                    <li class="sec-nav-item"><a href="#">Bread</a></li>
+                </ol>
+            </nav>
+            <nav class="sec-nav" role="navigation" id="drink-nav" style="display: none">
+                <ol>
+                    <li class="sec-nav-item sec-nav-active">
+                        <a href="#">Cold Drink</a>
+                    </li>
+                    <li class="sec-nav-item"><a href="#">Coffee and Tea</a></li>
+                    <li class="sec-nav-item"><a href="#">Soda</a></li>
+                    <li class="sec-nav-item"><a href="#">Beer</a></li>
+                </ol>
+            </nav>
             <div class="main">
                 <div class="contact">
                     <div class="col span_2_of_3 tab-content" id="tab-content">
@@ -263,6 +305,7 @@
                                     <ul>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
+                                            <i class="fa fa-close close right"></i>
                                             <div class="right">
                                                 <span class="stepper">
                                                         <button>–</button>
@@ -277,11 +320,11 @@
                                                             />
                                                         <button>+</button>
                                                     </span>
-                                                <i class="fa fa-close close"></i>
                                             </div>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">tempus aliquet</span>
+                                            <i class="fa fa-close close right"></i>
                                             <div class="right">
                                                 <span class="stepper">
                                                         <button>–</button>
@@ -296,312 +339,73 @@
                                                             />
                                                         <button>+</button>
                                                     </span>
-                                                <i class="fa fa-close close"></i>
                                             </div>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">CRAS EGET MAGNA</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper3"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
+                                            <span class="right qty">5 &nbsp; Qty</span>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
+                                            <span class="right qty">3 &nbsp; Qty</span>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                         <li class="list-group-item order-item">
                                             <span class="left">Nullam maximus</span>
-                                            <div class="right">
-                                                <span class="stepper">
-                                                        <button>–</button>
-                                                        <input
-                                                            type="number"
-                                                            id="stepper4"
-                                                            value="1"
-                                                            min="1"
-                                                            max="100"
-                                                            step="1"
-                                                            readonly
-                                                            />
-                                                        <button>+</button>
-                                                    </span>
-                                                <i class="fa fa-close close"></i>
-                                            </div>
+                                            <i class="fa fa-close close right"></i>
                                         </li>
                                     </ul>
                                 </nav>
@@ -656,10 +460,12 @@
     <script src="./js/design.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="menu-opener.js"></script>
     <script type="text/javascript">
         $(document).on("click", "ul li", function() {
             $(this).addClass("active").siblings().removeClass("active");
+        });
+        $(document).on("click", "ol li", function() {
+            $(this).addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
         });
     </script>
 </body>

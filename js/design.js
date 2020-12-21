@@ -112,3 +112,48 @@ function buffetMenuChange2() {
   planNav.style.display = "none";
   originNav.style.display = "block";
 }
+
+// Second Nav 
+function dishNav() {
+  var dish = document.getElementById("dish-nav");
+  var snack = document.getElementById("snack-nav");
+  var dessert = document.getElementById("dessert-nav");
+  var drink = document.getElementById("drink-nav");
+  dish.style.display = "block";
+  snack.style.display = "none";
+  dessert.style.display = "none";
+  drink.style.display = "none";
+}
+
+function snackNav() {
+  var dish = document.getElementById("dish-nav");
+  var snack = document.getElementById("snack-nav");
+  var dessert = document.getElementById("dessert-nav");
+  var drink = document.getElementById("drink-nav");
+  snack.style.display = "block";
+  dish.style.display = "none";
+  dessert.style.display = "none";
+  drink.style.display = "none";
+}
+
+function dessertNav() {
+  var dish = document.getElementById("dish-nav");
+  var snack = document.getElementById("snack-nav");
+  var dessert = document.getElementById("dessert-nav");
+  var drink = document.getElementById("drink-nav");
+  dessert.style.display = "block";
+  snack.style.display = "none";
+  dish.style.display = "none";
+  drink.style.display = "none";
+}
+
+function drinkNav() {
+  var dish = document.getElementById("dish-nav");
+  var snack = document.getElementById("snack-nav");
+  var dessert = document.getElementById("dessert-nav");
+  var drink = document.getElementById("drink-nav");
+  drink.style.display = "block";
+  snack.style.display = "none";
+  dessert.style.display = "none";
+  dish.style.display = "none";
+}
