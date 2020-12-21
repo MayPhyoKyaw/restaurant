@@ -11286,15 +11286,24 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     }
 }
 
-nav ul {
+.order-list ul {
     max-height: 300px;
 }
 
-nav ul {
+.order-list ul {
     overflow: hidden;
     overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {
     background: transparent;
+}
+
+.menu ul {
+    max-height: 600px;
+}
+
+.menu ul {
+    overflow: hidden;
+    overflow-y: scroll;
 }
