@@ -867,6 +867,7 @@ span.black {
     display: block;
     float: left;
     margin: 1% 0 1% 0;
+    border-left: 2px dotted #cec1ab;
 }
 
 .span_1_of_about h3 {
@@ -1144,7 +1145,7 @@ p.paragraph {
 .span_2_of_3 {
     width: 64%;
     padding: 1%;
-    padding-top: 0.8%;
+    padding-top: 0px;
 }
 
 .span_1_of_3 {
@@ -1236,10 +1237,11 @@ p.paragraph {
     .span_2_of_3 {
         width: 95%;
         padding: 2%;
-        padding-top: 0.8%;
+        padding-top: 0px;
     }
     .col {
         margin: 1% 0 1% 0%;
+        border-left: 2px dotted #cec1ab;
     }
     .span_1_of_3 {
         width: 94%;
@@ -1259,10 +1261,11 @@ p.paragraph {
     .span_2_of_3 {
         width: 91%;
         padding: 4%;
-        padding-top: 0.8%;
+        padding-top: 0px;
     }
     .col {
         margin: 1% 0 1% 0%;
+        border-left: 2px dotted #cec1ab;
     }
     .span_1_of_3 {
         width: 90%;
