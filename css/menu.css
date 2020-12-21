@@ -64,6 +64,69 @@ p {
     background: #fff9ed;
 }
 
+<<<<<<< HEAD
+=======
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 80%;
+}
+
+@media (max-width: 1366px) {
+    .sticky {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1680px) {
+    .sticky {
+        width: 90%;
+    }
+}
+
+#stickynav {
+    border-top: 1px solid #ebe4d6;
+    box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+#stickynav li {
+    color: #fbfafa;
+    border: none;
+    float: left;
+    width: 20%;
+    line-height: 20px;
+}
+
+#stickynav li:last-child {
+    border-right: none;
+}
+
+#stickynav li a:hover {
+    color: #fff;
+    background: #99251f50;
+}
+
+#stickynav li.active a {
+    color: #fff;
+    background: #99261f;
+}
+
+#stickynav li a {
+    display: block;
+    color: #99261f;
+    padding: 20px 0 20px;
+    height: auto !important;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Patua One", cursive;
+    text-transform: uppercase;
+}
+
+
+>>>>>>> refs/remotes/origin/mpk
 /*----- increase/decrease input for dish quantity ----*/
 
 [type="number"]::-webkit-inner-spin-button,
