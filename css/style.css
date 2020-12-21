@@ -1339,6 +1339,9 @@ p.paragraph {
         min-height: 950px;
         padding-bottom: 15px !important;
     }
+    .order-list ul {
+        max-height: 700px !important;
+    }
     .menu ul {
         max-height: 990px !important;
     }
