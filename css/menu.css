@@ -56,6 +56,7 @@ p {
     font-size: 24px;
 }
 
+
 /*----- increase/decrease input for dish quantity ----*/
 
 [type="number"]::-webkit-inner-spin-button,
@@ -11221,7 +11222,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 }
 
 .order-list ul {
-    max-height: 300px;
+    max-height: 335px;
 }
 
 .order-list ul {
