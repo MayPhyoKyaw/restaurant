@@ -738,6 +738,7 @@ span.black {
 
 .span_1_of_3 {
     width: 32.2%;
+    border-left: 2px dotted #cec1ab;
 }
 
 .span_1_of_3 p {
@@ -867,7 +868,6 @@ span.black {
     display: block;
     float: left;
     margin: 1% 0 1% 0;
-    border-left: 2px dotted #cec1ab;
 }
 
 .span_1_of_about h3 {
@@ -1151,6 +1151,7 @@ p.paragraph {
 .span_1_of_3 {
     width: 32.3%;
     padding: 0.5% 0 0.4% 1%;
+    border-left: 2px dotted #cec1ab;
 }
 
 .span_2_of_3 h3,
@@ -1241,12 +1242,12 @@ p.paragraph {
     }
     .col {
         margin: 1% 0 1% 0%;
-        border-left: 2px dotted #cec1ab;
     }
     .span_1_of_3 {
         width: 94%;
         padding: 3%;
         padding-top: 1.5%;
+        border-left: 2px dotted #cec1ab;
     }
     .contact-form input[type="text"],
     .contact-form textarea {
@@ -1265,7 +1266,6 @@ p.paragraph {
     }
     .col {
         margin: 1% 0 1% 0%;
-        border-left: 2px dotted #cec1ab;
     }
     .span_1_of_3 {
         width: 90%;
@@ -1575,6 +1575,7 @@ p.paragraph {
     .span_1_of_3 {
         width: 31%;
         padding: 1%;
+        border-left: 2px dotted #cec1ab;
     }
     .col_1_of_3 {
         margin: 0;
@@ -1627,6 +1628,7 @@ p.paragraph {
         width: 100%;
         float: none;
         text-align: center;
+        border-left: 2px dotted #cec1ab;
     }
     .bottom-head {
         margin-top: -25px;
