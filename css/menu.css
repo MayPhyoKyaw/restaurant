@@ -11285,3 +11285,16 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
         align-items: center;
     }
 }
+
+nav ul {
+    max-height: 300px;
+}
+
+nav ul {
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+}

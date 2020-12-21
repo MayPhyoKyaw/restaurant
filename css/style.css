@@ -2026,12 +2026,3 @@ p.paragraph {
         font-size: 5em;
     }
 }
-
-nav ul {
-    max-height: 300px;
-}
-
-nav ul {
-    overflow: hidden;
-    overflow-y: scroll;
-}
