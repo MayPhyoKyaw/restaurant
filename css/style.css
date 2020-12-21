@@ -1345,9 +1345,9 @@ p.paragraph {
     .menu ul {
         max-height: 990px !important;
     }
-    body {
+    /* body {
         padding-bottom: 3%;
-    }
+    } */
     .view .mask,
     .view .content {
         left: 4px;
@@ -1360,7 +1360,7 @@ p.paragraph {
         margin-bottom: 25px !important;
     }
     .footer-bottom {
-        padding-top: 1%;
+        padding-top: 1.7%;
     }
 }
 
