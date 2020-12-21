@@ -360,12 +360,11 @@ body::-webkit-scrollbar {
     box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-
 .top-nav li {
     color: #FBFAFA;
     border: none;
     float: left;
-    width: 16.6666%;
+    width: 20%;
     line-height: 20px;
 }
 
