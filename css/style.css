@@ -261,7 +261,8 @@ body {
 }
 
 .wrap {
-    width: 80%;
+    width: 90%;
+    height: 100%;
     margin: 0 auto;
     -moz-transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
@@ -1329,6 +1330,7 @@ p.paragraph {
 @media (max-width: 1366px) {
     .wrap {
         width: 90%;
+        height: 100%;
     }
     h3.head {
         padding: 20px 0px 10px 0px;
@@ -1992,6 +1994,7 @@ p.paragraph {
     }
     .wrap {
         width: 95%;
+        height: 100%;
     }
     .span_1_of_2 p {
         font-size: 0.68em;
