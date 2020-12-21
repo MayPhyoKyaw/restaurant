@@ -11242,3 +11242,15 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     overflow: hidden;
     overflow-y: scroll;
 }
+
+.table-number {
+    border: 2px solid #99261f;
+    font-weight: 500;
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: #99261f;
+    border-radius: 50%;
+}
