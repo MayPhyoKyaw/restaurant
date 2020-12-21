@@ -265,7 +265,7 @@ body::-webkit-scrollbar {
 }
 
 .menu-body {
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .wrap {
