@@ -10347,6 +10347,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
     letter-spacing: 4px;
     word-spacing: 6px;
     background-color: #f8e8c9;
+    padding-left: 10px;
 }
 
 .tit5 {
@@ -11286,15 +11287,24 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     }
 }
 
-nav ul {
+.order-list ul {
     max-height: 300px;
 }
 
-nav ul {
+.order-list ul {
     overflow: hidden;
     overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {
     background: transparent;
+}
+
+.menu ul {
+    max-height: 700px;
+}
+
+.menu ul {
+    overflow: hidden;
+    overflow-y: scroll;
 }

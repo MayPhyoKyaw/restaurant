@@ -261,7 +261,8 @@ body {
 }
 
 .wrap {
-    width: 80%;
+    width: 90%;
+    height: 100%;
     margin: 0 auto;
     -moz-transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
@@ -538,7 +539,7 @@ body {
 /*  GRID OF FIVE   ============================================================================= */
 
 .main {
-    padding: 0% 1.5% 0% 1.5%;
+    padding: 0% 0.5% 0% 0.5%;
 }
 
 .content-top {
@@ -737,6 +738,7 @@ span.black {
 
 .span_1_of_3 {
     width: 32.2%;
+    border-left: 2px dotted #cec1ab;
 }
 
 .span_1_of_3 p {
@@ -865,7 +867,7 @@ span.black {
 .col {
     display: block;
     float: left;
-    margin: 1% 0 1% 1.6%;
+    margin: 1% 0 1% 0;
 }
 
 .span_1_of_about h3 {
@@ -1141,15 +1143,15 @@ p.paragraph {
 }
 
 .span_2_of_3 {
-    width: 60%;
-    padding: 1.5%;
-    padding-top: 0.8%;
+    width: 64%;
+    padding: 1%;
+    padding-top: 0px;
 }
 
 .span_1_of_3 {
     width: 32.3%;
-    padding: 1.5%;
-    padding-top: 0.5%;
+    padding: 0.5% 0 0.4% 1%;
+    border-left: 2px dotted #cec1ab;
 }
 
 .span_2_of_3 h3,
@@ -1234,9 +1236,9 @@ p.paragraph {
 
 @media only screen and (max-width: 640px) and (min-width: 480px) {
     .span_2_of_3 {
-        width: 94%;
-        padding: 3%;
-        padding-top: 0.8%;
+        width: 95%;
+        padding: 2%;
+        padding-top: 0px;
     }
     .col {
         margin: 1% 0 1% 0%;
@@ -1245,6 +1247,7 @@ p.paragraph {
         width: 94%;
         padding: 3%;
         padding-top: 1.5%;
+        border-left: 2px dotted #cec1ab;
     }
     .contact-form input[type="text"],
     .contact-form textarea {
@@ -1257,9 +1260,9 @@ p.paragraph {
 
 @media only screen and (max-width: 480px) {
     .span_2_of_3 {
-        width: 90%;
-        padding: 5%;
-        padding-top: 0.8%;
+        width: 91%;
+        padding: 4%;
+        padding-top: 0px;
     }
     .col {
         margin: 1% 0 1% 0%;
@@ -1330,6 +1333,7 @@ p.paragraph {
 @media (max-width: 1366px) {
     .wrap {
         width: 90%;
+        height: 100%;
     }
     h3.head {
         padding: 20px 0px 10px 0px;
@@ -1571,6 +1575,7 @@ p.paragraph {
     .span_1_of_3 {
         width: 31%;
         padding: 1%;
+        border-left: 2px dotted #cec1ab;
     }
     .col_1_of_3 {
         margin: 0;
@@ -1623,6 +1628,7 @@ p.paragraph {
         width: 100%;
         float: none;
         text-align: center;
+        border-left: 2px dotted #cec1ab;
     }
     .bottom-head {
         margin-top: -25px;
@@ -1993,6 +1999,7 @@ p.paragraph {
     }
     .wrap {
         width: 95%;
+        height: 100%;
     }
     .span_1_of_2 p {
         font-size: 0.68em;
