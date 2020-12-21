@@ -57,6 +57,7 @@ p {
     font-size: 24px;
 }
 
+
 /*----- increase/decrease input for dish quantity ----*/
 
 [type="number"]::-webkit-inner-spin-button,
@@ -10274,7 +10275,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 .tit4 {
     font-family: Poppins;
     font-weight: 500;
-    font-size: 35px;
+    font-size: 25px;
     line-height: 2;
     color: #99261f;
     text-transform: uppercase;
@@ -11222,7 +11223,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 }
 
 .order-list ul {
-    max-height: 300px;
+    max-height: 335px;
 }
 
 .order-list ul {
@@ -11241,4 +11242,51 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 .menu ul {
     overflow: hidden;
     overflow-y: scroll;
+}
+
+.table-number {
+    border: 2px solid #99261f;
+    font-weight: 500;
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: #99261f;
+    border-radius: 50%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    max-width: 28%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+    width: 100%;
+    max-height: 100px;
+}
+
+.card-title {
+    text-align: center;
+    line-height: 2;
+    font-weight: 700;
+    font-size: 16px;
+    color: #99261f;
+}
+
+.card-price {
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: #99261f;
+}
+
+.card-button {
+    text-align: center;
+    font-size: 14px;
 }
