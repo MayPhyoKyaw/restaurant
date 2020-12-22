@@ -17,7 +17,13 @@ p {
     height: 20px;
 }
 
-.qty{
+.dinerCount{
+    border-bottom: 1px solid #dad0c1;
+    padding: 1% 0;
+    height: 30px;
+}
+
+.qty {
     margin-right: 5%;
 }
 
@@ -28,7 +34,7 @@ p {
 
 .header-item {
     border-bottom: 2px solid #c7c4bf;
-    padding-bottom: 1.8%;
+    padding-bottom: 1.5%;
 }
 
 .total-bill {
@@ -57,7 +63,7 @@ p {
 
 .close {
     padding: 0 5px;
-    color: #555555;
+    color: #c42020;
     font-size: 24px;
 }
 
@@ -74,23 +80,29 @@ p {
     border: 1px solid rgb(221, 221, 221);
     display: inline-block;
     overflow: visible;
-    height: 1.5em;
+    height: 1.7em;
     background: #fffefc;
     padding: 0;
     border-radius: 7px;
-    margin-right: 5px;
+    margin-top: 3px;
+    margin-right: 2px;
 }
 
 .stepper input {
     width: 1.5em;
     height: 100%;
+    line-height: 0.1em;
     text-align: center;
-    border: 0;
+    border: transparent;
     background: transparent;
     color: #000;
+    border-radius: 50px;
+    outline: none;
 }
 
 .stepper button {
+    align-items: center;
+    justify-content: center;
     width: 1em;
     font-weight: 300;
     height: 100%;
@@ -102,6 +114,7 @@ p {
     border: none;
     border-radius: 7px;
     outline: none;
+    cursor: pointer;
 }
 
 
@@ -11248,6 +11261,13 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     overflow-y: scroll;
 }
 
+.menu-item-title {
+    max-width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .table-number {
     border: 2px solid #99261f;
     font-weight: 500;
@@ -11258,39 +11278,24 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     text-align: center;
     color: #99261f;
     border-radius: 50%;
+    cursor: default;
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    max-width: 28%;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.card-img {
-    width: 100%;
-    max-height: 100px;
-}
-
-.card-title {
-    text-align: center;
-    line-height: 2;
-    font-weight: 700;
+.order-header {
+    font-weight: 900;
     font-size: 16px;
-    color: #99261f;
 }
 
-.card-price {
-    text-align: center;
-    font-weight: 700;
-    font-size: 14px;
-    color: #99261f;
+.ordered-item {
+    font-size: 13px;
+    font-weight: lighter;
+    max-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.card-button {
-    text-align: center;
-    font-size: 14px;
+.plan-img{
+    width: 720px; 
+    height: 540px;
 }

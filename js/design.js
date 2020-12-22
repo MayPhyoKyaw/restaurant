@@ -1,6 +1,13 @@
 //Get the button
 var mybutton = document.getElementById("myBtn");
 
+var originNav = document.getElementById("buffet-nav");
+var planNav = document.getElementById("buffet-plan-nav");
+var dish = document.getElementById("dish-nav");
+var snack = document.getElementById("snack-nav");
+var dessert = document.getElementById("dessert-nav");
+var drink = document.getElementById("drink-nav");
+
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
   scrollFunction();
@@ -100,25 +107,17 @@ theToggle.onclick = function () {
 
 // buffet menu
 function buffetMenuChange1() {
-  var originNav = document.getElementById("buffet-nav");
-  var planNav = document.getElementById("buffet-plan-nav");
   planNav.style.display = "block";
   originNav.style.display = "none";
 }
 
 function buffetMenuChange2() {
-  var originNav = document.getElementById("buffet-nav");
-  var planNav = document.getElementById("buffet-plan-nav");
   planNav.style.display = "none";
   originNav.style.display = "block";
 }
 
 // Second Nav 
 function dishNav() {
-  var dish = document.getElementById("dish-nav");
-  var snack = document.getElementById("snack-nav");
-  var dessert = document.getElementById("dessert-nav");
-  var drink = document.getElementById("drink-nav");
   dish.style.display = "block";
   snack.style.display = "none";
   dessert.style.display = "none";
@@ -126,10 +125,6 @@ function dishNav() {
 }
 
 function snackNav() {
-  var dish = document.getElementById("dish-nav");
-  var snack = document.getElementById("snack-nav");
-  var dessert = document.getElementById("dessert-nav");
-  var drink = document.getElementById("drink-nav");
   snack.style.display = "block";
   dish.style.display = "none";
   dessert.style.display = "none";
@@ -137,10 +132,6 @@ function snackNav() {
 }
 
 function dessertNav() {
-  var dish = document.getElementById("dish-nav");
-  var snack = document.getElementById("snack-nav");
-  var dessert = document.getElementById("dessert-nav");
-  var drink = document.getElementById("drink-nav");
   dessert.style.display = "block";
   snack.style.display = "none";
   dish.style.display = "none";
@@ -148,10 +139,6 @@ function dessertNav() {
 }
 
 function drinkNav() {
-  var dish = document.getElementById("dish-nav");
-  var snack = document.getElementById("snack-nav");
-  var dessert = document.getElementById("dessert-nav");
-  var drink = document.getElementById("drink-nav");
   drink.style.display = "block";
   snack.style.display = "none";
   dessert.style.display = "none";
