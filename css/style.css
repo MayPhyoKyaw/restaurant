@@ -2089,7 +2089,6 @@ p.paragraph {
 }
 
 .timer {
-<<<<<<< HEAD
     border: 1px solid rgb(128, 25, 25);
     margin-right: 15px;
     box-shadow: 4px 3px 4px #515151;
@@ -2099,10 +2098,4 @@ p.paragraph {
 .before-timer{
     color: rgb(128, 25, 25);
     margin-right: 7%;
-=======
-    border: 1px solid black;
-    margin-right: 15px;
-    box-shadow: 4px 3px 4px #515151;
-    cursor: default;
->>>>>>> refs/remotes/origin/mpk
 }
