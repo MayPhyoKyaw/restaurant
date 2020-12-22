@@ -264,7 +264,8 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.menu-body {
+.menu-body,
+.buffet-body {
     overflow: hidden;
 }
 
@@ -705,7 +706,7 @@ span.black {
 
 .btn-9 {
     background: #99261f;
-    width: 100%;
+    width: 40%;
     -webkit-transform-style: preserve-20d;
     -moz-transform-style: preserve-20d;
     transform-style: preserve-20d;
@@ -2076,4 +2077,20 @@ p.paragraph {
     .page-not-found h1 {
         font-size: 5em;
     }
+}
+
+.order-btn {
+    float: left;
+}
+
+.bill-btn {
+    float: right;
+    padding: none;
+}
+
+.timer {
+    border: 1px solid black;
+    margin-right: 15px;
+    box-shadow: 4px 3px 4px #515151;
+    cursor: default;
 }
