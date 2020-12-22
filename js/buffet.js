@@ -25,4 +25,3 @@
     bIcon.style.display = "none";
     display.style.display = "block";
   }
-// }

@@ -69,10 +69,10 @@
                     <li class="sec-nav-item sec-nav-active">
                         <a href="#">Buffet</a>
                     </li>
-                    <li class="sec-nav-item"><a href="./menu.html">Dishes</a></li>
-                    <li class="sec-nav-item"><a href="./menu.html">Snacks</a></li>
-                    <li class="sec-nav-item"><a href="./menu.html">Desserts</a></li>
-                    <li class="sec-nav-item"><a href="./menu.html">Drinks</a></li>
+                    <li class="sec-nav-item click-dish"><a href="#">Dishes</a></li>
+                    <li class="sec-nav-item click-snack"><a href="#">Snacks</a></li>
+                    <li class="sec-nav-item click-dessert"><a href="#">Desserts</a></li>
+                    <li class="sec-nav-item click-drink"><a href="#">Drinks</a></li>
                 </ol>
             </nav>
             <nav class="sec-nav" role="navigation" id="buffet-plan-nav" style="display: none">
@@ -277,6 +277,23 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
+        $('.click-dish').click(function(){
+            const get_menu_type = $(this).text();
+            location.href = `menu.html?menuType=${get_menu_type}`;
+        })
+        $('.click-snack').click(function(){
+            const get_menu_type = $(this).text();
+            location.href = `menu.html?menuType=${get_menu_type}`;
+        })
+        $('.click-dessert').click(function(){
+            const get_menu_type = $(this).text();
+            location.href = `menu.html?menuType=${get_menu_type}`;
+        })
+        $('.click-drink').click(function(){
+            const get_menu_type = $(this).text();
+            location.href = `menu.html?menuType=${get_menu_type}`;
+        })
+
         $(document).on("click", "ol li", function() {
             $(this)
                 .addClass("sec-nav-active")
