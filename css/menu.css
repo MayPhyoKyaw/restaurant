@@ -11255,6 +11255,13 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     overflow-y: scroll;
 }
 
+.menu-item-title {
+    max-width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .table-number {
     border: 2px solid #99261f;
     font-weight: 500;
@@ -11266,4 +11273,18 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     color: #99261f;
     border-radius: 50%;
     cursor: default;
+}
+
+.order-header {
+    font-weight: 900;
+    font-size: 16px;
+}
+
+.ordered-item {
+    font-size: 13px;
+    font-weight: lighter;
+    max-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
