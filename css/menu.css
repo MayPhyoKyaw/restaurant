@@ -17,12 +17,15 @@ p {
     height: 20px;
 }
 
+<<<<<<< HEAD
 .dinerCount{
     border-bottom: 1px solid #dad0c1;
     padding: 1% 0;
     height: 30px;
 }
 
+=======
+>>>>>>> refs/remotes/origin/mpk
 .qty {
     margin-right: 5%;
 }
@@ -85,7 +88,11 @@ p {
     padding: 0;
     border-radius: 7px;
     margin-top: 3px;
+<<<<<<< HEAD
     margin-right: 2px;
+=======
+    margin-right: 5px;
+>>>>>>> refs/remotes/origin/mpk
 }
 
 .stepper input {
@@ -11293,9 +11300,12 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+<<<<<<< HEAD
 }
 
 .plan-img{
     width: 720px; 
     height: 540px;
+=======
+>>>>>>> refs/remotes/origin/mpk
 }

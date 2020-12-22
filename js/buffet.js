@@ -16,6 +16,7 @@
     }, 1000);
   }
 
+<<<<<<< HEAD
   function goOrderTimer() {
     var fiveMinutes = 60*30+3600,
     display = document.getElementById('countdown');
@@ -24,5 +25,11 @@
     var bIcon = document.getElementById("before-countdown");
     bIcon.style.display = "none";
     display.style.display = "block";
+=======
+  window.onload = function () {
+    var fiveMinutes = 60,
+        display = document.getElementById('countdown');
+    startTimer(fiveMinutes, display);
+>>>>>>> refs/remotes/origin/mpk
   }
 // }
