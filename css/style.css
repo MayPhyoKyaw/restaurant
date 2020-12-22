@@ -744,7 +744,7 @@ span.black {
 }
 
 .span_1_of_3 {
-    width: 32.2%;
+    width: 30%;
 }
 
 .span_1_of_3 p {
@@ -1149,14 +1149,14 @@ p.paragraph {
 }
 
 .span_2_of_3 {
-    width: 64%;
+    width: 66%;
     padding: 1%;
     padding-top: 0px;
     border-right: 2px dotted #cec1ab;
 }
 
 .span_1_of_3 {
-    width: 32.3%;
+    width: 30%;
     padding: 0.5% 0 0.4% 1%;
 }
 
@@ -1333,6 +1333,7 @@ p.paragraph {
     }
     .span_1_of_3 {
         min-height: 900px;
+        max-width: 275px;
         border-left: 0px !important;
     }
     .p-b-30 {
@@ -1617,7 +1618,7 @@ p.paragraph {
         font-size: 17px;
     }
     .span_1_of_3 {
-        width: 31%;
+        width: 23%;
         padding: 1%;
     }
     .col_1_of_3 {
