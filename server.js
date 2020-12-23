@@ -3,7 +3,6 @@
 // include all required modules
 var http = require ('http');
 const express = require('express');
-var fs = require ('fs'); 
 
 // server details
 const app = express();
