@@ -5,7 +5,7 @@ console.log(menuType);
 var menu1 = document.getElementById("dish").innerHTML;
 var menu2 = document.getElementById("snack").innerHTML;
 var menu3 = document.getElementById("dessert").innerHTML;
-var menu4 = document.getElementById("drink").innerHTML; 
+var menu4 = document.getElementById("drink").innerHTML;
 
 var dish = document.getElementById("dish-nav");
 var snack = document.getElementById("snack-nav");

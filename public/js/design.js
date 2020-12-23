@@ -116,7 +116,7 @@ function buffetMenuChange2() {
   originNav.style.display = "block";
 }
 
-// Second Nav 
+// Second Nav
 function dishNav() {
   dish.style.display = "block";
   snack.style.display = "none";
