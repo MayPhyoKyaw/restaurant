@@ -128,7 +128,7 @@
             </nav>
             <div class="main">
                 <div class="contact">
-                    <div class="col span_2_of_3 tab-content" id="tab-content">
+                    <div class="col span_2_of_3 tab-content">
                         <div class="container tab-pane fade active in" id="dish" aria-labelledby="dish-tab">
                             <div class="header-lunch parallax0 parallax20" style="background-image:
                                     url(images/header-menu-01.jpg)">
@@ -136,7 +136,7 @@
                                     <h2 class="tit4 t-center">Buffet</h2>
                                 </div>
                             </div>
-                            <div class="row p-t-10 p-b-30">
+                            <div class="row p-t-10 p-b-30 list-wrapper">
                                 <nav class="menu">
                                     <ul>
                                         <!-- Block3 -->
@@ -255,7 +255,7 @@
                                             m-b-30 menu-item">
                                             <div class="pic-blo3 size20
                                                 bo-rad-10 hov-img-zoom m-r-28">
-                                                <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" /></a>
+                                                <a href="#"><img src="images/lunch-01.jpg" alt="IMG-MENU" /></a>
                                             </div>
 
                                             <div class="text-blo3 size21
@@ -366,7 +366,7 @@
                                             m-b-30 menu-item">
                                             <div class="pic-blo3 size20
                                                 bo-rad-10 hov-img-zoom m-r-28">
-                                                <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" /></a>
+                                                <a href="#"><img src="images/lunch-02.jpg" alt="IMG-MENU" /></a>
                                             </div>
 
                                             <div class="text-blo3 size21
@@ -473,6 +473,8 @@
                                         </li>
                                     </ul>
                                 </nav>
+                                <div id="pagination-info"></div>
+                                <div id="pagination-container"></div>
                             </div>
                         </div>
                     </div>
@@ -626,11 +628,19 @@
         </button>
 
     <!----- Script ----->
-    <script src="./js/design.js"></script>
-    <script src="./js/menu.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js'></script>
+    <script src="js/design.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/db.js"></script>
+    <script  src="js/pagination.js"></script>
+    <script 
+        src="https://code.jquery.com/jquery-3.5.1.js" 
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+        crossorigin="anonymous"
+    ></script>
     <script type="text/javascript">
+
         function myTrim(x) {
             return x.replace(/^\s+|\s+$/gm,'');
         }
