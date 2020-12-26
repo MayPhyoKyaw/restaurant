@@ -8,7 +8,44 @@ p {
 
 .btn-right {
     float: right;
-    padding-top: 5%;
+    padding-top: 3%;
+}
+
+.badge-right {
+    float: right;
+}
+
+.badge-pork{
+    display: inline-block;
+    font-family: inherit;
+    font-weight: bolder;
+    font-size: 12px;
+    border-radius: 3px;
+    background: lightcoral;
+    color: rgb(255, 255, 255);
+    padding: 3px 6px;
+}
+
+.badge-chicken{
+    display: inline-block;
+    font-family: inherit;
+    font-weight: bolder;
+    font-size: 12px;
+    border-radius: 3px;
+    background: rgb(128, 240, 128);
+    color: rgb(255, 255, 255);
+    padding: 3px 6px;
+}
+
+.badge-seafood{
+    display: inline-block;
+    font-family: inherit;
+    font-weight: bolder;
+    font-size: 12px;
+    border-radius: 3px;
+    background: rgb(128, 163, 240);
+    color: rgb(255, 255, 255);
+    padding: 3px 6px;
 }
 
 .order-item {
@@ -174,9 +211,21 @@ p {
 
 /* Create two equal columns that sits next to each other */
 
-.column {
-    flex: 50%;
+/* .column {
+    float: left;
+} */
+
+/* .column1{
+    float: left;
 }
+.column2{
+    float: right;
+    justify-content: right;
+    align-items: right;
+    text-align: right;
+    margin-right: 10px;
+    margin-left: 60%;
+} */
 
 
 /* ------------------------ Menu ------------------------------*/
@@ -10522,7 +10571,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 .txt19 {
     font-family: Montserrat;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     color: #222222;
     line-height: 1.2;
     text-transform: uppercase;
@@ -10816,7 +10865,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 }
 
 .size21 {
-    width: calc(100% - 160px - 28px - 160px);
+    width: calc(100% - 160px - 28px );
     min-height: 120px;
 }
 

@@ -1,6 +1,6 @@
 var items = $(".list-wrapper .menu-item");
 var numItems = items.length;
-var perPage = 2;
+var perPage = 5;
 var pgNumber = 1;
 
 items.slice(perPage).hide();
@@ -24,4 +24,4 @@ $("#pagination-container").click(function(){
     console.log(pgNumber);
 })
 console.log(pgNumber);
-document.getElementById("pagination-info").innerHTML = `Total ${numItems} Items`;
+document.getElementById("pagination-info").innerHTML = `Total ${numItems} ${menuType} Menu`;
