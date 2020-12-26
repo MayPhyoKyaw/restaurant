@@ -1,6 +1,6 @@
 var items = $(".list-wrapper .menu-item");
 var numItems = items.length;
-var perPage = 1;
+var perPage = 5;
 var pgNumber = 1;
 
 items.slice(perPage).hide();
