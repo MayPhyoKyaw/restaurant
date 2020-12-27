@@ -8,7 +8,7 @@ p {
 
 .btn-right {
     float: right;
-    padding-top: 3%;
+    padding-top: 7%;
 }
 
 .badge-right {
@@ -121,7 +121,7 @@ p {
     background: #fffefc;
     padding: 0;
     border-radius: 7px;
-    margin-top: 3px;
+    margin-top: 7px;
     margin-right: 2px;
 }
 
@@ -395,8 +395,9 @@ ol {
 }
 
 .sec-nav-item:hover {
-    border-bottom-color: #e7e575;
-    background: #f75c54;
+    border-bottom-color:#91d36b;
+    /* background: #f75c54; */
+    background: #c95b55;
     margin-right: 0%;
 }
 
@@ -10571,7 +10572,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 .txt19 {
     font-family: Montserrat;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 15px;
     color: #222222;
     line-height: 1.2;
     text-transform: uppercase;
@@ -10588,18 +10589,18 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 .txt21 {
     font-family: Poppins;
-    font-weight: 300;
-    font-size: 18px;
+    font-weight: 350;
+    font-size: 15px;
     color: #333333;
     line-height: 1.4;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .txt22 {
     font-family: Montserrat;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 19px;
     color: #333333;
     line-height: 1.2;
     text-transform: uppercase;
@@ -11386,7 +11387,10 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 
 #pagination-info{
     text-align: left;
-    font-size: 20px;
+    font-size: 19px;
     color: #99261f;
     font-family: 'Patua One', cursive;
+    padding-top: 1%;
+    letter-spacing: -1px;
+    font-weight: 900;
 }
