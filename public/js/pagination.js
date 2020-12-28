@@ -20,9 +20,4 @@ $("#pagination-container").pagination({
     console.log(location.href);
   },
 });
-$("#pagination-container").click(function(){
-    pgNumber++
-    console.log(pgNumber);
-})
-console.log(pgNumber);
 document.getElementById("pagination-info").innerHTML = `Total ${numItems} ${menuType} Menu`;
