@@ -1319,6 +1319,9 @@ p.paragraph {
 }
 
 @media (max-width: 1440px) {
+    .sec-nav {
+        width: 100% !important;
+    }
     .flex-caption {
         top: 65%;
     }
@@ -2095,7 +2098,7 @@ p.paragraph {
     cursor: default;
 }
 
-.before-timer{
+.before-timer {
     color: rgb(128, 25, 25);
     margin-right: 7%;
 }

@@ -1,9 +1,9 @@
 var name = test;
-// append new for main navs
+// append new for main navs in menu html
 $(".menu1 .nav").append(`
 <li class='nav-item click-test' onclick='testNav()' id='menuTest'><a href='#' id='test'>Test</a></li>`);
 
-// append new for second sub navs
+// append new for second sub navs in menu html
 $(".sub-nav").append(`
   <nav class='sec-nav' role='navigation' id='test-nav'>
     <ol>
