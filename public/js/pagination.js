@@ -14,15 +14,15 @@ $("#pagination-container").pagination({
   onPageClick: function (pageNumber) {
     var showFrom = perPage * (pageNumber - 1);
     var showTo = showFrom + perPage;
-    console.log(showFrom);
-    console.log(showTo);
+    console.log("showFrom => " + showFrom);
+    console.log("showTo => " + showTo);
     items.hide().slice(showFrom, showTo).show();
     console.log(location.href);
   },
 });
 $("#pagination-container").click(function(){
     pgNumber++
-    console.log(pgNumber);
+    console.log("pgNumber => " + pgNumber);
 })
 console.log(pgNumber);
 document.getElementById("pagination-info").innerHTML = `Total ${numItems} ${menuType} Menu`;
