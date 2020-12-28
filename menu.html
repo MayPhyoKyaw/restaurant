@@ -69,63 +69,65 @@
                         <li class="nav-item">
                             <a href="./buffet.html">Buffet</a>
                         </li>
-                        <li class="nav-item click-dish" onclick="dishNav()" id="menu1">
+                        <li class="nav-item click-dish" onclick="dishNav()" id="menuDish">
                             <a href="#" id="dish">Dishes</a>
                         </li>
-                        <li class="nav-item click-snack" onclick="snackNav()" id="menu2">
+                        <li class="nav-item click-snack" onclick="snackNav()" id="menuSnack">
                             <a href="#" id="snack">Snacks</a>
                         </li>
-                        <li class="nav-item click-dessert" onclick="dessertNav()" id="menu3">
+                        <li class="nav-item click-dessert" onclick="dessertNav()" id="menuDessert">
                             <a href="#" id="dessert">Desserts</a>
                         </li>
-                        <li class="nav-item click-drink" onclick="drinkNav()" id="menu4">
+                        <li class="nav-item click-drink" onclick="drinkNav()" id="menuDrink">
                             <a href="#" id="drink">Drinks</a>
                         </li>
                     </ul>
                     <div class="clear"></div>
                 </div>
             </div>
-            <nav class="sec-nav" role="navigation" id="dish-nav">
-                <ol>
-                    <li class="sec-nav-item sec-nav-active">
-                        <a href="#">Rice Dishes</a>
-                    </li>
-                    <li class="sec-nav-item"><a href="#">Noodle</a></li>
-                    <li class="sec-nav-item"><a href="#">Soup</a></li>
-                    <li class="sec-nav-item"><a href="#">Curry</a></li>
-                    <li class="sec-nav-item"><a href="#">Salad</a></li>
-                </ol>
-            </nav>
-            <nav class="sec-nav" role="navigation" id="snack-nav" style="display: none">
-                <ol>
-                    <li class="sec-nav-item sec-nav-active">
-                        <a href="#">Dumpling</a>
-                    </li>
-                    <li class="sec-nav-item"><a href="#">Sandwich</a></li>
-                    <li class="sec-nav-item"><a href="#">Fried</a></li>
-                    <li class="sec-nav-item"><a href="#">Burger and Hotdog</a></li>
-                </ol>
-            </nav>
-            <nav class="sec-nav" role="navigation" id="dessert-nav" style="display: none">
-                <ol>
-                    <li class="sec-nav-item sec-nav-active">
-                        <a href="#">Cake</a>
-                    </li>
-                    <li class="sec-nav-item"><a href="#">Cookies and Crackers</a></li>
-                    <li class="sec-nav-item"><a href="#">Puff and Pie</a></li>
-                    <li class="sec-nav-item"><a href="#">Bread</a></li>
-                </ol>
-            </nav>
-            <nav class="sec-nav" role="navigation" id="drink-nav" style="display: none">
-                <ol>
-                    <li class="sec-nav-item sec-nav-active">
-                        <a href="#">Cold Drink</a>
-                    </li>
-                    <li class="sec-nav-item"><a href="#">Coffee and Tea</a></li>
-                    <li class="sec-nav-item"><a href="#">Soda</a></li>
-                    <li class="sec-nav-item"><a href="#">Beer</a></li>
-                </ol>
-            </nav>
+            <div class="sub-nav">
+                <nav class="sec-nav" role="navigation" id="dish-nav">
+                    <ol>
+                        <li class="sec-nav-item sec-nav-active">
+                            <a href="#">Rice Dishes</a>
+                        </li>
+                        <li class="sec-nav-item"><a href="#">Noodle</a></li>
+                        <li class="sec-nav-item"><a href="#">Soup</a></li>
+                        <li class="sec-nav-item"><a href="#">Curry</a></li>
+                        <li class="sec-nav-item"><a href="#">Salad</a></li>
+                    </ol>
+                </nav>
+                <nav class="sec-nav" role="navigation" id="snack-nav" style="display: none">
+                    <ol>
+                        <li class="sec-nav-item sec-nav-active">
+                            <a href="#">Dumpling</a>
+                        </li>
+                        <li class="sec-nav-item"><a href="#">Sandwich</a></li>
+                        <li class="sec-nav-item"><a href="#">Fried</a></li>
+                        <li class="sec-nav-item"><a href="#">Burger and Hotdog</a></li>
+                    </ol>
+                </nav>
+                <nav class="sec-nav" role="navigation" id="dessert-nav" style="display: none">
+                    <ol>
+                        <li class="sec-nav-item sec-nav-active">
+                            <a href="#">Cake</a>
+                        </li>
+                        <li class="sec-nav-item"><a href="#">Cookies and Crackers</a></li>
+                        <li class="sec-nav-item"><a href="#">Puff and Pie</a></li>
+                        <li class="sec-nav-item"><a href="#">Bread</a></li>
+                    </ol>
+                </nav>
+                <nav class="sec-nav" role="navigation" id="drink-nav" style="display: none">
+                    <ol>
+                        <li class="sec-nav-item sec-nav-active">
+                            <a href="#">Cold Drink</a>
+                        </li>
+                        <li class="sec-nav-item"><a href="#">Coffee and Tea</a></li>
+                        <li class="sec-nav-item"><a href="#">Soda</a></li>
+                        <li class="sec-nav-item"><a href="#">Beer</a></li>
+                    </ol>
+                </nav>
+            </div>
             <div class="main">
                 <div class="contact">
                     <div class="col span_2_of_3 tab-content">
@@ -808,6 +810,11 @@
             location.href = `menu.html?menuType=${menu_type}`;
         })
         $('.click-drink').click(function() {
+            const get_menu_type = $(this).text();
+            var menu_type = myTrim(get_menu_type);
+            location.href = `menu.html?menuType=${menu_type}`;
+        })
+        $('.click-test').click(function() {
             const get_menu_type = $(this).text();
             var menu_type = myTrim(get_menu_type);
             location.href = `menu.html?menuType=${menu_type}`;

@@ -155,24 +155,29 @@
     <script src="./js/db.js"></script>
     <script>
         function myTrim(x) {
-            return x.replace(/^\s+|\s+$/gm,'');
+            return x.replace(/^\s+|\s+$/gm, '');
         }
-        $('.click-dish').click(function(){
+        $('.click-dish').click(function() {
             const get_menu_type = $(this).text();
             var menu_type = myTrim(get_menu_type);
             location.href = `menu.html?menuType=${menu_type}`;
         })
-        $('.click-snack').click(function(){
+        $('.click-snack').click(function() {
             const get_menu_type = $(this).text();
             var menu_type = myTrim(get_menu_type);
             location.href = `menu.html?menuType=${menu_type}`;
         })
-        $('.click-dessert').click(function(){
+        $('.click-dessert').click(function() {
             const get_menu_type = $(this).text();
             var menu_type = myTrim(get_menu_type);
             location.href = `menu.html?menuType=${menu_type}`;
         })
-        $('.click-drink').click(function(){
+        $('.click-drink').click(function() {
+            const get_menu_type = $(this).text();
+            var menu_type = myTrim(get_menu_type);
+            location.href = `menu.html?menuType=${menu_type}`;
+        })
+        $('.click-test').click(function() {
             const get_menu_type = $(this).text();
             var menu_type = myTrim(get_menu_type);
             location.href = `menu.html?menuType=${menu_type}`;
