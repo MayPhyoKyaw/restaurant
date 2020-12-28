@@ -1212,24 +1212,24 @@ p.paragraph {
     height: 120px;
 }
 
-.company_address {
+.your-order {
     padding-top: 2px;
 }
 
-.company_address p {
+.your-order p {
     font-size: 0.8125em;
     color: #333;
 }
 
-.company_address p span,
-.company_address p span a {
+.your-order p span,
+.your-order p span a {
     text-decoration: underline;
     color: #333;
     cursor: pointer;
 }
 
-.company_address p span:hover,
-.company_address p span a:hover {
+.your-order p span:hover,
+.your-order p span a:hover {
     text-decoration: none;
 }
 
@@ -2101,4 +2101,8 @@ p.paragraph {
 .before-timer {
     color: rgb(128, 25, 25);
     margin-right: 7%;
+}
+
+.fa-close {
+    cursor: pointer;
 }
