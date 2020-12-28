@@ -14,8 +14,8 @@ $("#pagination-container").pagination({
   onPageClick: function (pageNumber) {
     var showFrom = perPage * (pageNumber - 1);
     var showTo = showFrom + perPage;
-    console.log(showFrom);
-    console.log(showTo);
+    console.log("showFrom => " + showFrom);
+    console.log("showTo => " + showTo);
     items.hide().slice(showFrom, showTo).show();
     console.log(location.href);
   },

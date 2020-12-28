@@ -15,7 +15,7 @@ p {
     float: right;
 }
 
-.badge-pork{
+.badge-pork {
     display: inline-block;
     font-family: inherit;
     font-weight: bolder;
@@ -23,10 +23,10 @@ p {
     border-radius: 3px;
     background: lightcoral;
     color: rgb(255, 255, 255);
-    padding: 3px 6px;
+    padding: 6px 6px 3px 6px;
 }
 
-.badge-chicken{
+.badge-chicken {
     display: inline-block;
     font-family: inherit;
     font-weight: bolder;
@@ -34,10 +34,10 @@ p {
     border-radius: 3px;
     background: rgb(128, 240, 128);
     color: rgb(255, 255, 255);
-    padding: 3px 6px;
+    padding: 6px 6px 3px 6px;
 }
 
-.badge-seafood{
+.badge-seafood {
     display: inline-block;
     font-family: inherit;
     font-weight: bolder;
@@ -45,7 +45,18 @@ p {
     border-radius: 3px;
     background: rgb(128, 163, 240);
     color: rgb(255, 255, 255);
-    padding: 3px 6px;
+    padding: 6px 6px 3px 6px;
+}
+
+.badge-beef {
+    display: inline-block;
+    font-family: inherit;
+    font-weight: bolder;
+    font-size: 12px;
+    border-radius: 3px;
+    background: rgb(194, 194, 75);
+    color: rgb(255, 255, 255);
+    padding: 6px 6px 3px 6px;
 }
 
 .order-item {
@@ -54,7 +65,7 @@ p {
     height: 20px;
 }
 
-.dinerCount{
+.dinerCount {
     border-bottom: 1px solid #dad0c1;
     padding: 1% 0;
     height: 30px;
@@ -211,9 +222,11 @@ p {
 
 /* Create two equal columns that sits next to each other */
 
+
 /* .column {
     float: left;
 } */
+
 
 /* .column1{
     float: left;
@@ -395,7 +408,7 @@ ol {
 }
 
 .sec-nav-item:hover {
-    border-bottom-color:#91d36b;
+    border-bottom-color: #91d36b;
     /* background: #f75c54; */
     background: #c95b55;
     margin-right: 0%;
@@ -10866,7 +10879,7 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 }
 
 .size21 {
-    width: calc(100% - 160px - 28px );
+    width: calc(100% - 160px - 28px);
     min-height: 120px;
 }
 
@@ -11345,47 +11358,47 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     text-overflow: ellipsis;
 }
 
-.plan-img{
-    width: 720px; 
+.plan-img {
+    width: 720px;
     height: 540px;
 }
 
 .simple-pagination ul {
-	margin: 0 0 20px;
-	padding: 0;
-	list-style: none;
-	text-align: center;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
 }
 
 .simple-pagination li {
-	display: inline-block;
-	margin-right: 5px;
+    display: inline-block;
+    margin-right: 5px;
 }
 
 .simple-pagination li a,
 .simple-pagination li span {
-	color: #666;
-	padding: 5px 10px;
-	text-decoration: none;
-	border: 1px solid #EEE;
-	background-color: rgb(243, 209, 136);
+    color: #666;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #EEE;
+    background-color: rgb(243, 209, 136);
     box-shadow: 0px 0px 10px 0px #EEE;
     border-radius: 5px;
 }
 
 .simple-pagination .current {
-	color: #FFF;
-	background-color: #99261f;
-	border-color:#dfcdcf;
+    color: #FFF;
+    background-color: #99261f;
+    border-color: #dfcdcf;
 }
 
 .simple-pagination .prev.current,
 .simple-pagination .next.current {
     color: #666;
-	background: rgba(252, 225, 167, 0.027);
+    background: rgba(252, 225, 167, 0.027);
 }
 
-#pagination-info{
+#pagination-info {
     text-align: left;
     font-size: 19px;
     color: #99261f;

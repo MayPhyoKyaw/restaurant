@@ -7,6 +7,7 @@ var dish = document.getElementById("dish-nav");
 var snack = document.getElementById("snack-nav");
 var dessert = document.getElementById("dessert-nav");
 var drink = document.getElementById("drink-nav");
+var test = document.getElementById("test-nav");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
@@ -122,6 +123,7 @@ function dishNav() {
   snack.style.display = "none";
   dessert.style.display = "none";
   drink.style.display = "none";
+  test.style.display = "none";
 }
 
 function snackNav() {
@@ -129,6 +131,7 @@ function snackNav() {
   dish.style.display = "none";
   dessert.style.display = "none";
   drink.style.display = "none";
+  test.style.display = "none";
 }
 
 function dessertNav() {
@@ -136,6 +139,7 @@ function dessertNav() {
   snack.style.display = "none";
   dish.style.display = "none";
   drink.style.display = "none";
+  test.style.display = "none";
 }
 
 function drinkNav() {
@@ -143,4 +147,14 @@ function drinkNav() {
   snack.style.display = "none";
   dessert.style.display = "none";
   dish.style.display = "none";
+  test.style.display = "none";
+}
+
+function testNav() {
+  test.style.display = "block";
+  dish.style.display = "none";
+  snack.style.display = "none";
+  dessert.style.display = "none";
+  drink.style.display = "none";
+
 }
