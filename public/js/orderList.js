@@ -1,6 +1,6 @@
 // click add to order btn to add item into list
 $(".add-to-order").click(function() {
-  var itemTitle = $(this).parent().parent().parent().find('.row .item-title a').text();
+  var itemTitle = $(this).parent().parent().parent().find('.row .item-title span').text();
   var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
   var itemPrice = $(this).parent().parent().parent().find('.row .left .item-price').text();
   var changeInt = itemPrice.slice(0, -5);
@@ -20,3 +20,11 @@ $(".add-to-order").click(function() {
     }
   })
 });
+
+ // clear item from order list
+ $(".order-item .fa-close").click(function () {
+  $(this).parent().remove();
+  if ($(".order-list li").length < 5) {
+    $(".order-list").css('cssText', 'min-height: 200px !important;');
+  }
+})
