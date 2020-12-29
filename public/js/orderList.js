@@ -8,8 +8,8 @@ $(".add-to-order").click(function() {
   <li class="list-group-item order-item">
     <span class="left ordered-item">${itemTitle}</span>
     <i class="fa fa-close close right"></i>
-    <span class="right qty ordered-item">${changeInt * itemQuantity} &nbsp;</span>
-    <span class="right qty ordered-item">${itemQuantity} &nbsp;x</span>
+    <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
+    <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
   </li>`);
 
   // clear item from order list
