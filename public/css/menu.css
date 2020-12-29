@@ -24,6 +24,7 @@ p {
     background: lightcoral;
     color: rgb(255, 255, 255);
     padding: 6px 6px 3px 6px;
+    cursor: default;
 }
 
 .badge-chicken {
@@ -35,6 +36,7 @@ p {
     background: rgb(128, 240, 128);
     color: rgb(255, 255, 255);
     padding: 6px 6px 3px 6px;
+    cursor: default;
 }
 
 .badge-seafood {
@@ -46,6 +48,7 @@ p {
     background: rgb(128, 163, 240);
     color: rgb(255, 255, 255);
     padding: 6px 6px 3px 6px;
+    cursor: default;
 }
 
 .badge-beef {
@@ -57,6 +60,7 @@ p {
     background: rgb(194, 194, 75);
     color: rgb(255, 255, 255);
     padding: 6px 6px 3px 6px;
+    cursor: default;
 }
 
 .order-item {

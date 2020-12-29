@@ -12,13 +12,11 @@ $(".add-to-order").click(function() {
     <span class="right qty ordered-item">${itemQuantity} &nbsp;x</span>
   </li>`);
 
+  // clear item from order list
+  $(".order-item .fa-close").click(function () {
+    $(this).parent().remove();
+    if ($(".order-list li").length < 5) {
+      $(".order-list").css('cssText', 'min-height: 200px !important;');
+    }
+  })
 });
-
-// clear item from order list
-$(".fa-close").click(function () {
-  $(this).parent().remove();
-  if ($(".order-list li").length < 5) {
-    $(".order-list").css('cssText', 'min-height: 200px !important;');
-  }
-})
-
