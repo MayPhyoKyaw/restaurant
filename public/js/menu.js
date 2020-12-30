@@ -1,21 +1,45 @@
-var name = test;
+var testName = "test";
+var clickMenu = `click-${testName}`;
 // append new for main navs in menu html
 $(".menu1 .nav").append(`
-<li class='nav-item click-test' onclick='testNav()' id='menuTest'><a href='#' id='test'>Test</a></li>`);
+  <li class='nav-item ${clickMenu}' onclick='testNav()' id='menuTest'>
+    <a href='#' id=${testName}>${testName}</a>
+  </li>`
+);
+console.log(`${testName}`);
 
+var testNameNav = `${testName}-nav`;
 // append new for second sub navs in menu html
 $(".sub-nav").append(`
-  <nav class='sec-nav' role='navigation' id='test-nav'>
-    <ol>
-        <li class='sec-nav-item sec-nav-active'>
-            <a href='#'>Test1</a>
-        </li>
-        <li class='sec-nav-item'><a href='#'>Test2</a></li>
-        <li class='sec-nav-item'><a href='#'>Test3</a></li>
-        <li class='sec-nav-item'><a href='#'>Test4</a></li>
-        <li class='sec-nav-item'><a href='#'>Test5</a></li>
-    </ol>
-  </nav>`);
+  <nav class='sec-nav' role='navigation' style="display: none">
+    <div id='${testNameNav}'>
+      <ol>
+          <li class='sec-nav-item sec-nav-active'>
+              <a href='#'>Test1</a>
+          </li>
+          <li class='sec-nav-item'><a href='#'>Test2</a></li>
+          <li class='sec-nav-item'><a href='#'>Test3</a></li>
+          <li class='sec-nav-item'><a href='#'>Test4</a></li>
+          <li class='sec-nav-item'><a href='#'>Test5</a></li>
+      </ol>
+    </div>
+  </nav>`
+);
+
+// var subNav = document.getElementsByClassName("sec-nav");
+// for (i = 0; i < subNav.length; i++) {
+//   var subnav = subNav[i].querySelector("div"),
+//   id = subnav.getAttribute("id");
+//   console.log(id);
+//   subNavFunc = document.getElementById(id);
+//   console.log(subNavFunc);
+//   for(j=0; j<id.length; i++){
+//     // if(id[j]==)
+//   }
+//   $(subNavFunc).click(function(){
+//     $(this).style.display = "block";
+//   });
+// }
 
 var navLength = $(".menu1 .nav-item").length;
 var calculatedByLength = 100 / navLength;
