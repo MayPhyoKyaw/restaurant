@@ -1,5 +1,7 @@
-var items = $(".list-wrapper .menu-item");
+var items = $(".list-wrapper").find(".menu-item");
+console.log(items);
 var numItems = items.length;
+console.log(numItems);
 var perPage = 5;
 var pgNumber = 1;
 
@@ -20,4 +22,4 @@ $("#pagination-container").pagination({
     console.log(location.href);
   },
 });
-document.getElementById("pagination-info").innerHTML = `Total ${numItems} ${menuType} Menu`;
+// document.getElementById("pagination-info").innerHTML = `Total ${numItems} ${menuType} Menu`;

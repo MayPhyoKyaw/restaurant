@@ -89,62 +89,134 @@ $(document).ready(function () {
       .then(function (data) {
         // document.getElementById('counter').innerHTML = `Button was clicked ${data.length} times`;
         data.forEach(dish => {
-          $('.menu ul').append(`
-            <li class="blo3 flex-w flex-col-l-sm m-b-30 menu-item">
-              <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-                  <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" /></a>
-              </div>
-
-              <div class="text-blo3 size21 flex-col-l-m">
-                <a href="#" class="txt19 m-b-3">
-                    ${dish.dishName}
-                </a>
-                <div class="row" style="width: 100%;">
-                    <div class="column left item-title">
-                        <a href="#" class="txt19 m-b-3">
-                            ${dish.langName}
-                        </a>
-                    </div>
-                    <div class="badge-right column">
-                        <span class="badge-pork">
-                            Pork
-                        </span>
-                        <span class="badge-chicken">
-                            Chicken
-                        </span>
-                        <span class="badge-seafood">
-                            Seafood
-                        </span>
-                    </div>
+          var appetizer = document.getElementById("appetizer").innerHTML;
+          // console.log(soup)
+          if (dish.dishMenu === appetizer){
+            console.log(dish)
+            $('.menu ul').append(`
+              <li class="blo3 flex-w flex-col-l-sm m-b-30 menu-item">
+                <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
+                    <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" /></a>
                 </div>
-                <div class="row" style="width: 100%;">
-                    <div class="column left item-quantity">
-                        <span class="stepper">
-                            <button>–</button>
-                            <input
-                                type="number"
-                                id="stepper2"
-                                value="1"
-                                min="1"
-                                max="100"
-                                step="1"
-                                readonly
-                                />
-                            <button>+</button>
-                        </span>
-                        <br/><br/>
-                        <span class="txt22 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
-                    </div>
 
-                    <div class="btn-blo3 btn-right column">
-                        <button class="btn1 btn-8 btn-8a add-to-order">Add to order</button>
-                    </div>
+                <div class="text-blo3 size21 flex-col-l-m">
+                  <a href="#" class="txt19 m-b-3">
+                      ${dish.dishName}
+                  </a>
+                  <div class="row" style="width: 100%;">
+                      <div class="column left item-title">
+                          <a href="#" class="txt19 m-b-3">
+                              ${dish.langName}
+                          </a>
+                      </div>
+                      <div class="badge-right column">
+                          <span class="badge-pork">
+                              Pork
+                          </span>
+                          <span class="badge-chicken">
+                              Chicken
+                          </span>
+                          <span class="badge-seafood">
+                              Seafood
+                          </span>
+                      </div>
+                  </div>
+                  <div class="row" style="width: 100%;">
+                      <div class="column left item-quantity">
+                          <span class="stepper">
+                              <button>–</button>
+                              <input
+                                  type="number"
+                                  id="stepper2"
+                                  value="1"
+                                  min="1"
+                                  max="100"
+                                  step="1"
+                                  readonly
+                                  />
+                              <button>+</button>
+                          </span>
+                          <br/><br/>
+                          <span class="txt22 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
+                      </div>
+
+                      <div class="btn-blo3 btn-right column">
+                          <button class="btn1 btn-8 btn-8a add-to-order">Add to order</button>
+                      </div>
+                  </div>
                 </div>
-              </div>
-            </li>
-          `)
-          console.log(dish);
+              </li>
+            `)
+          }
+          $("#dishes").on('click' , 'li' , function() {
+            $(this).addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
+            var dishMenu = $(this).find("a").html();
+            console.log(dishMenu);
+            if (dish.dishMenu === dishMenu){
+              console.log(dish.dishMenu, dish)
+              $('.menu ul').empty();
+              $('.menu ul').append(`
+                <li class="blo3 flex-w flex-col-l-sm m-b-30 menu-item">
+                  <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
+                      <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" /></a>
+                  </div>
+  
+                  <div class="text-blo3 size21 flex-col-l-m">
+                    <a href="#" class="txt19 m-b-3">
+                        ${dish.dishName}
+                    </a>
+                    <div class="row" style="width: 100%;">
+                        <div class="column left item-title">
+                            <a href="#" class="txt19 m-b-3">
+                                ${dish.langName}
+                            </a>
+                        </div>
+                        <div class="badge-right column">
+                            <span class="badge-pork">
+                                Pork
+                            </span>
+                            <span class="badge-chicken">
+                                Chicken
+                            </span>
+                            <span class="badge-seafood">
+                                Seafood
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row" style="width: 100%;">
+                        <div class="column left item-quantity">
+                            <span class="stepper">
+                                <button>–</button>
+                                <input
+                                    type="number"
+                                    id="stepper2"
+                                    value="1"
+                                    min="1"
+                                    max="100"
+                                    step="1"
+                                    readonly
+                                    />
+                                <button>+</button>
+                            </span>
+                            <br/><br/>
+                            <span class="txt22 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
+                        </div>
+  
+                        <div class="btn-blo3 btn-right column">
+                            <button class="btn1 btn-8 btn-8a add-to-order">Add to order</button>
+                        </div>
+                    </div>
+                  </div>
+                </li>
+              `)
+            }
+          });
+          // console.log(dish);
         });
+
+        // Show Total Dish Menu Info
+        console.log(data.length)
+        document.getElementById("pagination-info").innerHTML = `Total ${data.length} ${menuType} Menu`;
       })
       .catch(function (error) {
         console.log(error);

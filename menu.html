@@ -87,14 +87,14 @@
             </div>
             <div class="sub-nav">
                 <nav class="sec-nav" role="navigation" id="dish-nav">
-                    <ol>
+                    <ol id="dishes">
                         <li class="sec-nav-item sec-nav-active">
-                            <a href="#">Rice Dishes</a>
+                            <a href="#" id="appetizer">Appetizers</a>
                         </li>
-                        <li class="sec-nav-item"><a href="#">Noodle</a></li>
-                        <li class="sec-nav-item"><a href="#">Soup</a></li>
-                        <li class="sec-nav-item"><a href="#">Curry</a></li>
-                        <li class="sec-nav-item"><a href="#">Salad</a></li>
+                        <li class="sec-nav-item"><a href="#" id="soup">Soups</a></li>
+                        <li class="sec-nav-item"><a href="#" id="salad">Salads</a></li>
+                        <li class="sec-nav-item"><a href="#" id="curry">Curries</a></li>
+                        <li class="sec-nav-item"><a href="#" id="vegetable-dish">Vegetables Dishes</a></li>
                     </ol>
                 </nav>
                 <nav class="sec-nav" role="navigation" id="snack-nav" style="display: none">
@@ -141,7 +141,7 @@
                             <div class="row p-t-10 p-b-30 list-wrapper">
                                 <nav class="menu">
                                     <ul>
-                                        <!-- Block3 >
+                                        <!-- Block3 ->
                                         <li class="blo3 flex-w flex-col-l-sm
                                             m-b-30 menu-item">
                                             <div class="pic-blo3 size20
@@ -358,7 +358,6 @@
     <script src="js/design.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/orderList.js"></script>
-    <script src="js/db.js"></script>
     <script src="js/pagination.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script type="text/javascript">
@@ -394,9 +393,9 @@
         $(document).on("click", "ul li", function() {
             $(this).addClass("active").siblings().removeClass("active");
         });
-        $(document).on("click", "ol li", function() {
-            $(this).addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
-        });
+        // $(document).on("click", "ol li", function() {
+        //     $(this).addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
+        // });
     </script>
 </body>
 
