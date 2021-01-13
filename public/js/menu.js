@@ -173,7 +173,7 @@ $(document).ready(function () {
             </div>
           </li>
         `
-        result.push(menuItem)
+        // result.push(menuItem)
         var menuItems = [];
         if (dish.dishMenu === appetizer) {
           // var apArr = [];
@@ -187,11 +187,12 @@ $(document).ready(function () {
           // console.log(dish);
           // var items = arrselect(arr);
           // console.log(menuItems)
-          menuItems.push(menuItem);
-          console.log(menuItems)
-          $('.menu ul').empty().append(menuItems)
+          result.push(menuItem);
+          console.log(result)
+          // console.log(menuItems)
+          
         }
-        console.log(menuItems)
+        // console.log(menuItems)
 
         // click items into order list
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
@@ -224,11 +225,11 @@ $(document).ready(function () {
           if (dish.dishMenu === dishMenu) {
             // console.log(dish.dishMenu, dish)
             // menuItems.length = 0;
-            $('.menu ul').empty();
-            menuItems.push(menuItem);
-            console.log(menuItems)
-            $('.menu ul').append(menuItems);
-            menuItems.length = 0;
+            // $('.menu ul').empty();
+            result.push(menuItem);
+            // console.log(menuItems)
+            // $('.menu ul').append(menuItems);
+            // menuItems.length = 0;
           }
           // click items into order list
           $(".menu ul li .row .btn-right .add-to-order").click(function () {
@@ -257,6 +258,7 @@ $(document).ready(function () {
 
       });
       console.log(result)
+      $('.menu ul').append(result)
       // Show Total Dish Menu Info
       // console.log(data.length)
       document.getElementById("pagination-info").innerHTML = `Total ${data.length} ${menuType} Menu`;
