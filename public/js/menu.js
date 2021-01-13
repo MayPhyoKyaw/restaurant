@@ -188,7 +188,6 @@ $(document).ready(function () {
           var dishMenu = $(this).find("a").html();
           console.log(dishMenu);
           if (dish.dishMenu === dishMenu) {
-
             result1.push(menuItem);
           }
           
@@ -222,7 +221,15 @@ $(document).ready(function () {
       $('.menu ul').append(result);
       $("#dishes").on('click', 'li', function () {
         $('.menu ul').html('');
+        // $('.menu ul').empty();
         $('.menu ul').append(result1)
+        var len = result1.length;
+        console.log(len);
+        while(len >= 0){
+          result1.shift();
+          len -= 1;
+          console.log(len)
+        }
       })
 
       // Show Total Dish Menu Info
