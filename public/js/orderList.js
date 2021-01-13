@@ -29,3 +29,8 @@
 //     $(".order-list").css('cssText', 'min-height: 200px !important;');
 //   }
 // })
+
+$("#dish_list .menu ul li .row .btn-right .add-to-order").click(function () {
+    var itemTitle = $(this).parent('div').parent('div').parent('div').parent('div').find('.menu ul li .text-blo3 .row .item-title span').text();
+    console.log(itemTitle)
+  })

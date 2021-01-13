@@ -19,12 +19,12 @@ $(".sub-nav").append(`
 
 var navLength = $(".menu1 .nav-item").length;
 var calculatedByLength = 100 / navLength;
-console.log("Nav length => " + calculatedByLength);
+// console.log("Nav length => " + calculatedByLength);
 $(".top-nav li").css('width', `${calculatedByLength}%`);
 
 const menu_type_url = new URL(location);
 const menuType = menu_type_url.searchParams.get("menuType");
-console.log(menuType);
+// console.log(menuType);
 
 var menuDish = document.getElementById("dish").innerHTML;
 var menuSnack = document.getElementById("snack").innerHTML;
@@ -154,14 +154,15 @@ $(document).ready(function () {
         }
         // click items into order list
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
-          var itemTitle = $(this).parent().parent().parent().find('.text-blo3 .row .item-title .lang-name').text();
+          // var itemTitle = $(this).parent().parent().parent().parent().find('.menu ul li .text-blo3 .row .item-title span').text();
+          var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
           console.log(itemTitle)
         })
         // click on nav bar
         $("#dishes").on('click', 'li', function () {
           $(this).addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
           var dishMenu = $(this).find("a").html();
-          console.log(dishMenu);
+          // console.log(dishMenu);
           if (dish.dishMenu === dishMenu) {
             console.log(dish.dishMenu, dish)
             $('.menu ul').empty();
@@ -225,7 +226,7 @@ $(document).ready(function () {
       });
 
       // Show Total Dish Menu Info
-      console.log(data.length)
+      // console.log(data.length)
       document.getElementById("pagination-info").innerHTML = `Total ${data.length} ${menuType} Menu`;
     })
     .catch(function (error) {
