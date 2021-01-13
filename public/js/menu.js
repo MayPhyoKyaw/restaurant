@@ -173,88 +173,22 @@ $(document).ready(function () {
           </li>
         `
 
-        function arrselect(item){
-          // console.log(item)
-          item.map(i => {
-            console.log(i)
-            var dishmeat = [];
-            i["meat"].map(dm => {
-              // console.log(dm)
-              var Meats = `
-                <span class="badge-${dm}">
-                  ${dm}
-                </span>
-              `
-              dishmeat.push(Meats);
-            })
-            var dishMeat = dishmeat.join(' ');
-            var menuItem = `
-              <li class="blo3 flex-w flex-col-l-sm m-b-30 menu-item">
-                <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-                    <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" /></a>
-                </div>
-
-                <div class="text-blo3 size21 flex-col-l-m">
-                  <span class="txt19 m-b-3">
-                      ${i.dishName}
-                  </span>
-                  <div class="row" style="width: 100%;">
-                      <div class="column left item-title">
-                          <span class="txt19 m-b-3 lang-name">
-                              ${i.langName}
-                          </span>
-                      </div>
-                      <div class="badge-right column">
-                          ${dishMeat}
-                      </div>
-                  </div>
-                  <div class="row" style="width: 100%;">
-                      <div class="column left item-quantity">
-                          <div id="small_item" ><input type="radio" name="size" value="Small">
-                          <label for="small">Small</label> -------<span class="txt19 m-t-10 item-price"> ${i.smallDishPrice} MMK </span>
-                          </div>
-                          <div id="large_item" ><input type="radio" name="size" value="Large">
-                          <label for="large">Large</label> -------<span class="txt19 m-t-10 item-price"> ${i.largeDishPrice} MMK </span>
-                          </div>
-                          <span class="stepper">
-                              <button>–</button>
-                              <input
-                                  type="number"
-                                  id="stepper2"
-                                  value="1"
-                                  min="1"
-                                  max="100"
-                                  step="1"
-                                  readonly
-                                  />
-                              <button>+</button>
-                          </span>
-                      </div>
-
-                      <div class="btn-blo3 btn-right column">
-                          <button class="btn1 btn-8 btn-8a add-to-order">Add to order</button>
-                      </div>
-                  </div>
-                </div>
-              </li>
-            `
-            // console.log(menuItem);
-            return menuItem;
-          })
-        }
-        
+        var menuItems = [];
         if (dish.dishMenu === appetizer) {
-          const arr = [];
           // var apArr = [];
-          arr.push(dish);
+          // console.log(arr.concat([dish]));
+          // arr = [...new Set([...[dish]])]
+          // console.log(arr)
           // var apArr =  arr.concat(dish);
           // apArr = [...apArr, ...arr];
-          console.log(arr.concat());
           // var arr = [dish].concat([dish]);
           // console.log(arr)
           console.log(dish);
-          // var items = arrselect(apArr);
-          $('.menu ul').append(menuItem)
+          // var items = arrselect(arr);
+          // console.log(menuItems)
+          menuItems.push(menuItem);
+          console.log(menuItems)
+          $('.menu ul').append(menuItems)
         }
 
         // click items into order list
@@ -287,8 +221,10 @@ $(document).ready(function () {
           // console.log(dishMenu);
           if (dish.dishMenu === dishMenu) {
             // console.log(dish.dishMenu, dish)
-            // $('.menu ul').empty();
-            $('.menu ul').append(menuItem)
+            $('.menu ul').empty();
+            menuItems.push(menuItem);
+            // console.log(menuItem)
+            $('.menu ul').append(menuItems)
           }
           // click items into order list
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
