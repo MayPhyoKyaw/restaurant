@@ -174,7 +174,7 @@ $(document).ready(function () {
           </li>
         `
         // result.push(menuItem)
-        var menuItems = [];
+        // var menuItems = [];
         if (dish.dishMenu === appetizer) {
           // var apArr = [];
           // console.log(arr.concat([dish]));
@@ -189,7 +189,7 @@ $(document).ready(function () {
           // console.log(menuItems)
           result.push(menuItem);
           // console.log(menuItems)
-          $('.menu ul').append(menuItems)
+          // $('.menu ul').append(result)
         }
         // console.log(menuItems)
 
@@ -255,6 +255,7 @@ $(document).ready(function () {
 
       });
       console.log(result)
+      $('.menu ul').append(result)
       // Show Total Dish Menu Info
       // console.log(data.length)
       document.getElementById("pagination-info").innerHTML = `Total ${data.length} ${menuType} Menu`;
