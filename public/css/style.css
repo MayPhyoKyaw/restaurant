@@ -2106,3 +2106,9 @@ p.paragraph {
 .fa-close {
     cursor: pointer;
 }
+
+#small_item,
+#large_item {
+    margin-top: 2%;
+    margin-left: -4px;
+}

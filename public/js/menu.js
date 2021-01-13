@@ -122,6 +122,12 @@ $(document).ready(function () {
                   </div>
                   <div class="row" style="width: 100%;">
                       <div class="column left item-quantity">
+                          <div id="small_item" ><input type="radio" name="size" value="Samll" checked/>
+                          <label for="small">Small</label> -------<span class="txt19 m-t-10 item-price"> ${dish.smallDishPrice} MMK </span>
+                          </div>
+                          <div id="large_item" ><input type="radio" name="size" value="Large">
+                          <label for="large">Large</label> -------<span class="txt19 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
+                          </div>
                           <span class="stepper">
                               <button>–</button>
                               <input
@@ -135,13 +141,6 @@ $(document).ready(function () {
                                   />
                               <button>+</button>
                           </span>
-                          <br/>
-                          <input type="radio" id="small" name="size" value="Samll" checked/>
-                          <label for="male">Small</label>
-                          <input type="radio" id="large" name="size" value="Large">
-                          <label for="female">Large</label><br>
-                          <span id="small_price" class="txt19 m-t-10 item-price"> ${dish.smallDishPrice} MMK </span>
-                          <span id="large_price" class="txt19 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
                       </div>
 
                       <div class="btn-blo3 btn-right column">
