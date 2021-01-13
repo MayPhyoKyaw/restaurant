@@ -219,8 +219,12 @@ $(document).ready(function () {
 
       });
       console.log(result1)
-      $('.menu ul').append(result)
-      $('.menu ul').append(result1)
+      $('.menu ul').append(result);
+      $("#dishes").on('click', 'li', function () {
+        $('.menu ul').html('');
+        $('.menu ul').append(result1)
+      })
+
       // Show Total Dish Menu Info
       // console.log(data.length)
       document.getElementById("pagination-info").innerHTML = `Total ${data.length} ${menuType} Menu`;
