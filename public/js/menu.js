@@ -156,7 +156,25 @@ $(document).ready(function () {
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
           // var itemTitle = $(this).parent().parent().parent().parent().find('.menu ul li .text-blo3 .row .item-title span').text();
           var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
-          console.log(itemTitle)
+          var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
+          var checkedValue = $('input[name="size"]:checked').val();
+          var changeInt = "";
+          if (checkedValue === "Large") {
+            var largePrice = $(this).parent().parent().find('.column #large_item span').text();
+            var changeInt = largePrice.slice(0, -5);
+          }else {
+            var smallPrice = $(this).parent().parent().find('.column #small_item span').text();
+            var changeInt = smallPrice.slice(0, -5);
+          }
+          $(".order-list ul").append(`
+            <li class="list-group-item order-item">
+              <span class="left ordered-item">${itemTitle}</span>
+              <i class="fa fa-close close right"></i>
+              <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
+              <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
+            </li>`);
+            console.log("choose...")
+          console.log(changeInt)
         })
         // click on nav bar
         $("#dishes").on('click', 'li', function () {
