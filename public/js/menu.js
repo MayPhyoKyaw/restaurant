@@ -173,7 +173,7 @@ $(document).ready(function () {
             </div>
           </li>
         `
-        result.push(menuItem)
+        // result.push(menuItem)
         var menuItems = [];
         if (dish.dishMenu === appetizer) {
           // var apArr = [];
@@ -187,11 +187,11 @@ $(document).ready(function () {
           // console.log(dish);
           // var items = arrselect(arr);
           // console.log(menuItems)
-          menuItems.push(menuItem);
+          result.push(menuItem);
           // console.log(menuItems)
           $('.menu ul').append(menuItems)
         }
-        console.log(menuItems)
+        // console.log(menuItems)
 
         // click items into order list
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
