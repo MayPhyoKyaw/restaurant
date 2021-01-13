@@ -109,6 +109,7 @@ $(document).ready(function () {
       // })
 
       var result = [];
+      var menuItems = [];
       data.forEach(dish => {
         var appetizer = document.getElementById("appetizer").innerHTML;
         var dishmeat = [];
@@ -225,12 +226,13 @@ $(document).ready(function () {
           if (dish.dishMenu === dishMenu) {
             // console.log(dish.dishMenu, dish)
             // menuItems.length = 0;
-            // $('.menu ul').empty();
-            result.push(menuItem);
-            // console.log(menuItems)
-            // $('.menu ul').append(menuItems);
-            // menuItems.length = 0;
+            $('.menu ul').empty();
+            menuItems.push(menuItem);
+            console.log(menuItems)
+            $('.menu ul').append(menuItems);
+            
           }
+          
           // click items into order list
           $(".menu ul li .row .btn-right .add-to-order").click(function () {
             // var itemTitle = $(this).parent().parent().parent().parent().find('.menu ul li .text-blo3 .row .item-title span').text();
