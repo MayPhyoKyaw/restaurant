@@ -189,8 +189,8 @@ $(document).ready(function () {
           // var items = arrselect(arr);
           // console.log(menuItems)
           menuItems.push(menuItem);
-          // console.log(menuItems)
-          $('.menu ul').append(menuItems)
+          console.log(menuItems)
+          $('.menu ul').empty().append(menuItems)
         }
         // console.log(menuItems)
 
@@ -224,10 +224,12 @@ $(document).ready(function () {
           // console.log(dishMenu);
           if (dish.dishMenu === dishMenu) {
             // console.log(dish.dishMenu, dish)
+            // menuItems.length = 0;
             $('.menu ul').empty();
             menuItems.push(menuItem);
-            // console.log(menuItem)
-            $('.menu ul').append(menuItems)
+            console.log(menuItems)
+            $('.menu ul').append(menuItems);
+            menuItems.length = 0;
           }
           // click items into order list
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
