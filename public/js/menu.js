@@ -173,7 +173,6 @@ $(document).ready(function () {
               <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
               <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
             </li>`);
-            console.log("choose...")
           console.log(changeInt)
         })
         // click on nav bar
@@ -191,14 +190,14 @@ $(document).ready(function () {
                   </div>
 
                   <div class="text-blo3 size21 flex-col-l-m">
-                    <a href="#" class="txt19 m-b-3">
+                    <span class="txt19 m-b-3">
                         ${dish.dishName}
-                    </a>
+                    </span>
                     <div class="row" style="width: 100%;">
                         <div class="column left item-title">
-                            <a href="#" class="txt19 m-b-3">
+                            <span class="txt19 m-b-3 lang-name">
                                 ${dish.langName}
-                            </a>
+                            </span>
                         </div>
                         <div class="badge-right column">
                             <span class="badge-pork">
@@ -213,32 +212,59 @@ $(document).ready(function () {
                         </div>
                     </div>
                     <div class="row" style="width: 100%;">
-                        <div class="column left item-quantity">
-                            <span class="stepper">
-                                <button>–</button>
-                                <input
-                                    type="number"
-                                    id="stepper2"
-                                    value="1"
-                                    min="1"
-                                    max="100"
-                                    step="1"
-                                    readonly
-                                    />
-                                <button>+</button>
-                            </span>
-                            <br/><br/>
-                            <span class="txt22 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
-                        </div>
+                      <div class="column left item-quantity">
+                          <div id="small_item" ><input type="radio" name="size" value="Small">
+                          <label for="small">Small</label> -------<span class="txt19 m-t-10 item-price"> ${dish.smallDishPrice} MMK </span>
+                          </div>
+                          <div id="large_item" ><input type="radio" name="size" value="Large">
+                          <label for="large">Large</label> -------<span class="txt19 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
+                          </div>
+                          <span class="stepper">
+                              <button>–</button>
+                              <input
+                                  type="number"
+                                  id="stepper2"
+                                  value="1"
+                                  min="1"
+                                  max="100"
+                                  step="1"
+                                  readonly
+                                  />
+                              <button>+</button>
+                          </span>
+                      </div>
 
-                        <div class="btn-blo3 btn-right column">
-                            <button class="btn1 btn-8 btn-8a add-to-order">Add to order</button>
-                        </div>
-                    </div>
+                      <div class="btn-blo3 btn-right column">
+                          <button class="btn1 btn-8 btn-8a add-to-order">Add to order</button>
+                      </div>
+                  </div>
                   </div>
                 </li>
               `)
           }
+          // click items into order list
+        $(".menu ul li .row .btn-right .add-to-order").click(function () {
+          // var itemTitle = $(this).parent().parent().parent().parent().find('.menu ul li .text-blo3 .row .item-title span').text();
+          var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
+          var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
+          var checkedValue = $('input[name="size"]:checked').val();
+          var changeInt = "";
+          if (checkedValue === "Large") {
+            var largePrice = $(this).parent().parent().find('.column #large_item span').text();
+            var changeInt = largePrice.slice(0, -5);
+          }else {
+            var smallPrice = $(this).parent().parent().find('.column #small_item span').text();
+            var changeInt = smallPrice.slice(0, -5);
+          }
+          $(".order-list ul").append(`
+            <li class="list-group-item order-item">
+              <span class="left ordered-item">${itemTitle}</span>
+              <i class="fa fa-close close right"></i>
+              <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
+              <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
+            </li>`);
+          console.log(changeInt)
+        })
         });
         // console.log(dish);
       });
