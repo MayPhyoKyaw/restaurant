@@ -174,7 +174,7 @@ $(document).ready(function () {
           </li>
         `
         // result.push(menuItem)
-        var menuItems = [];
+        // var menuItems = [];
         if (dish.dishMenu === appetizer) {
           // var apArr = [];
           // console.log(arr.concat([dish]));
@@ -190,7 +190,7 @@ $(document).ready(function () {
           result.push(menuItem);
           console.log(result)
           // console.log(menuItems)
-          
+          // $('.menu ul').append(result)
         }
         // console.log(menuItems)
 
