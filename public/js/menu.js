@@ -107,7 +107,8 @@ $(document).ready(function () {
       //     // $('.menu ul').append(menuItem)
       //   }
       // })
-      
+
+      var menuItems = [];
       data.forEach(dish => {
         var appetizer = document.getElementById("appetizer").innerHTML;
         var dishmeat = [];
@@ -173,7 +174,7 @@ $(document).ready(function () {
           </li>
         `
 
-        var menuItems = [];
+        // var menuItems = [];
         if (dish.dishMenu === appetizer) {
           // var apArr = [];
           // console.log(arr.concat([dish]));
@@ -183,13 +184,15 @@ $(document).ready(function () {
           // apArr = [...apArr, ...arr];
           // var arr = [dish].concat([dish]);
           // console.log(arr)
-          console.log(dish);
+
+          // console.log(dish);
           // var items = arrselect(arr);
           // console.log(menuItems)
           menuItems.push(menuItem);
-          console.log(menuItems)
+          // console.log(menuItems)
           $('.menu ul').append(menuItems)
         }
+        // console.log(menuItems)
 
         // click items into order list
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
@@ -212,7 +215,7 @@ $(document).ready(function () {
               <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
               <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
             </li>`);
-          console.log(changeInt)
+          // console.log(changeInt)
         })
         // click on nav bar
         $("#dishes").on('click', 'li', function () {
@@ -247,12 +250,12 @@ $(document).ready(function () {
               <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
               <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
             </li>`);
-          console.log(changeInt)
+          // console.log(changeInt)
         })
         });
 
       });
-
+      // console.log(menuItems)
       // Show Total Dish Menu Info
       // console.log(data.length)
       document.getElementById("pagination-info").innerHTML = `Total ${data.length} ${menuType} Menu`;
