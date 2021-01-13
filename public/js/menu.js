@@ -88,28 +88,9 @@ $(document).ready(function () {
     })
     .then(function (data) {
       console.log(data)
-      // document.getElementById('counter').innerHTML = `Button was clicked ${data.length} times`;      
-      // const dishType = [];
-      // console.log(data[0].dishMenu);
-
-      // console.log(dishType)
-      // var appetizer = document.getElementById("appetizer").innerHTML;
-      // data.map(dishM => {
-      //   dishType.push(dishM.dishMenu);
-
-      //   if (dishType === appetizer) {
-      //     // const arr = [];
-      //     // arr.push(data);
-      //     // var apArr =  arr.concat(arr);
-      //     // console.log(arr.concat(arr));
-      //     console.log(dishM);
-      //     // arrselect(apArr);
-      //     // $('.menu ul').append(menuItem)
-      //   }
-      // })
 
       var result = [];
-      var menuItems = [];
+      var result1 = [];
       data.forEach(dish => {
         var appetizer = document.getElementById("appetizer").innerHTML;
         var dishmeat = [];
@@ -174,30 +155,13 @@ $(document).ready(function () {
             </div>
           </li>
         `
-        // result.push(menuItem)
-        // var menuItems = [];
         if (dish.dishMenu === appetizer) {
-          // var apArr = [];
-          // console.log(arr.concat([dish]));
-          // arr = [...new Set([...[dish]])]
-          // console.log(arr)
-          // var apArr =  arr.concat(dish);
-          // apArr = [...apArr, ...arr];
-          // var arr = [dish].concat([dish]);
-          // console.log(arr)
-          // console.log(dish);
-          // var items = arrselect(arr);
-          // console.log(menuItems)
           result.push(menuItem);
-          console.log(result)
-          // console.log(menuItems)
           // $('.menu ul').append(result)
         }
-        // console.log(menuItems)
 
         // click items into order list
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
-          // var itemTitle = $(this).parent().parent().parent().parent().find('.menu ul li .text-blo3 .row .item-title span').text();
           var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
           var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
           var checkedValue = $('input[name="size"]:checked').val();
@@ -222,15 +186,10 @@ $(document).ready(function () {
         $("#dishes").on('click', 'li', function () {
           $(this).addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
           var dishMenu = $(this).find("a").html();
-          // console.log(dishMenu);
+          console.log(dishMenu);
           if (dish.dishMenu === dishMenu) {
-            // console.log(dish.dishMenu, dish)
-            // menuItems.length = 0;
-            $('.menu ul').empty();
-            menuItems.push(menuItem);
-            console.log(menuItems)
-            $('.menu ul').append(menuItems);
-            
+
+            result1.push(menuItem);
           }
           
           // click items into order list
@@ -259,8 +218,9 @@ $(document).ready(function () {
         });
 
       });
-      console.log(result)
+      console.log(result1)
       $('.menu ul').append(result)
+      $('.menu ul').append(result1)
       // Show Total Dish Menu Info
       // console.log(data.length)
       document.getElementById("pagination-info").innerHTML = `Total ${data.length} ${menuType} Menu`;
