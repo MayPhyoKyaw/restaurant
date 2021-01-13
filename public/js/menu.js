@@ -80,7 +80,10 @@ if (menuType === menuTest) {
   dessert.style.display = "none";
   drink.style.display = "none";
 }
+
+var numItems, items;
 $(document).ready(function () {
+
   fetch('/menu.html/selectDish', { method: 'GET' })
     .then(function (response) {
       if (response.ok) return response.json();
@@ -90,7 +93,7 @@ $(document).ready(function () {
       console.log(data)
 
       var result = [];
-      var result1 = [];
+      var menuItems = [];
       data.forEach(dish => {
         var appetizer = document.getElementById("appetizer").innerHTML;
         var dishmeat = [];
@@ -128,16 +131,16 @@ $(document).ready(function () {
               <div class="row" style="width: 100%;">
                   <div class="column left item-quantity">
                       <div id="small_item" ><input type="radio" name="size" value="Small">
-                      <label for="small">Small</label> -------<span class="txt19 m-t-10 item-price"> ${dish.smallDishPrice} MMK </span>
+                        <label for="small">Small</label> -------<span class="txt19 m-t-10 item-price"> ${dish.smallDishPrice} MMK </span>
                       </div>
                       <div id="large_item" ><input type="radio" name="size" value="Large">
-                      <label for="large">Large</label> -------<span class="txt19 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
+                        <label for="large">Large</label> -------<span class="txt19 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
                       </div>
                       <span class="stepper">
                           <button>–</button>
                           <input
                               type="number"
-                              id="stepper2"
+                              id=${dish._id}
                               value="1"
                               min="1"
                               max="100"
@@ -160,7 +163,100 @@ $(document).ready(function () {
           // $('.menu ul').append(result)
         }
 
-        // click items into order list
+        // click on nav bar
+        $("#dishes").on('click', 'li', function () {
+          $(this).addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
+          var dishMenu = $(this).find("a").html();
+          console.log(dishMenu);
+          if (dish.dishMenu === dishMenu) {
+            menuItems.push(menuItem);
+          }
+        });
+      });
+      // console.log(result1)
+      $('.menu ul').append(result);
+
+      // click items into order list
+      $(".menu ul li .row .btn-right .add-to-order").click(function () {
+        // var itemTitle = $(this).parent().parent().parent().parent().find('.menu ul li .text-blo3 .row .item-title span').text();
+        var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
+        var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
+        var checkedValue = $('input[name="size"]:checked').val();
+        var changeInt = "";
+        if (checkedValue === "Large") {
+          var largePrice = $(this).parent().parent().find('.column #large_item span').text();
+          var changeInt = largePrice.slice(0, -5);
+        } else {
+          var smallPrice = $(this).parent().parent().find('.column #small_item span').text();
+          var changeInt = smallPrice.slice(0, -5);
+        }
+        $(".order-list ul").append(`
+        <li class="list-group-item order-item">
+          <span class="left ordered-item">${itemTitle}</span>
+          <i class="fa fa-close close right"></i>
+          <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
+          <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
+        </li>`);
+        console.log(changeInt)
+      })
+
+      // function stepperInput(id, s, m) {
+      //   var el = document.getElementById(id);
+      //   console.log(el)
+      //   if (s > 0) {
+      //     if (parseInt(el.value) < m) {
+      //       el.value = parseInt(el.value) + s;
+      //       console.log(el.value)
+      //     }
+      //   } else {
+      //     if (parseInt(el.value) > m) {
+      //       el.value = parseInt(el.value) + s;
+      //     }
+      //   }
+      // }
+
+      // var inc = document.getElementsByClassName("stepper");
+      // for (i = 0; i < inc.length; i++) {
+      //   var incI = inc[i].querySelector("input"),
+      //     id = incI.getAttribute("id"),
+      //     min = incI.getAttribute("min"),
+      //     max = incI.getAttribute("max"),
+      //     step = incI.getAttribute("step");
+      //   console.log(id, step, min, max)
+      //   document
+      //     .getElementById(id)
+      //     .previousElementSibling.setAttribute(
+      //       "onclick",
+      //       "stepperInput('" + id + "', -" + step + ", " + min + ")"
+      //     );
+      //   document
+      //     .getElementById(id)
+      //     .nextElementSibling.setAttribute(
+      //       "onclick",
+      //       "stepperInput('" + id + "', " + step + ", " + max + ")"
+      //     );
+      // }
+
+      items = $(".list-wrapper .menu-item");
+      console.log(items);
+      numItems = items.length;
+      console.log(numItems);
+      // paginate();
+
+      // Show Total Dish Menu Info
+      document.getElementById("pagination-info").innerHTML = `Total ${numItems} ${menuType} Menu`;
+
+      $("#dishes").on('click', 'li', function () {
+        $('.menu ul').html('');
+        $('.menu ul').append(menuItems)
+        var len = menuItems.length;
+        // console.log(len);
+        while(len >= 0){
+          menuItems.shift();
+          len -= 1;
+          console.log(len)
+        }
+
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
           var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
           var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
@@ -182,62 +278,40 @@ $(document).ready(function () {
             </li>`);
           console.log(changeInt)
         })
-        // click on nav bar
-        $("#dishes").on('click', 'li', function () {
-          $(this).addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
-          var dishMenu = $(this).find("a").html();
-          console.log(dishMenu);
-          if (dish.dishMenu === dishMenu) {
-            result1.push(menuItem);
-          }
-          
-          // click items into order list
-          $(".menu ul li .row .btn-right .add-to-order").click(function () {
-            // var itemTitle = $(this).parent().parent().parent().parent().find('.menu ul li .text-blo3 .row .item-title span').text();
-            var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
-            var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
-            var checkedValue = $('input[name="size"]:checked').val();
-            var changeInt = "";
-            if (checkedValue === "Large") {
-              var largePrice = $(this).parent().parent().find('.column #large_item span').text();
-              var changeInt = largePrice.slice(0, -5);
-            } else {
-              var smallPrice = $(this).parent().parent().find('.column #small_item span').text();
-              var changeInt = smallPrice.slice(0, -5);
-            }
-            $(".order-list ul").append(`
-            <li class="list-group-item order-item">
-              <span class="left ordered-item">${itemTitle}</span>
-              <i class="fa fa-close close right"></i>
-              <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
-              <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
-            </li>`);
-            console.log(changeInt)
-          })
-        });
 
-      });
-      console.log(result1)
-      $('.menu ul').append(result);
-      $("#dishes").on('click', 'li', function () {
-        $('.menu ul').html('');
-        // $('.menu ul').empty();
-        $('.menu ul').append(result1)
-        var len = result1.length;
-        console.log(len);
-        while(len >= 0){
-          result1.shift();
-          len -= 1;
-          console.log(len)
-        }
+        items = $(".list-wrapper .menu-item");
+        console.log(items);
+        numItems = items.length;
+        console.log(numItems);
+        // paginate();
+        // Show Total Dish Menu Info
+        document.getElementById("pagination-info").innerHTML = `Total ${numItems} ${menuType} Menu`;
       })
-
-      // Show Total Dish Menu Info
-      // console.log(data.length)
-      document.getElementById("pagination-info").innerHTML = `Total ${data.length} ${menuType} Menu`;
     })
     .catch(function (error) {
       console.log(error);
     });
+
+    // console.log(numItems);
 })
+
+// items.slice(perPage).hide();
+
+// $("#pagination-container").pagination({
+//   items: numItems,
+//   itemsOnPage: perPage,
+//   prevText: "&laquo;",
+//   nextText: "&raquo;",
+//   edges: 1,
+//   onPageClick: function (pageNumber) {
+//     var showFrom = perPage * (pageNumber - 1);
+//     var showTo = showFrom + perPage;
+//     console.log("showFrom => " + showFrom);
+//     console.log("showTo => " + showTo);
+//     items.hide().slice(showFrom, showTo).show();
+//     console.log(location.href);
+//   },
+// });
+
+
 
