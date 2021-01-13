@@ -87,6 +87,7 @@ $(document).ready(function () {
       throw new Error('Request failed.');
     })
     .then(function (data) {
+      console.log(data)
       // document.getElementById('counter').innerHTML = `Button was clicked ${data.length} times`;
       data.forEach(dish => {
         var appetizer = document.getElementById("appetizer").innerHTML;
@@ -99,14 +100,14 @@ $(document).ready(function () {
                 </div>
 
                 <div class="text-blo3 size21 flex-col-l-m">
-                  <a href="#" class="txt19 m-b-3">
+                  <span class="txt19 m-b-3">
                       ${dish.dishName}
-                  </a>
+                  </span>
                   <div class="row" style="width: 100%;">
                       <div class="column left item-title">
-                          <a href="#" class="txt19 m-b-3">
+                          <span class="txt19 m-b-3 lang-name">
                               ${dish.langName}
-                          </a>
+                          </span>
                       </div>
                       <div class="badge-right column">
                           <span class="badge-pork">
@@ -122,7 +123,7 @@ $(document).ready(function () {
                   </div>
                   <div class="row" style="width: 100%;">
                       <div class="column left item-quantity">
-                          <div id="small_item" ><input type="radio" name="size" value="Samll" checked/>
+                          <div id="small_item" ><input type="radio" name="size" value="Small">
                           <label for="small">Small</label> -------<span class="txt19 m-t-10 item-price"> ${dish.smallDishPrice} MMK </span>
                           </div>
                           <div id="large_item" ><input type="radio" name="size" value="Large">
@@ -151,7 +152,12 @@ $(document).ready(function () {
               </li>
             `)
         }
-
+        // click items into order list
+        $(".menu ul li .row .btn-right .add-to-order").click(function () {
+          var itemTitle = $(this).parent().parent().parent().find('.text-blo3 .row .item-title .lang-name').text();
+          console.log(itemTitle)
+        })
+        // click on nav bar
         $("#dishes").on('click', 'li', function () {
           $(this).addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
           var dishMenu = $(this).find("a").html();
@@ -164,7 +170,7 @@ $(document).ready(function () {
                   <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
                       <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" /></a>
                   </div>
-  
+
                   <div class="text-blo3 size21 flex-col-l-m">
                     <a href="#" class="txt19 m-b-3">
                         ${dish.dishName}
@@ -205,7 +211,7 @@ $(document).ready(function () {
                             <br/><br/>
                             <span class="txt22 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
                         </div>
-  
+
                         <div class="btn-blo3 btn-right column">
                             <button class="btn1 btn-8 btn-8a add-to-order">Add to order</button>
                         </div>
@@ -226,3 +232,4 @@ $(document).ready(function () {
       console.log(error);
     });
 })
+
