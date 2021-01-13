@@ -15,7 +15,7 @@ p {
     float: right;
 }
 
-.badge-pork {
+.badge-Pork {
     display: inline-block;
     font-family: inherit;
     font-weight: bolder;
@@ -27,7 +27,7 @@ p {
     cursor: default;
 }
 
-.badge-chicken {
+.badge-Chicken {
     display: inline-block;
     font-family: inherit;
     font-weight: bolder;
@@ -39,7 +39,7 @@ p {
     cursor: default;
 }
 
-.badge-seafood {
+.badge-Seafood {
     display: inline-block;
     font-family: inherit;
     font-weight: bolder;
@@ -51,7 +51,7 @@ p {
     cursor: default;
 }
 
-.badge-beef {
+.badge-Beef {
     display: inline-block;
     font-family: inherit;
     font-weight: bolder;
