@@ -142,6 +142,7 @@ $(document).ready(function () {
                           <button class="minus">–</button>
                           <input
                               type="number"
+                              class="input-count"
                               id=${dish._id}
                               value="1"
                               min="1"
@@ -237,7 +238,9 @@ $(document).ready(function () {
       // }
       // var quantity = 0;
       $('.menu ul li .row .item-quantity .stepper .minus').on('click', () => {
-        var quantity = $(this).text();
+        // var quantity = $(".menu ul li .row .item-quantity .stepper .minus .input-count").text();
+        // console.log(quantity)
+        var quantity = $(".input-count").val()
         console.log(quantity)
       })
 
