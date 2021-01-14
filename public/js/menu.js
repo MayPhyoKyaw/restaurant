@@ -187,6 +187,7 @@ $(document).ready(function () {
         // var itemTitle = $(this).parent().parent().parent().parent().find('.menu ul li .text-blo3 .row .item-title span').text();
         var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
         var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
+        console.log(itemQuantity)
         var checkedValue = $('input[name="size"]:checked').val();
         var changeInt = "";
         if (checkedValue === "Large") {
@@ -206,42 +207,22 @@ $(document).ready(function () {
         console.log(changeInt)
       })
 
-      // var inc = document.getElementsByClassName("stepper");
-      // for (i = 0; i < inc.length; i++) {
-      //   console.log(i)
-      //   var incI = inc[i].querySelector("input"),
-      //     id = incI.getAttribute("id"),
-      //     min = incI.getAttribute("min"),
-      //     max = incI.getAttribute("max"),
-      //     step = incI.getAttribute("step");
-      //     console.log(id, min, max);
-      //   var minus = inc[i].querySelector(".minus");
-      //   var plus = inc[i].querySelector(".plus");
-      //   var num = parseInt(incI.value);
-      //   minus.addEventListener("click", () => {
-      //     // console.log(incI.value)
-      //     if( num > min ){
-      //       num--;
-      //       incI.value = num;
-      //       console.log(num);
-      //     }
-      //   })
-      //   plus.addEventListener("click", () => {
-      //     // console.log(incI.value)
-      //     if( num <= max ){
-      //       num++;
-      //       incI.value = num;
-      //       console.log(num);
-      //     }
-      //   })
-      //   console.log(minus);
-      // }
-      // var quantity = 0;
-      $('.menu ul li .row .item-quantity .stepper .minus').on('click', () => {
-        // var quantity = $(".menu ul li .row .item-quantity .stepper .minus .input-count").text();
-        // console.log(quantity)
-        var quantity = $(".input-count").val()
-        console.log(quantity)
+      var quantity = 0;
+      $('.stepper .minus').click(function() {
+        quantity = parseInt($(this).siblings('.input-count').val());
+        quantity--;
+        $(this).siblings('.input-count').val(quantity);
+    		if (quantity == 0) {
+          $(this).siblings('.input-count').val(1);
+        }
+      })
+      $('.stepper .plus').click(function() {
+        quantity = parseInt($(this).siblings('.input-count').val());
+        quantity++;
+        $(this).siblings('.input-count').val(quantity);
+        if (quantity == 100) {
+          $(this).siblings('.input-count').val(100);
+        }
       })
 
       items = $(".list-wrapper .menu-item");
@@ -314,6 +295,24 @@ $(document).ready(function () {
               <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
             </li>`);
           console.log(changeInt)
+        })
+
+        var quantity = 0;
+        $('.stepper .minus').click(function() {
+          quantity = parseInt($(this).siblings('.input-count').val());
+          quantity--;
+          $(this).siblings('.input-count').val(quantity);
+          if (quantity == 0) {
+            $(this).siblings('.input-count').val(1);
+          }
+        })
+        $('.stepper .plus').click(function() {
+          quantity = parseInt($(this).siblings('.input-count').val());
+          quantity++;
+          $(this).siblings('.input-count').val(quantity);
+          if (quantity == 100) {
+            $(this).siblings('.input-count').val(100);
+          }
         })
 
         items = $(".list-wrapper .menu-item");
