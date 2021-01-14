@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MayPhyoKyaw/ksp-mpk#readme",
   "dependencies": {
+    "bootstrap-input-spinner": "^1.16.9",
     "express": "^4.17.1",
     "mongodb": "^3.6.3"
   },

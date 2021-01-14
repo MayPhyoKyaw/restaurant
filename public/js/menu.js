@@ -80,7 +80,6 @@ if (menuType === menuTest) {
   dessert.style.display = "none";
   drink.style.display = "none";
 }
-
 var numItems, items;
 $(document).ready(function () {
 
@@ -206,36 +205,41 @@ $(document).ready(function () {
         console.log(changeInt)
       })
 
-      var inc = document.getElementsByClassName("stepper");
-      for (i = 0; i < inc.length; i++) {
-        console.log(i)
-        var incI = inc[i].querySelector("input"),
-          id = incI.getAttribute("id"),
-          min = incI.getAttribute("min"),
-          max = incI.getAttribute("max"),
-          step = incI.getAttribute("step");
-          console.log(id, min, max);
-        var minus = inc[i].querySelector(".minus");
-        var plus = inc[i].querySelector(".plus");
-        var num = parseInt(incI.value);
-        minus.addEventListener("click", () => {
-          // console.log(incI.value)
-          if( num >= min ){
-            num--;
-            incI.value = num;
-            console.log(num);
-          }
-        })
-        plus.addEventListener("click", () => {
-          // console.log(incI.value)
-          if( num <= max ){
-            num++;
-            incI.value = num;
-            console.log(num);
-          }
-        })
-        console.log(minus);
-      }
+      // var inc = document.getElementsByClassName("stepper");
+      // for (i = 0; i < inc.length; i++) {
+      //   console.log(i)
+      //   var incI = inc[i].querySelector("input"),
+      //     id = incI.getAttribute("id"),
+      //     min = incI.getAttribute("min"),
+      //     max = incI.getAttribute("max"),
+      //     step = incI.getAttribute("step");
+      //     console.log(id, min, max);
+      //   var minus = inc[i].querySelector(".minus");
+      //   var plus = inc[i].querySelector(".plus");
+      //   var num = parseInt(incI.value);
+      //   minus.addEventListener("click", () => {
+      //     // console.log(incI.value)
+      //     if( num > min ){
+      //       num--;
+      //       incI.value = num;
+      //       console.log(num);
+      //     }
+      //   })
+      //   plus.addEventListener("click", () => {
+      //     // console.log(incI.value)
+      //     if( num <= max ){
+      //       num++;
+      //       incI.value = num;
+      //       console.log(num);
+      //     }
+      //   })
+      //   console.log(minus);
+      // }
+      // var quantity = 0;
+      $('.menu ul li .row .item-quantity .stepper .minus').on('click', () => {
+        var quantity = $(this).text();
+        console.log(quantity)
+      })
 
       items = $(".list-wrapper .menu-item");
       // console.log(items);
