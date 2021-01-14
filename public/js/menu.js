@@ -108,28 +108,31 @@ $(document).ready(function () {
         })
         var dishMeat = dishmeat.join(' ');
 
+        // console.log($('input').innerHTML)
+        // console.log(inc.length)
+
         var menuItem = `
           <li class="blo3 flex-w flex-col-l-sm m-b-30 menu-item">
-            <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-                <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" /></a>
-            </div>
-
-            <div class="text-blo3 size21 flex-col-l-m">
-              <span class="txt19 m-b-3">
-                  ${dish.dishName}
-              </span>
-              <div class="row" style="width: 100%;">
-                  <div class="column left item-title">
-                      <span class="txt19 m-b-3 lang-name">
-                          ${dish.langName}
-                      </span>
-                  </div>
-                  <div class="badge-right column">
-                      ${dishMeat}
-                  </div>
+            <div class="row menu-row">
+              <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28 column left">
+                  <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" height=150 /></a>
               </div>
-              <div class="row" style="width: 100%;">
-                  <div class="column left item-quantity">
+              <div class="text-blo3 size21 flex-col-l-m column right">
+                <span class="txt19 m-b-3">
+                    ${dish.dishName}
+                </span>
+                <div class="row" style="width: 100%;">
+                    <div class="column left item-title">
+                        <span class="txt19 m-b-3 lang-name">
+                            ${dish.langName}
+                        </span>
+                    </div>
+                    <div class="badge-right column">
+                        ${dishMeat}
+                    </div>
+                </div>
+                <div class="row" style="width: 100%;">
+                    <div class="column left item-quantity">
                       <div id="small_item" ><input type="radio" name="size" value="Small">
                         <label for="small">Small</label> -------<span class="txt19 m-t-10 item-price"> ${dish.smallDishPrice} MMK </span>
                       </div>
@@ -137,7 +140,7 @@ $(document).ready(function () {
                         <label for="large">Large</label> -------<span class="txt19 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
                       </div>
                       <span class="stepper">
-                          <button>–</button>
+                          <button class="minus">–</button>
                           <input
                               type="number"
                               id=${dish._id}
@@ -146,18 +149,21 @@ $(document).ready(function () {
                               max="100"
                               step="1"
                               readonly
-                              />
-                          <button>+</button>
+                          />
+                          <button class="plus">+</button>
                       </span>
-                  </div>
+                    </div>
 
-                  <div class="btn-blo3 btn-right column">
+                    <div class="btn-blo3 btn-right column">
                       <button class="btn1 btn-8 btn-8a add-to-order">Add to order</button>
-                  </div>
+                    </div>
+                </div>
               </div>
             </div>
+            <hr>
           </li>
         `
+
         if (dish.dishMenu === appetizer) {
           result.push(menuItem);
           // $('.menu ul').append(result)
@@ -173,7 +179,7 @@ $(document).ready(function () {
           }
         });
       });
-      // console.log(result1)
+
       $('.menu ul').append(result);
 
       // click items into order list
@@ -200,51 +206,75 @@ $(document).ready(function () {
         console.log(changeInt)
       })
 
-      // function stepperInput(id, s, m) {
-      //   var el = document.getElementById(id);
-      //   console.log(el)
-      //   if (s > 0) {
-      //     if (parseInt(el.value) < m) {
-      //       el.value = parseInt(el.value) + s;
-      //       console.log(el.value)
-      //     }
-      //   } else {
-      //     if (parseInt(el.value) > m) {
-      //       el.value = parseInt(el.value) + s;
-      //     }
-      //   }
-      // }
-
-      // var inc = document.getElementsByClassName("stepper");
-      // for (i = 0; i < inc.length; i++) {
-      //   var incI = inc[i].querySelector("input"),
-      //     id = incI.getAttribute("id"),
-      //     min = incI.getAttribute("min"),
-      //     max = incI.getAttribute("max"),
-      //     step = incI.getAttribute("step");
-      //   console.log(id, step, min, max)
-      //   document
-      //     .getElementById(id)
-      //     .previousElementSibling.setAttribute(
-      //       "onclick",
-      //       "stepperInput('" + id + "', -" + step + ", " + min + ")"
-      //     );
-      //   document
-      //     .getElementById(id)
-      //     .nextElementSibling.setAttribute(
-      //       "onclick",
-      //       "stepperInput('" + id + "', " + step + ", " + max + ")"
-      //     );
-      // }
+      var inc = document.getElementsByClassName("stepper");
+      for (i = 0; i < inc.length; i++) {
+        console.log(i)
+        var incI = inc[i].querySelector("input"),
+          id = incI.getAttribute("id"),
+          min = incI.getAttribute("min"),
+          max = incI.getAttribute("max"),
+          step = incI.getAttribute("step");
+          console.log(id, min, max);
+        var minus = inc[i].querySelector(".minus");
+        var plus = inc[i].querySelector(".plus");
+        var num = parseInt(incI.value);
+        minus.addEventListener("click", () => {
+          // console.log(incI.value)
+          if( num >= min ){
+            num--;
+            incI.value = num;
+            console.log(num);
+          }
+        })
+        plus.addEventListener("click", () => {
+          // console.log(incI.value)
+          if( num <= max ){
+            num++;
+            incI.value = num;
+            console.log(num);
+          }
+        })
+        console.log(minus);
+      }
 
       items = $(".list-wrapper .menu-item");
-      console.log(items);
+      // console.log(items);
       numItems = items.length;
-      console.log(numItems);
-      // paginate();
-
+      // console.log(numItems);
       // Show Total Dish Menu Info
       document.getElementById("pagination-info").innerHTML = `Total ${numItems} ${menuType} Menu`;
+      //Pagination JS
+      //how much items per page to show
+      var show_per_page = 5; 
+      //getting the amount of elements inside pagingBox div
+      var number_of_items = numItems;
+      //calculate the number of pages we are going to have
+      var number_of_pages = Math.ceil(number_of_items/show_per_page);
+      
+      //set the value of our hidden input fields
+      $('#current_page').val(0);
+      $('#show_per_page').val(show_per_page);
+      
+      //now when we got all we need for the navigation let's make it '
+
+      var navigation_html = '<a class="previous_link" href="javascript:previous();">&laquo;</a>';
+      var current_link = 0;
+      while(number_of_pages > current_link){
+        navigation_html += '<a class="page_link" href="javascript:go_to_page(' + current_link +')" longdesc="' + current_link +'">'+ (current_link + 1) +'</a>';
+        current_link++;
+      }
+      navigation_html += '<a class="next_link" href="javascript:next();">&raquo;</a>';
+      
+      $('#pagination-container').html(navigation_html);
+      
+      //add active_page class to the first page link
+      $('#pagination-container .page_link:first').addClass('active_page');
+      
+      //hide all the elements inside pagingBox div
+      items.css('display', 'none');
+      
+      //and show the first n (show_per_page) elements
+      items.slice(0, show_per_page).css('display', 'block');
 
       $("#dishes").on('click', 'li', function () {
         $('.menu ul').html('');
@@ -283,9 +313,29 @@ $(document).ready(function () {
         console.log(items);
         numItems = items.length;
         console.log(numItems);
-        // paginate();
         // Show Total Dish Menu Info
         document.getElementById("pagination-info").innerHTML = `Total ${numItems} ${menuType} Menu`;
+        var show_per_page = 5; 
+        var number_of_items = numItems;
+        var number_of_pages = Math.ceil(number_of_items/show_per_page);
+        $('#current_page').val(0);
+        $('#show_per_page').val(show_per_page);
+        
+        var navigation_html = '<a class="previous_link" href="javascript:previous();">&laquo;</a>';
+        var current_link = 0;
+        while(number_of_pages > current_link){
+          navigation_html += '<a class="page_link" href="javascript:go_to_page(' + current_link +')" longdesc="' + current_link +'">'+ (current_link + 1) +'</a>';
+          current_link++;
+        }
+        navigation_html += '<a class="next_link" href="javascript:next();">&raquo;</a>';
+        
+        $('#pagination-container').html(navigation_html);
+        
+        $('#pagination-container .page_link:first').addClass('active_page');
+        
+        items.css('display', 'none');
+        
+        items.slice(0, show_per_page).css('display', 'block');
       })
     })
     .catch(function (error) {
@@ -294,6 +344,47 @@ $(document).ready(function () {
 
     // console.log(numItems);
 })
+
+//Pagination JS
+
+function previous(){
+	
+	new_page = parseInt($('#current_page').val()) - 1;
+	//if there is an item before the current active link run the function
+	if($('.active_page').prev('.page_link').length==true){
+		go_to_page(new_page);
+	}
+	
+}
+
+function next(){
+	new_page = parseInt($('#current_page').val()) + 1;
+	//if there is an item after the current active link run the function
+	if($('.active_page').next('.page_link').length==true){
+		go_to_page(new_page);
+	}
+	
+}
+function go_to_page(page_num){
+	//get the number of items shown per page
+	var show_per_page = parseInt($('#show_per_page').val());
+	
+	//get the element number where to start the slice from
+	start_from = page_num * show_per_page;
+	
+	//get the element number where to end the slice
+	end_on = start_from + show_per_page;
+	
+	//hide all children elements of pagingBox div, get specific items and show them
+	$('#pagingBox').children().css('display', 'none').slice(start_from, end_on).css('display', 'block');
+	
+	/*get the page link that has longdesc attribute of the current page and add active_page class to it
+	and remove that class from previously active page link*/
+	$('.page_link[longdesc=' + page_num +']').addClass('active_page').siblings('.active_page').removeClass('active_page');
+	
+	//update the current page input field
+	$('#current_page').val(page_num);
+}
 
 // items.slice(perPage).hide();
 

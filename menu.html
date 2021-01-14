@@ -140,7 +140,9 @@
                             </div>
                             <div class="row p-t-10 p-b-30 list-wrapper">
                                 <nav class="menu">
-                                    <ul>
+                                    <input type='hidden' id='current_page' />
+                                    <input type='hidden' id='show_per_page' />
+                                    <ul id="pagingBox">
                                         <!-- Block3 ->
                                         <li class="blo3 flex-w flex-col-l-sm
                                             m-b-30 menu-item">
@@ -197,8 +199,8 @@
                                 </nav>
                                 <div class="clear"></div>
                                 <div class="row" style="width: 100%;">
-                                    <div class="column left" id="pagination-info"></div>
                                     <div class="column right" id="pagination-container"></div>
+                                    <div class="column left" id="pagination-info"></div>
                                 </div>
                             </div>
                         </div>

@@ -79,9 +79,13 @@ p {
     margin-right: 5%;
 }
 
-.menu-item {
-    border-bottom: 1px solid #dad0c1;
-    padding-bottom: 20px;
+.menu-row{
+    padding-bottom: 8em;
+}
+
+hr {
+    border-top: 1px solid #dad0c1;
+    width: 100%;
 }
 
 .header-item {
@@ -124,7 +128,7 @@ p {
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     height: auto;
 }
 
@@ -10878,12 +10882,12 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 }
 
 .size20 {
-    width: 160px;
+    width: 150px;
     height: 120px;
 }
 
 .size21 {
-    width: calc(100% - 160px - 28px);
+    width: calc(100% - 180px - 28px);
     min-height: 120px;
 }
 
@@ -11367,7 +11371,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     height: 540px;
 }
 
-.simple-pagination ul {
+/* .simple-pagination ul {
     margin: 0 0 20px;
     padding: 0;
     list-style: none;
@@ -11400,6 +11404,33 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 .simple-pagination .next.current {
     color: #666;
     background: rgba(252, 225, 167, 0.027);
+} */
+
+#pagination-container {
+    clear:both;
+}
+#pagination-container a{
+    padding:5px 10px;
+    border:1px solid #99261f;
+    margin:2px;
+    color:black;
+    text-decoration:none;
+    border-radius: 5px;
+}
+.active_page{
+    background:#99261f;
+    color:white !important;
+}
+
+.prev.disabled, .next.disabled {
+    cursor: default;
+    background: #ccc;
+    color: #888;
+    border-color: #888;
+}
+.prev.disabled:hover, .next.disabled:hover {
+    cursor: default;
+    text-decoration: none;
 }
 
 #pagination-info {
