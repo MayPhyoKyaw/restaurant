@@ -2091,6 +2091,13 @@ p.paragraph {
     padding: none;
 }
 
+
+/* order list */
+
+.order-list {
+    min-height: 200px !important;
+}
+
 .timer {
     border: 1px solid rgb(128, 25, 25);
     margin-right: 15px;
