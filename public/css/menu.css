@@ -89,7 +89,7 @@ hr {
 }
 
 .header-item {
-    border-bottom: 2px solid #c7c4bf;
+    border-top: 2px solid #c7c4bf;
     padding-bottom: 1.5%;
 }
 
@@ -10882,12 +10882,12 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 }
 
 .size20 {
-    width: 150px;
+    width: 145px;
     height: 120px;
 }
 
 .size21 {
-    width: calc(100% - 180px - 28px);
+    width: calc(100% - 180px - 38px);
     min-height: 120px;
 }
 

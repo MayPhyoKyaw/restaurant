@@ -26,4 +26,17 @@ function goOrderTimer() {
   var bIcon = document.getElementById("before-countdown");
   bIcon.style.display = "none";
   display.style.display = "block";
+  document.getElementById("order-list").style.display = "block";
+  document.getElementById("choose-tb").style.display = "none";
+}
+
+function chooseTable(){
+  var choose = document.getElementById("choose");
+  var start = document.getElementById("before-countdown");
+  choose.style.display = "none";
+  start.style.display = "block";  
+  document.getElementById("input-number-mod").disabled = true;
+  document.getElementById("option").disabled = true;
+  // var val = $("input[name:option]:checked").val();
+  // console.log(val);
 }

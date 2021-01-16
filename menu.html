@@ -31,6 +31,8 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css" />
     <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!-- <script src="./src/bootstrap-input-spinner.js"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
@@ -208,11 +210,69 @@
                     </div>
                     <div class="col span_1_of_3">
                         <div class="your-order">
-                            <h3 class="header-item">
+                            <h3>
                                 <span classs="left">Your Order</span>
-                                <span class="right table-number">T-2</span>
+                                <!-- <span class="right table-number">T-2</span> -->
+                                <span class="right">
+                                    <button id="before-countdown" onclick="goOrderTimer()" style="display: none;" class="btn1 btn-8 btn-8a">Start</button>
+                                    <span id="countdown" class="timer right" style="display: none;"></span>
+                                </span>
                             </h3>
-                            <ul class="list-group">
+                            <div id="choose-tb">
+                                <div class="select animated left" id="select">
+                                    <!-- You can toggle select (disabled) -->
+                                    <label>
+                                        <input type="checkbox" name="placeholder" id="option">
+                                        <i class="toggle icon icon-arrow-down"></i>
+                                        <i class="toggle icon icon-arrow-up"></i>
+                                        <span class="placeholder">Choose...</span>
+                                        <label class="option">
+                                            <input type="radio" name="option" id="option" disabled>
+                                            <span class="title animated fadeIn"><i class="icon"></i>Family Type</span>
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="option" id="option">
+                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-1</span>
+                                        </label>
+                                
+                                        <label class="option">
+                                            <input type="radio" name="option" id="option">
+                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-2</span>
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="option" id="option">
+                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-3</span>
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="option" id="option">
+                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-4</span>
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="option" disabled id="option">
+                                            <span class="title animated fadeIn"><i class="icon"></i>Dual Type</span>
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="option" id="option">
+                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-6</span>
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="option" id="option">
+                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-7</span>
+                                        </label>
+                                        <label class="option">
+                                            <input type="radio" name="option" id="option">
+                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-8</span>
+                                        </label>
+                                    </label>
+                                </div>
+                                <span class="right people">
+                                    <label for="input-number-mod" style="padding-bottom: 5px;">No. of Customers</label>
+                                    <input id="input-number-mod" class="mod" type="number" value="1" min="1" max="50" />
+                                    <button id="choose" onclick="chooseTable()" class="btn1 btn-8 btn-8a">Choose</button>
+                                    <span id="countdown" class="timer right" style="display: none;"></span>
+                                </span>
+                            </div>
+                            <ul class="list-group header-item" style="display: none;" id="order-list">
                                 <li class="list-group-item order-item">
                                     <span class="left order-header">Items</span>
                                     <span class="right order-header">Action</span>
@@ -279,13 +339,15 @@
     <!----- Script ----->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js'></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- <script src="js/paging.js"></script> -->
     <script src="js/design.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/buffet.js"></script>
     <script src="js/orderList.js"></script>
     <script src="js/pagination.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script type="text/javascript">
         function myTrim(x) {
             return x.replace(/^\s+|\s+$/gm, '');
