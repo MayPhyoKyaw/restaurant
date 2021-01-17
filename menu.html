@@ -35,6 +35,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!-- <script src="./src/bootstrap-input-spinner.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" />
 </head>
 
@@ -214,7 +216,7 @@
                                 <span classs="left">Your Order</span>
                                 <!-- <span class="right table-number">T-2</span> -->
                                 <span class="right">
-                                    <button id="before-countdown" onclick="goOrderTimer()" style="display: none;" class="btn1 btn-8 btn-8a">Start</button>
+                                    <button id="before-countdown" style="display: none;" class="btn1 btn-8 btn-8a">Start</button>
                                     <span id="countdown" class="timer right" style="display: none;"></span>
                                 </span>
                             </h3>
@@ -268,14 +270,14 @@
                                 <span class="right people">
                                     <label for="input-number-mod" style="padding-bottom: 5px;">No. of Customers</label>
                                     <input id="input-number-mod" class="mod" type="number" value="1" min="1" max="50" />
-                                    <button id="choose" onclick="chooseTable()" class="btn1 btn-8 btn-8a">Choose</button>
+                                    <button id="choose" class="btn1 btn-8 btn-8a">Choose</button>
                                     <span id="countdown" class="timer right" style="display: none;"></span>
                                 </span>
                             </div>
                             <ul class="list-group header-item" style="display: none;" id="order-list">
                                 <li class="list-group-item order-item">
                                     <span class="left order-header">Items</span>
-                                    <span class="right order-header">Action</span>
+                                    <span class="right order-header" id="action">Action</span>
                                     <span class="right order-header">Cost</span>
                                     <span class="right order-header m-g-r">Qty</span>
                                 </li>
@@ -310,13 +312,36 @@
                                 </li>
 
                                 <li class="list-group-item">
-                                    <button class="btn2 btn-9 btn-9a">Order</button>
-                                    <button class="btn2 btn-9 btn-9a bill-btn">Bill</button>
+                                    <button class="btn2 btn-9 btn-9a order" id="order-btn">Order</button>
+                                    <button class="btn2 btn-9 btn-9a reset modal-trigger no-select" id="reset-verification-btn">Reset</button>
+                                    <button class="btn2 btn-9 btn-9a bill-btn modal-trigger no-select" id="edit-verification-btn">Edit</button>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="clear"></div>
+                    <!-- Modal -->
+                    <!-- The Modal -->
+                    <div id="verification" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span id="modalClose" class="modal-close no-select">&times;</span>
+                            <h1>Verification</h1>
+                            <h3>Please enter the 4-digit pin code</h3>
+                            <div class="passcode-area">
+                                <input autofocus type="text" maxlength="1">
+                                <input type="text" maxlength="1">
+                                <input type="text" maxlength="1">
+                                <input type="text" maxlength="1">
+                            </div>
+                            <button class="c-button c-button--color" type="button">
+                                <div class="c-ripple js-ripple">
+                                  <span class="c-ripple__circle"></span>
+                                </div>
+                                Verify
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -344,8 +369,8 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- <script src="js/paging.js"></script> -->
     <script src="js/design.js"></script>
-    <script src="js/menu.js"></script>
     <script src="js/buffet.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/orderList.js"></script>
     <script src="js/pagination.js"></script>
     <script type="text/javascript">

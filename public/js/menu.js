@@ -200,7 +200,7 @@ $(document).ready(function () {
         $(".order-list ul").append(`
         <li class="list-group-item order-item">
           <span class="left ordered-item">${itemTitle}</span>
-          <i class="fa fa-close close right"></i>
+          <i class="fa fa-close close right" id="close"></i>
           <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
           <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
         </li>`);
@@ -213,6 +213,19 @@ $(document).ready(function () {
             $(".order-list").css('cssText', 'min-height: 200px !important;');
           }
         })
+      })
+
+      $('#order-btn').click(function () {
+        var items = document.getElementsByClassName('close');
+        console.log();
+        var len = items.length-1;
+        for (let i = 0; i < len; i++) {
+          const element = items[i];
+          console.log(element);
+          var close = document.getElementsByTagName('i');
+          i.style.display = "none";
+        }
+        document.getElementById('action').style.display = "none";
       })
 
       var quantity = 0;

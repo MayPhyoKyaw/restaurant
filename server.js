@@ -54,3 +54,21 @@ app.get('/menu.html/selectDish', async (req, res) => {
         res.send(result);
     });
 });
+
+app.get('/menu.html/identification', async (req, res) => {
+    const mongo_url = 'mongodb+srv://ksp:ksp123@cluster0.tqggl.mongodb.net/testinggg?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true';
+    // const client = new MongoClient(url);
+    const db = "resturant";
+    // connect to your cluster
+    const client2 = await MongoClient.connect(mongo_url, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+    // specify the DB's name
+    const userdb = client2.db(db);
+    console.log("Connected correctly to server for selecting....");
+    userdb.collection('admin').find().toArray((err, result) => {
+        if (err) return console.log(err);
+        res.send(result);
+    });
+});

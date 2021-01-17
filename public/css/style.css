@@ -702,7 +702,7 @@ span.black {
 
 .btn-9 {
   background: #99261f;
-  width: 40%;
+  width: 30%;
   -webkit-transform-style: preserve-20d;
   -moz-transform-style: preserve-20d;
   transform-style: preserve-20d;
@@ -1348,6 +1348,9 @@ p.paragraph {
   .footer-bottom {
     padding-top: 1%;
   }
+  .modal-content {
+    margin-top: 150px !important;
+  }
 }
 
 @media (max-width: 1366px) {
@@ -1374,6 +1377,9 @@ p.paragraph {
   .order-item {
     border-bottom: 1px solid #dad0c1;
     padding: 5% 0 18% 0;
+  }
+  .modal-content {
+    margin-top: 300px !important;
   }
 }
 
@@ -2070,7 +2076,18 @@ p.paragraph {
 .bill-btn {
   float: right;
   padding: none;
+  margin: 0 4% 2%;
 }
+
+.reset {
+  margin-right: 1%;
+  float: right;
+}
+
+.order {
+  margin-left: 1%;
+}
+
 
 /* order list */
 
@@ -2283,4 +2300,199 @@ input[type="number"].mod::-webkit-inner-spin-button:active{
 input:-webkit-autofill {
     background:  #eed29f;
     color: red;
+}
+
+/* .modal-trigger{
+	font-variant:small-caps;
+	background:#eee;
+	font-size:1.5em;
+	color:#333;
+	padding:.6em 1em;
+	border:0;
+	border-radius:.2em;
+	cursor:pointer;
+	letter-spacing:.1em;
+	outline: 0;
+} */
+
+
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+/* Modal Content */
+.modal-content {
+    /* background-color: rgb(240, 219, 163); */
+    background: linear-gradient(to bottom, #ffffff 0%, #faefd2 100%);
+	  color:#fff;
+	  text-align:left;
+    margin: 180px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    transition: all 0.3s ease;
+}
+
+/* The Close Button */
+.modal-close {
+    color: #807d7d;
+    float: right;
+    line-height: 19px;
+    font-size: 20px;
+    width: 22px;
+    font-weight: bold;
+	  position:absolute;
+	  right: .8em;
+    top: .8em;
+    border: solid 3px #807d7d;
+    border-radius: 200%;
+    padding: 5px 1px 5px 5px;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: rgb(59, 59, 59);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a,.no-select{ -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+*::selection {
+  background-color: #333;
+	color:#fff;
+}
+
+.passcode-area {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-left: 20px;  
+}
+.passcode-area > input {
+  background-color: #fff;
+  border: 2px solid #d6d6d6;
+  border-radius: 4px;
+  padding: 0;
+  margin: 25px 6px 0;
+  width: 65px;
+  height: 65px;
+  text-align: center;
+  font-size: 32px;
+  line-height: 1.29;
+  text-transform: uppercase;
+  background-clip: padding-box;
+}
+.passcode-area > input:nth-child(4) {
+  margin-right: 25px;
+}
+@media only screen and (max-width: 450px) {
+  .passcode-area > input:nth-child(4) {
+    margin-right: 6px;
+  }
+}
+.passcode-area > input:focus {
+  -webkit-appearance: none;
+  border: 2px solid skyblue;
+  outline: 0;
+  box-shadow: 0px 0px 3px rgba(131, 192, 253, 0.5);
+}
+
+.modal h3 {
+  color: rgb(138, 36, 36);
+  font-family: 'Patua One', cursive;
+  margin: 30px 0 5px 0;
+  padding: 0;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.modal h1 {
+  color: rgb(138, 36, 36);
+  font-family: 'Patua One', cursive;
+  font-size: 3.5em;
+  line-height: 1.25;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.c-button {
+  display: inline-block;
+  font: inherit;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: 'Patua One', cursive;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 1px;
+  width: 90%;
+  height: 60px;
+  color: #fff;
+  margin: 30px 20px 20px;
+  padding: 10px 35px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  vertical-align: middle;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: relative;
+  -webkit-appearance: none;
+  transition: all 0.2x ease;
+}
+.c-button:hover, .c-button:focus {
+  outline: 0;
+}
+.c-button:not(:disabled) {
+  cursor: pointer;
+}
+
+.c-button--color {
+  background: #5e1717;
+  border-color: #5e1732;
+}
+.c-button--color:hover {
+  background: #5e1721;
+}
+
+.c-ripple {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.c-ripple__circle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.c-ripple.is-active .c-ripple__circle {
+  -webkit-animation: a-ripple 0.4s ease-in;
+          animation: a-ripple 0.4s ease-in;
 }
