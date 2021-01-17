@@ -1349,7 +1349,7 @@ p.paragraph {
     padding-top: 1%;
   }
   .modal-content {
-    margin-top: 150px !important;
+    margin-top: 100px !important;
   }
 }
 
@@ -1379,7 +1379,7 @@ p.paragraph {
     padding: 5% 0 18% 0;
   }
   .modal-content {
-    margin-top: 300px !important;
+    margin-top: 250px !important;
   }
 }
 
@@ -2418,6 +2418,15 @@ a,.no-select{ -webkit-user-select: none; -khtml-user-select: none; -moz-user-sel
   padding: 0;
   text-align: center;
   line-height: 1.25;
+}
+
+.modal h2 {
+  color: rgb(138, 36, 36);
+  font-family: 'Patua One', cursive;
+  font-size: 2em;
+  line-height: 1.25;
+  margin-top: 15px;
+  text-align: center;
 }
 
 .modal h1 {

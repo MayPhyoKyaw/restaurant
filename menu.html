@@ -322,11 +322,12 @@
                     <div class="clear"></div>
                     <!-- Modal -->
                     <!-- The Modal -->
-                    <div id="verification" class="modal">
+                    <div id="edit-modal" class="modal">
                         <!-- Modal content -->
                         <div class="modal-content">
-                            <span id="modalClose" class="modal-close no-select">&times;</span>
+                            <span id="editModalClose" class="modal-close no-select">&times;</span>
                             <h1>Verification</h1>
+                            <h2>For Editing</h2>
                             <h3>Please enter the 4-digit pin code</h3>
                             <div class="passcode-area">
                                 <input autofocus type="text" maxlength="1">
@@ -334,7 +335,29 @@
                                 <input type="text" maxlength="1">
                                 <input type="text" maxlength="1">
                             </div>
-                            <button class="c-button c-button--color" type="button">
+                            <button class="c-button c-button--color" type="button" id="verify-edit">
+                                <div class="c-ripple js-ripple">
+                                  <span class="c-ripple__circle"></span>
+                                </div>
+                                Verify
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="reset-modal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span id="resetModalClose" class="modal-close no-select">&times;</span>
+                            <h1>Verification</h1>
+                            <h2>For Reset Timer</h2>
+                            <h3>Please enter the 4-digit pin code</h3>
+                            <div class="passcode-area">
+                                <input autofocus type="text" maxlength="1">
+                                <input type="text" maxlength="1">
+                                <input type="text" maxlength="1">
+                                <input type="text" maxlength="1">
+                            </div>
+                            <button class="c-button c-button--color" type="button" id="verify-reset">
                                 <div class="c-ripple js-ripple">
                                   <span class="c-ripple__circle"></span>
                                 </div>
