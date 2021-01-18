@@ -99,27 +99,53 @@ var msgForEdit = document.getElementById('Emsg');
 var warningForEdit = document.getElementById('Epwd-warning');
 var focusInputForEdit = document.getElementById('focusE');
 
+var noOfCustomers = document.getElementById("input-number-mod");
+var tableNo = document.getElementById("option");
+
 $(document).ready(function () {
 
   var serveTime = 60 * 30 + 3600;
+  var totalCost;
   var choose = document.getElementById("choose");
   var start = document.getElementById("before-countdown");
   var display = document.getElementById("countdown");
+
+  $('#order-btn').attr("disabled", true);
+  $('#edit-verification-btn').attr("disabled", true);
+
+  // click start timer btn to calculate bill and start timer
   $('#before-countdown').on('click', function () {
-    startTimer(serveTime, display);
+    startTimer(5, display);
     start.style.display = "none";
     display.style.display = "block";
     document.getElementById("order-list").style.display = "block";
     // document.getElementById("choose-tb").style.display = "none";
+    var inputNumberPeople = $("#input-number-mod").val()
+    $(".no-of-customers").html(`x  ${inputNumberPeople}  People`);
+    var stringCost = $(".cost").html();
+    stringCost.slice(0, -4)
+    var cost = parseInt(stringCost);
+    var noOfPeople = parseInt(inputNumberPeople);
+    var calculation = cost * noOfPeople;
+    var toPlus = (calculation/100) * 10;
+    totalCost = calculation + toPlus
+    $(".total-cost").html(`${totalCost} MMK`);
+    $('#order-btn').attr("disabled", false);
+    $('#edit-verification-btn').attr("disabled", false);
   })
 
   $('#choose').on('click', function () {
     choose.style.display = "none";
     start.style.display = "block";  
-    document.getElementById("input-number-mod").disabled = true;
-    document.getElementById("option").disabled = true;
+    noOfCustomers.disabled = true;
+    tableNo.disabled = true;
     // console.log("hello")
   })
+
+  // click start timer btn to calculate bill
+  // $("#before-countdown").click (function() {
+    
+  // })
 
   fetch('/menu.html/identification', { method: 'GET' })
   .then(function (response) {
@@ -140,6 +166,13 @@ $(document).ready(function () {
           clearInterval(timeLeft);
           choose.style.display = "inline-block";
           display.style.display = "none";
+          totalCost = '';
+          $(".no-of-customers").html('');
+          $(".total-cost").html(`${totalCost}`);
+          noOfCustomers.disabled = false;
+          noOfCustomers.value = 1;
+          tableNo.disabled = false;
+          tableNo.value = '';
         }else{
           msgForReset.style.display = "none";
           warningForReset.style.display = "block";
@@ -152,7 +185,7 @@ $(document).ready(function () {
         var pwdForEdit = $('.edit-pwd').val();
         if(id.password === pwdForEdit){
           hideEditModal();
-
+          $(".cancel-order").css('visibility', 'visible');
         }else{
           msgForEdit.style.display = "none";
           warningForEdit.style.display = "block";
@@ -185,9 +218,16 @@ $(document).ready(function () {
     hideEditModal();
   });
   $('#resetTimeoutModalClose').click(function (event) {
-    console.log("click");
+    // console.log("click");
     hideTimeoutModal();
     event.stopPropagation();
+    clearInterval(timeLeft);
+  });
+  $('#timeout').click(function (event) {
+    // console.log("click");
+    hideTimeoutModal();
+    event.stopPropagation();
+    clearInterval(timeLeft);
   });
 
   // Do nothing when clicking on the modal content
@@ -234,14 +274,14 @@ function hideResetModal(){
 }
 
 function showTimeoutModal() {
-  $('#time_out_modal').fadeIn('slow');
-  (function fun() {
-    $('.modal-content').css({ 'transform': 'translateY(-50px)' });
-  })();
+  $('#timeout-modal').fadeIn('slow');
+    (function fun() {
+      $('.modal-content').css({ 'transform': 'translateY(-50px)' });
+    })();
 }
 
 function hideTimeoutModal() {
-  $('#edit-modal').fadeOut('fast');
+  $('#timeout-modal').fadeOut('fast');
   (function fun() {
     $('.modal-content').css({ 'transform': 'translateY(0px)' });
   })();

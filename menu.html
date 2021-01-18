@@ -212,8 +212,9 @@
                     </div>
                     <div class="col span_1_of_3">
                         <div class="tb-no left">
-                            <label for="table-number-mod">Choose Table No.</label>
-                            <select name="mySelect" class="select animated left table-no" id="option">
+                            <label for="table-number-mod">Table No.</label>
+                            <select name="table-no" class="select animated left table-no" id="option">
+                                <option value="" disabled selected>Choose...</option>
                                 <option value="" disabled>Family Type</option>
                                 <option value="T1" class="title animated fadeIn">T1</option>
                                 <option value="T2" class="title animated fadeIn">T2</option>
@@ -228,7 +229,7 @@
                         </div>
                         <div id="choose-tb right">
                             <span class="people">
-                                <label for="input-number-mod">No. of Customers</label>
+                                <label for="input-number-mod" class="cus">No. of Customers</label>
                                 <input id="input-number-mod" class="mod" type="number" value="1" min="1" max="50" />
                                 <button id="choose" class="btn3 btn-8 btn-8a">Choose</button>
                                 <span id="countdown" class="timer right" style="display: none;"></span>
@@ -261,8 +262,7 @@
                                         </li> -->
                                     </ul>
                                 </nav>
-                                <li class="list-group-item order-item bill
-                                        bill-b-top">
+                                <li class="list-group-item order-item bill bill-b-top">
                                     <span class="left">Cost (1 People) </span>
                                     <i class="right cost">11000 MMK</i>
                                 </li>
@@ -274,10 +274,10 @@
                                     <span class="left">Tax </span>
                                     <i class="right tax">10%</i>
                                 </li>
-                                <li class="list-group-item total-bill bill
-                                        bill-b-top">
-                                    <span class="left">Total (incl. tax)
-                                        </span>
+                                <li class="list-group-item total-bill bill bill-b-top">
+                                    <span class="left">
+                                        Total (incl. tax)
+                                    </span>
                                     <i class="right total-cost"></i>
                                 </li>
 
@@ -368,12 +368,12 @@
                         </div>
                     </div>
 
-                    <div id="time_out_modal" class="modal">
+                    <div id="timeout-modal" class="modal">
                         <!-- Modal content -->
                         <div class="modal-content">
                             <span id="resetTimeoutModalClose" class="modal-close no-select">&times;</span>
                             <h2>Time out ! </h2>
-                            <button class="c-button c-button--color" type="button" id="verify-reset">
+                            <button class="c-button c-button--color" type="button" id="timeout">
                                 <div class="c-ripple js-ripple">
                                   <span class="c-ripple__circle"></span>
                                 </div>

@@ -219,30 +219,16 @@ $(document).ready(function () {
 
       // click order btn
       $('#order-btn').click(function () {
-        var items = document.getElementsByClassName('close');
-        console.log();
-        var len = items.length-1;
-        for (let i = 0; i < len; i++) {
-          const element = items[i];
-          console.log(element);
-          var close = document.getElementsByTagName('i');
-          // i.style.display = "none";
-        }
+        // var items = document.getElementsByClassName('close');
+        // console.log();
+        // var len = items.length-1;
+        // for (let i = 0; i < len; i++) {
+        //   const element = items[i];
+        //   console.log(element);
+        //   var close = document.getElementsByTagName('i');
+        //   // i.style.display = "none";
+        // }
         $(".cancel-order").css('visibility', 'hidden');
-      })
-
-      // click start timer btn to calculate bill
-      $("#before-countdown").click (function() {
-        var inputNumberPeople = $("#input-number-mod").val()
-        $(".no-of-customers").html(`x  ${inputNumberPeople}  People`);
-        var stringCost = $(".cost").html();
-        stringCost.slice(0, -4)
-        var cost = parseInt(stringCost);
-        var noOfPeople = parseInt(inputNumberPeople);
-        var calculation = cost * noOfPeople;
-        var toPlus = (calculation/100) * 10;
-        var totalCost = calculation + toPlus
-        $(".total-cost").html(`${totalCost} MMK`);
       })
 
       // for dish quantity

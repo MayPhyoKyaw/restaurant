@@ -708,7 +708,7 @@ span.black {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
   outline: none;
@@ -2133,9 +2133,11 @@ p.paragraph {
 }
 
 .timer {
-  border: 1px solid rgb(128, 25, 25);
+  padding: 5px !important;
+  border: 2px solid rgb(128, 25, 25);
   margin-right: 15px;
-  box-shadow: 4px 3px 4px #515151;
+  box-shadow: 4px 3px 4px #5e2d2d;
+  border-radius: 5px;
   cursor: default;
 }
 
@@ -2161,14 +2163,14 @@ p.paragraph {
   /* margin: auto; */
   margin-top: 2% !important;
   margin-right: 10px !important;
-  width: 120px;
+  width: 100px;
   height: 30px !important;
   /* overflow-y: hidden; */
   border-bottom: 0px;
   border-radius: 10px;
   font-size: 14px;
   font-weight: bold;
-  box-shadow: 0px 1em 2em -1.5em rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1em 2em -1.5em rgba(255, 216, 216, 0.5);
   background: #ffeecf;
   color: #992621;
 }
@@ -2190,13 +2192,14 @@ p.paragraph {
   height: 100%;
   padding: 1em 1em 0.8em 1em;
   background: white;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(250, 246, 185, 0.05);
   cursor: pointer;
   background: #ffeecf;
+  border-radius: 25px;
   color: #992621;
 }
 
-.select > label > input {
+/* .select > label > input {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -2296,7 +2299,7 @@ p.paragraph {
   color: #992621;
   border-top: 0px;
   box-shadow: none;
-  /* color: inherit; */
+  /* color: inherit; 
   width: 100%;
 }
 
@@ -2309,14 +2312,14 @@ p.paragraph {
   color: #aaa;
   background: none;
   cursor: no-drop;
-}
+} */
 
-.people label {
+.people .cus {
+  margin-top: 1px !important;
   display: block;
   font-size: 0.8rem;
   color: black;
-  padding-bottom: 5px;
-  margin-top: 2% !important;
+  padding: 3px;
   /* letter-spacing: 0.5px; */
 }
 
@@ -2333,7 +2336,7 @@ input[type="number"] {
     border: 1px solid #eed29f;
     border-color: #eed29f #f5eee2 #f5eee2 #eed098;
     padding: .2rem;
-    width: 50px;
+    width: 65px;
     height: 20px;
     background: #ffeecf;
     border-radius: 10px;
