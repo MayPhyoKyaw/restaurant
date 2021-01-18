@@ -222,8 +222,18 @@ $(document).ready(function () {
         $(".cancel-order").css('visibility', 'hidden');
       })
       $("#before-countdown").click (function() {
-        console.log("DDD")
-        $(".no-of-customers").html("x  " + $("#input-number-mod").val() + " People")
+        var inputNumberPeople = $("#input-number-mod").val()
+        $(".no-of-customers").html(`x  ${inputNumberPeople}  People`);
+        var stringCost = $(".cost").html();
+        stringCost.slice(0, -4)
+        var cost = parseInt(stringCost);
+        var noOfPeople = parseInt(inputNumberPeople);
+        var calculation = cost * noOfPeople;
+        var toMinus = (calculation/100) * 10;
+        console.log(calculation)
+        console.log(toMinus)
+        var totalCost = calculation - toMinus
+        $(".total-cost").html(`${totalCost} MMK`)
       })
 
       // for dish quantity

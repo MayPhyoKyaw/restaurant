@@ -27,7 +27,7 @@ function startTimer(duration, display) {
 //   }
 // }
 
-//To Do: Add Visibility toggle  
+//To Do: Add Visibility toggle
 const inputs = document.querySelectorAll('.passcode-area input');
 inputs[0].focus();
 for (elem of inputs) {
