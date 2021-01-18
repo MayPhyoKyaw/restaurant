@@ -194,7 +194,7 @@ $(document).ready(function () {
         $(".order-list ul").append(`
         <li class="list-group-item order-item">
           <span class="left ordered-item">${itemTitle}</span>
-          <i class="fa fa-close close right" id="close"></i>
+          <i class="fa fa-close close cancel-order right" id="close"></i>
           <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity}</span>
         </li>`);
         // console.log(changeInt)
@@ -216,9 +216,9 @@ $(document).ready(function () {
           const element = items[i];
           console.log(element);
           var close = document.getElementsByTagName('i');
-          i.style.display = "none";
+          // i.style.display = "none";
         }
-        document.getElementById('action').style.display = "none";
+        $(".cancel-order").css('display', 'none');
       })
 
       var quantity = 0;
