@@ -16,6 +16,9 @@ function startTimer(duration, display) {
 
     if (--timer < 0) {
       timer = 00;
+      console.log("stop");
+      $('#order-btn').attr("disabled", true);
+      showTimeoutModal();
     }
   }, 1000);
 }
@@ -156,12 +159,11 @@ $(document).ready(function () {
           focusInputForEdit.value = '';
         }
       })
-    })
 
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 
   $('#reset-verification-btn').click(function(event){
     showResetModal();
@@ -172,21 +174,26 @@ $(document).ready(function () {
   $('#edit-verification-btn').click(function(event){
     showEditModal();
     focusInputForEdit.focus();
-    event.stopPropagation(); 
+    event.stopPropagation();
     // console.log("hello")
-	});
-	$('#resetModalClose').click(function(){
+  });
+  $('#resetModalClose').click(function () {
     hideResetModal();
   });
-  $('#editModalClose').click(function(){
-		hideEditModal();
-	});
-	
-	// Do nothing when clicking on the modal content
-	$('.modal-content').click(function(event){
-       event.stopPropagation(); 
+  $('#editModalClose').click(function () {
+    hideEditModal();
   });
-  
+  $('#resetTimeoutModalClose').click(function (event) {
+    console.log("click");
+    hideTimeoutModal();
+    event.stopPropagation();
+  });
+
+  // Do nothing when clicking on the modal content
+  $('.modal-content').click(function (event) {
+    event.stopPropagation();
+  });
+
 })
 
 function showEditModal(){
@@ -225,8 +232,24 @@ function hideResetModal(){
     focusInputForReset.value = '';
 }
 
+function showTimeoutModal() {
+  $('#time_out_modal').fadeIn('slow');
+  (function fun() {
+    $('.modal-content').css({ 'transform': 'translateY(-50px)' });
+  })();
+}
+
+function hideTimeoutModal() {
+  $('#edit-modal').fadeOut('fast');
+  (function fun() {
+    $('.modal-content').css({ 'transform': 'translateY(0px)' });
+  })();
+  // value = [];
+}
+
 $(document).on("click", function () {
-    //click outside of ".nav__dropdown" class itself and menu will be hidden
+  //click outside of ".nav__dropdown" class itself and menu will be hidden
+  hideTimeoutModal();
   hideEditModal();
   hideResetModal();
-});
+})

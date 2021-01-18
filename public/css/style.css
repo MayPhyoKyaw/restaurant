@@ -2323,15 +2323,16 @@ p.paragraph {
 }
 
 input[type="number"] {
-  position: relative;
-  /* margin: 0 0 0 2px !important; */
-  border: 1px solid #eed29f;
-  border-color: #eed29f #f5eee2 #f5eee2 #eed098;
-  padding: 0.2rem;
-  width: 50px;
-  height: 20px;
-  background: #ffeecf;
-  border-radius: 10px;
+    position: relative;
+    /* margin: 0 0 1rem; */
+    border: 1px solid #eed29f;
+    border-color: #eed29f #f5eee2 #f5eee2 #eed098;
+    padding: .2rem;
+    width: 50px;
+    height: 20px;
+    background: #ffeecf;
+    border-radius: 10px;
+    outline: none;
 }
 
 /* Spin Buttons modified */
@@ -2418,18 +2419,19 @@ input:-webkit-autofill {
 /* The Close Button */
 
 .modal-close {
-  color: #807d7d;
-  float: right;
-  line-height: 19px;
-  font-size: 20px;
-  width: 22px;
-  font-weight: bold;
-  position: absolute;
-  right: 0.8em;
-  top: 0.8em;
-  border: solid 3px #807d7d;
-  border-radius: 200%;
-  padding: 5px 1px 5px 5px;
+    text-align: center;
+    color: #807d7d;
+    float: right;
+    line-height: 19px;
+    font-size: 20px;
+    width: 22px;
+    font-weight: bold;
+    position: absolute;
+    right: .8em;
+    top: .8em;
+    border: solid 3px #807d7d;
+    border-radius: 200%;
+    padding: 5px;
 }
 
 .modal-close:hover,

@@ -217,6 +217,7 @@ $(document).ready(function () {
         })
       })
 
+      // click order btn
       $('#order-btn').click(function () {
         var items = document.getElementsByClassName('close');
         console.log();
@@ -230,6 +231,21 @@ $(document).ready(function () {
         $(".cancel-order").css('visibility', 'hidden');
       })
 
+      // click start timer btn to calculate bill
+      $("#before-countdown").click (function() {
+        var inputNumberPeople = $("#input-number-mod").val()
+        $(".no-of-customers").html(`x  ${inputNumberPeople}  People`);
+        var stringCost = $(".cost").html();
+        stringCost.slice(0, -4)
+        var cost = parseInt(stringCost);
+        var noOfPeople = parseInt(inputNumberPeople);
+        var calculation = cost * noOfPeople;
+        var toPlus = (calculation/100) * 10;
+        var totalCost = calculation + toPlus
+        $(".total-cost").html(`${totalCost} MMK`);
+      })
+
+      // for dish quantity
       var quantity = 0;
       $('.stepper .minus').click(function () {
         quantity = parseInt($(this).siblings('.input-count').val());
