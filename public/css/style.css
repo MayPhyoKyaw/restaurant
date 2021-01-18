@@ -2309,6 +2309,7 @@ input[type="number"] {
     height: 20px;
     background: #ffeecf;
     border-radius: 10px;
+    outline: none;
 }
 
 
@@ -2399,6 +2400,7 @@ input:-webkit-autofill {
 /* The Close Button */
 
 .modal-close {
+    text-align: center;
     color: #807d7d;
     float: right;
     line-height: 19px;
@@ -2410,7 +2412,7 @@ input:-webkit-autofill {
     top: .8em;
     border: solid 3px #807d7d;
     border-radius: 200%;
-    padding: 5px 1px 5px 5px;
+    padding: 5px;
 }
 
 .modal-close:hover,

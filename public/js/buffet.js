@@ -15,6 +15,9 @@ function startTimer(duration, display) {
 
     if (--timer < 0) {
       timer = 00;
+      console.log("stop");
+      $('#order-btn').attr("disabled", true);
+      showTimeoutModal();
     }
   }, 1000);
 }
@@ -128,7 +131,8 @@ $(document).ready(function () {
     });
 
   $('#before-countdown').on('click', function () {
-    var serveTime = 60 * 30 + 3600,
+    // var serveTime = 60 * 30 + 3600,
+    var serveTime = 5,
       display = document.getElementById("countdown");
     startTimer(serveTime, display);
 
@@ -137,6 +141,9 @@ $(document).ready(function () {
     display.style.display = "block";
     // document.getElementById("order-list").style.display = "block";
     // document.getElementById("choose-tb").style.display = "none";
+
+    // condition for time over countdown
+    console.log($("#countdown").text())
   })
 
   $('#choose').on('click', function () {
@@ -145,7 +152,8 @@ $(document).ready(function () {
     choose.style.display = "none";
     start.style.display = "block";
     document.getElementById("input-number-mod").disabled = true;
-    document.getElementById("option").disabled = true;
+    // document.getElementById("option").disabled = true;
+    $('.select').prop('disabled', true);
   })
 
   $('#reset-verification-btn').click(function (event) {
@@ -164,6 +172,11 @@ $(document).ready(function () {
   $('#editModalClose').click(function () {
     hideEditModal();
   });
+  $('#resetTimeoutModalClose').click(function (event) {
+    console.log("click");
+    hideTimeoutModal();
+    event.stopPropagation();
+  });
 
   // Do nothing when clicking on the modal content
   $('.modal-content').click(function (event) {
@@ -171,6 +184,21 @@ $(document).ready(function () {
   });
 
 })
+
+function showTimeoutModal() {
+  $('#time_out_modal').fadeIn('slow');
+  (function fun() {
+    $('.modal-content').css({ 'transform': 'translateY(-50px)' });
+  })();
+}
+
+function hideTimeoutModal() {
+  $('#edit-modal').fadeOut('fast');
+  (function fun() {
+    $('.modal-content').css({ 'transform': 'translateY(0px)' });
+  })();
+  // value = [];
+}
 
 function showEditModal() {
   $('#edit-modal').fadeIn('slow');
@@ -212,6 +240,7 @@ function hideResetModal() {
 
 $(document).on("click", function () {
   //click outside of ".nav__dropdown" class itself and menu will be hidden
+  hideTimeoutModal();
   hideEditModal();
   hideResetModal();
 });

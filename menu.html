@@ -211,52 +211,18 @@
                         </div>
                     </div>
                     <div class="col span_1_of_3">
-                        <div class="select animated left table-no" id="select">
-                            <!-- You can toggle select (disabled) -->
-                            <label>
-                                <input type="checkbox" name="placeholder" id="option">
-                                <i class="toggle icon icon-arrow-down"></i>
-                                <i class="toggle icon icon-arrow-up"></i>
-                                <span class="placeholder">Choose...</span>
-                                <label class="option">
-                                    <input type="radio" name="option" id="option" disabled>
-                                    <span class="title animated fadeIn"><i class="icon"></i>Family Type</span>
-                            </label>
-                            <label class="option">
-                                    <input type="radio" name="option" id="option">
-                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-1</span>
-                                </label>
-
-                            <label class="option">
-                                    <input type="radio" name="option" id="option">
-                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-2</span>
-                                </label>
-                            <label class="option">
-                                    <input type="radio" name="option" id="option">
-                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-3</span>
-                                </label>
-                            <label class="option">
-                                    <input type="radio" name="option" id="option">
-                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-4</span>
-                                </label>
-                            <label class="option">
-                                    <input type="radio" name="option" disabled id="option">
-                                    <span class="title animated fadeIn"><i class="icon"></i>Dual Type</span>
-                                </label>
-                            <label class="option">
-                                    <input type="radio" name="option" id="option">
-                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-6</span>
-                                </label>
-                            <label class="option">
-                                    <input type="radio" name="option" id="option">
-                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-7</span>
-                                </label>
-                            <label class="option">
-                                    <input type="radio" name="option" id="option">
-                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-8</span>
-                                </label>
-                            </label>
-                        </div>
+                        <select name="mySelect" class="select animated left table-no">
+                            <option value="" disabled>Family Type</option>
+                            <option value="T1" class="title animated fadeIn">T1</option>
+                            <option value="T2" class="title animated fadeIn">T2</option>
+                            <option value="T3" class="title animated fadeIn">T3</option>
+                            <option value="T4" class="title animated fadeIn">T4</option>
+                            <option value="" disabled>Family Type</option>
+                            <option value="T5" class="title animated fadeIn">T5</option>
+                            <option value="T6" class="title animated fadeIn">T6</option>
+                            <option value="T7" class="title animated fadeIn">T7</option>
+                            <option value="T8" class="title animated fadeIn">T8</option>
+                        </select>
                         <div id="choose-tb right">
 
                             <span class="people">
@@ -322,8 +288,8 @@
                         </div>
                     </div>
                     <div class="clear"></div>
+
                     <!-- Modal -->
-                    <!-- The Modal -->
                     <div id="edit-modal" class="modal">
                         <!-- Modal content -->
                         <div class="modal-content">
@@ -364,6 +330,20 @@
                                   <span class="c-ripple__circle"></span>
                                 </div>
                                 Verify
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="time_out_modal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span id="resetTimeoutModalClose" class="modal-close no-select">&times;</span>
+                            <h2>Time out ! </h2>
+                            <button class="c-button c-button--color" type="button" id="verify-reset">
+                                <div class="c-ripple js-ripple">
+                                  <span class="c-ripple__circle"></span>
+                                </div>
+                                Ok
                             </button>
                         </div>
                     </div>

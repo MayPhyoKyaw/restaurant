@@ -233,7 +233,7 @@ $(document).ready(function () {
         var calculation = cost * noOfPeople;
         var toPlus = (calculation/100) * 10;
         var totalCost = calculation + toPlus
-        $(".total-cost").html(`${totalCost} MMK`)
+        $(".total-cost").html(`${totalCost} MMK`);
       })
 
       // for dish quantity
