@@ -95,20 +95,29 @@ $(document).ready(function () {
       var menuItems = [];
       data.forEach(dish => {
         var appetizer = document.getElementById("appetizer").innerHTML;
-        // var dishmeat = [];
-        // console.log(dish["meat"])
-        // dish["meat"].map(dm => {
-        //   console.log(dm)
-        //   var Meats = `
-        //     <span class="badge-${dm}">
-        //       ${dm}
-        //     </span>
-        //   `
-        //   dishmeat.push(Meats);
-        // })
-        // var dishMeat = dishmeat.join(' ');
+        var dishmeat = [];
+        // var type = dish.meat.type;
+        // console.log(dish["meat"], typeof(dish.meat), dish)
+        var meats;
+        if(typeof(dish.meat) === 'string'){
+          meats = dish["meat"].split(",");
+          console.log(meats)
+        }else{
+          meats = dish.meat;
+          console.log(meats)
+        }
+        // console.log(meats)
+        meats.map(dm => {
+          console.log(dm)
+          var Meats = `
+            <span class="badge-${dm}">
+              ${dm}
+            </span>
+          `
+          dishmeat.push(Meats);
+        })
+        var dishMeat = dishmeat.join(' ');
         // console.log(dishMeat)
-
 
         var menuItem = `
           <li class="blo3 flex-w flex-col-l-sm  menu-item">
@@ -127,7 +136,7 @@ $(document).ready(function () {
                         </span>
                     </div>
                     <div class="badge-right column">
-
+                      ${dishMeat}
                     </div>
                 </div>
                 <div class="row" style="width: 100%;">
@@ -286,7 +295,7 @@ $(document).ready(function () {
         while (len >= 0) {
           menuItems.shift();
           len -= 1;
-          console.log(len)
+          // console.log(len)
         }
 
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
