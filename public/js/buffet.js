@@ -18,6 +18,7 @@ function startTimer(duration, display) {
       timer = 00;
       console.log("stop");
       $('#order-btn').attr("disabled", true);
+      $('#edit-verification-btn').attr("disabled", true);
       showTimeoutModal();
     }
   }, 1000);
