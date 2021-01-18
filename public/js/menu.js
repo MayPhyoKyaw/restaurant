@@ -95,23 +95,23 @@ $(document).ready(function () {
       var menuItems = [];
       data.forEach(dish => {
         var appetizer = document.getElementById("appetizer").innerHTML;
-        var dishmeat = [];
-        dish["meat"].map(dm => {
-          // console.log(dm)
-          var Meats = `
-            <span class="badge-${dm}">
-              ${dm}
-            </span>
-          `
-          dishmeat.push(Meats);
-        })
-        var dishMeat = dishmeat.join(' ');
+        // var dishmeat = [];
+        // console.log(dish["meat"])
+        // dish["meat"].map(dm => {
+        //   console.log(dm)
+        //   var Meats = `
+        //     <span class="badge-${dm}">
+        //       ${dm}
+        //     </span>
+        //   `
+        //   dishmeat.push(Meats);
+        // })
+        // var dishMeat = dishmeat.join(' ');
+        // console.log(dishMeat)
 
-        // console.log($('input').innerHTML)
-        // console.log(inc.length)
 
         var menuItem = `
-          <li class="blo3 flex-w flex-col-l-sm m-b-30 menu-item">
+          <li class="blo3 flex-w flex-col-l-sm  menu-item">
             <div class="row menu-row">
               <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28 column left">
                   <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" height=150 /></a>
@@ -127,17 +127,11 @@ $(document).ready(function () {
                         </span>
                     </div>
                     <div class="badge-right column">
-                        ${dishMeat}
+
                     </div>
                 </div>
                 <div class="row" style="width: 100%;">
                     <div class="column left item-quantity">
-                      <div id="small_item" ><input type="radio" name="size" value="Small">
-                        <label for="small">Small</label> -------<span class="txt19 m-t-10 item-price"> ${dish.smallDishPrice} MMK </span>
-                      </div>
-                      <div id="large_item" ><input type="radio" name="size" value="Large">
-                        <label for="large">Large</label> -------<span class="txt19 m-t-10 item-price"> ${dish.largeDishPrice} MMK </span>
-                      </div>
                       <span class="stepper">
                           <button class="minus">–</button>
                           <input
@@ -188,23 +182,22 @@ $(document).ready(function () {
         var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
         var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
         console.log(itemQuantity)
-        var checkedValue = $('input[name="size"]:checked').val();
-        var changeInt = "";
-        if (checkedValue === "Large") {
-          var largePrice = $(this).parent().parent().find('.column #large_item span').text();
-          var changeInt = largePrice.slice(0, -5);
-        } else {
-          var smallPrice = $(this).parent().parent().find('.column #small_item span').text();
-          var changeInt = smallPrice.slice(0, -5);
-        }
+        // var checkedValue = $('input[name="size"]:checked').val();
+        // var changeInt = "";
+        // if (checkedValue === "Large") {
+        //   var largePrice = $(this).parent().parent().find('.column #large_item span').text();
+        //   var changeInt = largePrice.slice(0, -5);
+        // } else {
+        //   var smallPrice = $(this).parent().parent().find('.column #small_item span').text();
+        //   var changeInt = smallPrice.slice(0, -5);
+        // }
         $(".order-list ul").append(`
         <li class="list-group-item order-item">
           <span class="left ordered-item">${itemTitle}</span>
           <i class="fa fa-close close right" id="close"></i>
-          <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
-          <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
+          <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity}</span>
         </li>`);
-        console.log(changeInt)
+        // console.log(changeInt)
 
         // clear item from order list
         $(".order-item .fa-close").click(function () {

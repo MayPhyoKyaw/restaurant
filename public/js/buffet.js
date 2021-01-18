@@ -75,12 +75,12 @@ $(document).ready(function () {
 
   fetch('/menu.html/identification', { method: 'GET' })
   .then(function (response) {
-    console.log(response)
+    // console.log(response)
     if (response.ok) return response.json();
     throw new Error('Request failed.');
   })
   .then(function (data) {
-    console.log(data)
+    // console.log(data)
     // console.log(data[0].password)
     data.forEach(id => {
       var identification = id.password.split('');

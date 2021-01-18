@@ -8,7 +8,7 @@ p {
 
 .btn-right {
     float: right;
-    padding-top: 4%;
+    /* padding-top: 4%; */
 }
 
 .badge-right {
@@ -79,7 +79,7 @@ p {
     margin-right: 5%;
 }
 
-.menu-row{
+.menu-row {
     padding-bottom: 8em;
 }
 
@@ -123,6 +123,22 @@ hr {
     font-size: 24px;
 }
 
+.item-quantity {
+    margin-top: 1%;
+}
+
+
+/* order list style */
+
+.table-no {
+    margin-top: 0%;
+    margin-right: 5%;
+}
+
+.ordered-qty {
+    margin-right: 13%;
+}
+
 
 /*----- increase/decrease input for dish quantity ----*/
 
@@ -145,7 +161,7 @@ hr {
 }
 
 .stepper input {
-    width: 1.5em;
+    width: 1.6em;
     height: 100%;
     line-height: 0.1em;
     text-align: center;
@@ -11371,6 +11387,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     height: 540px;
 }
 
+
 /* .simple-pagination ul {
     margin: 0 0 20px;
     padding: 0;
@@ -11407,28 +11424,33 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 } */
 
 #pagination-container {
-    clear:both;
-}
-#pagination-container a{
-    padding:5px 10px;
-    border:1px solid #99261f;
-    margin:2px;
-    color:black;
-    text-decoration:none;
-    border-radius: 5px;
-}
-.active_page{
-    background:#99261f;
-    color:white !important;
+    clear: both;
 }
 
-.prev.disabled, .next.disabled {
+#pagination-container a {
+    padding: 5px 10px;
+    border: 1px solid #99261f;
+    margin: 2px;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.active_page {
+    background: #99261f;
+    color: white !important;
+}
+
+.prev.disabled,
+.next.disabled {
     cursor: default;
     background: #ccc;
     color: #888;
     border-color: #888;
 }
-.prev.disabled:hover, .next.disabled:hover {
+
+.prev.disabled:hover,
+.next.disabled:hover {
     cursor: default;
     text-decoration: none;
 }

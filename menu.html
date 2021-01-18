@@ -140,7 +140,7 @@
                             <div class="header-lunch parallax0 parallax20" style="background-image:
                                     url(images/header-menu-01.jpg)">
                                 <div class="bg1-overlay p-t-65 p-b-50">
-                                    <h2 class="tit4 t-center">Buffet</h2>
+                                    <h2 class="tit4 t-center">Dishes</h2>
                                 </div>
                             </div>
                             <div class="row p-t-10 p-b-30 list-wrapper">
@@ -211,6 +211,62 @@
                         </div>
                     </div>
                     <div class="col span_1_of_3">
+                        <div class="select animated left table-no" id="select">
+                            <!-- You can toggle select (disabled) -->
+                            <label>
+                                <input type="checkbox" name="placeholder" id="option">
+                                <i class="toggle icon icon-arrow-down"></i>
+                                <i class="toggle icon icon-arrow-up"></i>
+                                <span class="placeholder">Choose...</span>
+                                <label class="option">
+                                    <input type="radio" name="option" id="option" disabled>
+                                    <span class="title animated fadeIn"><i class="icon"></i>Family Type</span>
+                            </label>
+                            <label class="option">
+                                    <input type="radio" name="option" id="option">
+                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-1</span>
+                                </label>
+
+                            <label class="option">
+                                    <input type="radio" name="option" id="option">
+                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-2</span>
+                                </label>
+                            <label class="option">
+                                    <input type="radio" name="option" id="option">
+                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-3</span>
+                                </label>
+                            <label class="option">
+                                    <input type="radio" name="option" id="option">
+                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-4</span>
+                                </label>
+                            <label class="option">
+                                    <input type="radio" name="option" disabled id="option">
+                                    <span class="title animated fadeIn"><i class="icon"></i>Dual Type</span>
+                                </label>
+                            <label class="option">
+                                    <input type="radio" name="option" id="option">
+                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-6</span>
+                                </label>
+                            <label class="option">
+                                    <input type="radio" name="option" id="option">
+                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-7</span>
+                                </label>
+                            <label class="option">
+                                    <input type="radio" name="option" id="option">
+                                    <span class="title animated fadeIn"><i class="icon icon-check"></i>T-8</span>
+                                </label>
+                            </label>
+                        </div>
+                        <div id="choose-tb right">
+
+                            <span class="people">
+                                <label for="input-number-mod" style="padding-bottom: 5px;">No. of Customers</label>
+                                <input id="input-number-mod" class="mod" type="number" value="1" min="1" max="50" />
+                                <button id="choose" class="btn1 btn-8 btn-8a">Choose</button>
+                                <span id="countdown" class="timer right" style="display: none;"></span>
+                            </span>
+                        </div>
+                        <br/>
                         <div class="your-order">
                             <h3>
                                 <span classs="left">Your Order</span>
@@ -220,65 +276,11 @@
                                     <span id="countdown" class="timer right" style="display: none;"></span>
                                 </span>
                             </h3>
-                            <div id="choose-tb">
-                                <div class="select animated left" id="select">
-                                    <!-- You can toggle select (disabled) -->
-                                    <label>
-                                        <input type="checkbox" name="placeholder" id="option">
-                                        <i class="toggle icon icon-arrow-down"></i>
-                                        <i class="toggle icon icon-arrow-up"></i>
-                                        <span class="placeholder">Choose...</span>
-                                        <label class="option">
-                                            <input type="radio" name="option" id="option" disabled>
-                                            <span class="title animated fadeIn"><i class="icon"></i>Family Type</span>
-                                        </label>
-                                        <label class="option">
-                                            <input type="radio" name="option" id="option">
-                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-1</span>
-                                        </label>
-                                
-                                        <label class="option">
-                                            <input type="radio" name="option" id="option">
-                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-2</span>
-                                        </label>
-                                        <label class="option">
-                                            <input type="radio" name="option" id="option">
-                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-3</span>
-                                        </label>
-                                        <label class="option">
-                                            <input type="radio" name="option" id="option">
-                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-4</span>
-                                        </label>
-                                        <label class="option">
-                                            <input type="radio" name="option" disabled id="option">
-                                            <span class="title animated fadeIn"><i class="icon"></i>Dual Type</span>
-                                        </label>
-                                        <label class="option">
-                                            <input type="radio" name="option" id="option">
-                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-6</span>
-                                        </label>
-                                        <label class="option">
-                                            <input type="radio" name="option" id="option">
-                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-7</span>
-                                        </label>
-                                        <label class="option">
-                                            <input type="radio" name="option" id="option">
-                                            <span class="title animated fadeIn"><i class="icon icon-check"></i>T-8</span>
-                                        </label>
-                                    </label>
-                                </div>
-                                <span class="right people">
-                                    <label for="input-number-mod" style="padding-bottom: 5px;">No. of Customers</label>
-                                    <input id="input-number-mod" class="mod" type="number" value="1" min="1" max="50" />
-                                    <button id="choose" class="btn1 btn-8 btn-8a">Choose</button>
-                                    <span id="countdown" class="timer right" style="display: none;"></span>
-                                </span>
-                            </div>
-                            <ul class="list-group header-item" style="display: none;" id="order-list">
+
+                            <ul class="list-group header-item" id="order-list">
                                 <li class="list-group-item order-item">
                                     <span class="left order-header">Items</span>
                                     <span class="right order-header" id="action">Action</span>
-                                    <span class="right order-header">Cost</span>
                                     <span class="right order-header m-g-r">Qty</span>
                                 </li>
                                 <nav class="order-list">
