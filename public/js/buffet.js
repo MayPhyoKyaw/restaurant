@@ -118,7 +118,7 @@ $(document).ready(function () {
     start.style.display = "block";  
     document.getElementById("input-number-mod").disabled = true;
     document.getElementById("option").disabled = true;
-    console.log("hello")
+    // console.log("hello")
   })
 
   fetch('/menu.html/identification', { method: 'GET' })

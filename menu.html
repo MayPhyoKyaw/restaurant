@@ -211,21 +211,24 @@
                         </div>
                     </div>
                     <div class="col span_1_of_3">
-                        <select name="mySelect" class="select animated left table-no">
-                            <option value="" disabled>Family Type</option>
-                            <option value="T1" class="title animated fadeIn">T1</option>
-                            <option value="T2" class="title animated fadeIn">T2</option>
-                            <option value="T3" class="title animated fadeIn">T3</option>
-                            <option value="T4" class="title animated fadeIn">T4</option>
-                            <option value="" disabled>Family Type</option>
-                            <option value="T5" class="title animated fadeIn">T5</option>
-                            <option value="T6" class="title animated fadeIn">T6</option>
-                            <option value="T7" class="title animated fadeIn">T7</option>
-                            <option value="T8" class="title animated fadeIn">T8</option>
-                        </select>
+                        <div class="tb-no left">
+                            <label for="table-number-mod">Choose Table No.</label>
+                            <select name="mySelect" class="select animated left table-no" id="option">
+                                <option value="" disabled>Family Type</option>
+                                <option value="T1" class="title animated fadeIn">T1</option>
+                                <option value="T2" class="title animated fadeIn">T2</option>
+                                <option value="T3" class="title animated fadeIn">T3</option>
+                                <option value="T4" class="title animated fadeIn">T4</option>
+                                <option value="" disabled>Family Type</option>
+                                <option value="T5" class="title animated fadeIn">T5</option>
+                                <option value="T6" class="title animated fadeIn">T6</option>
+                                <option value="T7" class="title animated fadeIn">T7</option>
+                                <option value="T8" class="title animated fadeIn">T8</option>
+                            </select>
+                        </div>
                         <div id="choose-tb right">
                             <span class="people">
-                                <label for="input-number-mod" style="padding-bottom: 5px;">No. of Customers</label>
+                                <label for="input-number-mod">No. of Customers</label>
                                 <input id="input-number-mod" class="mod" type="number" value="1" min="1" max="50" />
                                 <button id="choose" class="btn3 btn-8 btn-8a">Choose</button>
                                 <span id="countdown" class="timer right" style="display: none;"></span>
