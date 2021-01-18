@@ -218,7 +218,7 @@ $(document).ready(function () {
           var close = document.getElementsByTagName('i');
           // i.style.display = "none";
         }
-        $(".cancel-order").css('display', 'none');
+        $(".cancel-order").css('visibility', 'hidden');
       })
 
       var quantity = 0;
