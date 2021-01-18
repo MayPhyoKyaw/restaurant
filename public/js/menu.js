@@ -208,6 +208,7 @@ $(document).ready(function () {
         })
       })
 
+      // click order btn
       $('#order-btn').click(function () {
         var items = document.getElementsByClassName('close');
         console.log();
@@ -220,7 +221,12 @@ $(document).ready(function () {
         }
         $(".cancel-order").css('visibility', 'hidden');
       })
+      $("#before-countdown").click (function() {
+        console.log("DDD")
+        $(".no-of-customers").html("x  " + $("#input-number-mod").val() + " People")
+      })
 
+      // for dish quantity
       var quantity = 0;
       $('.stepper .minus').click(function () {
         quantity = parseInt($(this).siblings('.input-count').val());
