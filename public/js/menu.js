@@ -89,7 +89,7 @@ $(document).ready(function () {
       throw new Error('Request failed.');
     })
     .then(function (data) {
-      console.log(data)
+      // console.log(data)
 
       var result = [];
       var menuItems = [];
@@ -99,16 +99,16 @@ $(document).ready(function () {
         // var type = dish.meat.type;
         // console.log(dish["meat"], typeof(dish.meat), dish)
         var meats;
-        if(typeof(dish.meat) === 'string'){
+        if (typeof (dish.meat) === 'string') {
           meats = dish["meat"].split(",");
-          console.log(meats)
-        }else{
+          // console.log(meats)
+        } else {
           meats = dish.meat;
-          console.log(meats)
+          // console.log(meats)
         }
         // console.log(meats)
         meats.map(dm => {
-          console.log(dm)
+          // console.log(dm)
           var Meats = `
             <span class="badge-${dm}">
               ${dm}
@@ -202,7 +202,7 @@ $(document).ready(function () {
         // }
         $(".order-list ul").append(`
         <li class="list-group-item order-item">
-          <span class="left ordered-item">${itemTitle}</span>
+          <span class="left ordered-item ordered-title">${itemTitle}</span>
           <i class="fa fa-close close cancel-order right" id="close"></i>
           <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity}</span>
         </li>`);
@@ -219,16 +219,74 @@ $(document).ready(function () {
 
       // click order btn
       $('#order-btn').click(function () {
-        // var items = document.getElementsByClassName('close');
-        // console.log();
-        // var len = items.length-1;
-        // for (let i = 0; i < len; i++) {
-        //   const element = items[i];
-        //   console.log(element);
-        //   var close = document.getElementsByTagName('i');
-        //   // i.style.display = "none";
-        // }
         $(".cancel-order").css('visibility', 'hidden');
+        // $('#order_list').each(function () {
+        //   var getOrderedTitles = $(this).find('li .ordered-title');
+        //   var trim = getOrderedTitles.text().trim();
+        //   var orderedTitles = trim.replace(/(\r\n|\n|\r)/gm, " ");
+        //   console.log(orderedTitles);
+        //   var getOrderedQuantities = $(this).find('li .ordered-qty')
+        //   var orderedQuantities = getOrderedQuantities.text();
+        //   console.log(orderedQuantities.split(","));
+        // })
+        $('#order_list').each(function () {
+          var date = new Date();
+          var day = date.getDate();
+          var month = date.getMonth() + 1;
+          var year = date.getFullYear();
+          var hour = date.getHours();
+          var minute = date.getMinutes();
+          var second = date.getSeconds();
+
+          if (month < 10) month = "0" + month;
+          if (day < 10) day = "0" + day;
+          if (minute < 10) minute = "0" + minute;
+          if (second < 10) second = "0" + second;
+          var orderedDate = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
+
+          // var getOrderedValue = $(this).find('li .ordered-item');
+          // var orderedItems = getOrderedValue.text()
+          var getOrderedTitles = $("#order_list #ordered_list_ul li .ordered-title ");
+          var orderedTitles = getOrderedTitles.map(function() {
+            return this.textContent.trim();
+          }).get();
+          console.log(orderedTitles);
+          var getOrderedQuantities = $("#order_list #ordered_list_ul li .ordered-qty ");
+          var orderedQuantities = getOrderedQuantities.map(function() {
+            return this.textContent.trim();
+          }).get();
+          console.log(orderedQuantities);
+          // var getOrderedQuantities = $(this).find('li .ordered-qty')
+          // var orderedQuantities = getOrderedQuantities.text();
+          // console.log(orderedQuantities.split(","));
+
+          var tableNo = $( "#option option:selected" ).text();
+
+          fetch('/menu.html/CreateOrder', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              ordered_titles: orderedTitles,
+              ordered_quantities: orderedQuantities,
+              table_no: tableNo,
+              ordered_at: orderedDate,
+            })
+          })
+            .then(function (response) {
+              console.log(response)
+              if (response.ok) {
+                console.log('clicked!!');
+                return;
+              }
+              throw new Error('Failed!!');
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        })
       })
 
       // for dish quantity
@@ -303,23 +361,30 @@ $(document).ready(function () {
         $(".menu ul li .row .btn-right .add-to-order").click(function () {
           var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
           var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
-          var checkedValue = $('input[name="size"]:checked').val();
-          var changeInt = "";
-          if (checkedValue === "Large") {
-            var largePrice = $(this).parent().parent().find('.column #large_item span').text();
-            var changeInt = largePrice.slice(0, -5);
-          } else {
-            var smallPrice = $(this).parent().parent().find('.column #small_item span').text();
-            var changeInt = smallPrice.slice(0, -5);
-          }
+          // var checkedValue = $('input[name="size"]:checked').val();
+          // var changeInt = "";
+          // if (checkedValue === "Large") {
+          //   var largePrice = $(this).parent().parent().find('.column #large_item span').text();
+          //   var changeInt = largePrice.slice(0, -5);
+          // } else {
+          //   var smallPrice = $(this).parent().parent().find('.column #small_item span').text();
+          //   var changeInt = smallPrice.slice(0, -5);
+          // }
+          // add items to order list
           $(".order-list ul").append(`
-            <li class="list-group-item order-item">
-              <span class="left ordered-item">${itemTitle}</span>
-              <i class="fa fa-close close right"></i>
-              <span class="right m-g-r ordered-item ordered-price">${changeInt * itemQuantity} &nbsp;</span>
-              <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity} &nbsp;x</span>
-            </li>`);
-          console.log(changeInt)
+          <li class="list-group-item order-item">
+            <span class="left ordered-item ordered-title">${itemTitle}</span>
+            <i class="fa fa-close close cancel-order right" id="close"></i>
+            <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity}</span>
+          </li>`);
+
+          // clear item from order list
+          $(".order-item .fa-close").click(function () {
+            $(this).parent().remove();
+            if ($(".order-list li").length < 5) {
+              $(".order-list").css('cssText', 'min-height: 200px !important;');
+            }
+          })
         })
 
         var quantity = 0;
