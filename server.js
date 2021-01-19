@@ -138,6 +138,12 @@ app.post('/menu.html/CreateOrder', (req, res) => {
 
             // Insert a single document, wait for promise so we can read it back
             const p = await col.insertMany(personDocument);
+            // const p = await col.insertMany(personDocument, function(err){
+            //     if (err) return;
+            //     // Object inserted successfully.
+            //     var objectId = personDocument._id;
+            //     console.log(objectId);
+            // });
 
         } catch (err) {
             console.log(err.stack);

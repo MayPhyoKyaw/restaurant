@@ -426,7 +426,7 @@ $(document).ready(function () {
         })
 
         items = $(".list-wrapper .menu-item");
-        console.log(items);
+        // console.log(items);
         numItems = items.length;
         console.log(numItems);
         // Show Total Dish Menu Info
