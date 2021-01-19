@@ -157,11 +157,50 @@ input[type="number"][disabled] {
 
 button:disabled,
 button[disabled] {
-    border: 1px solid #8d6967 !important;
-    background: #8d6967 !important;
+    border: 1px solid #e4cbca !important;
+    background: #e4cbca !important;
     box-shadow: none !important;
     color: #fff !important;
     cursor: not-allowed !important;
+}
+
+.action-buttons {
+    margin-top: 5px;
+}
+
+#order-btn,
+#reset-verification-btn,
+#edit-verification-btn {
+    border-radius: 10px;
+    border: 2px solid rgb(128, 25, 25);
+    box-shadow: 4px 3px 4px #5e2d2d;
+    cursor: pointer;
+}
+
+#option,
+#input-number-mod {
+    border: 1px solid #ebe4d6;
+    /* cursor: pointer; */
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    background: red;
+    cursor: pointer;
+}
+
+#choose,
+.add-to-order {
+    border-radius: 23px;
+    border: 2px solid rgb(128, 25, 25);
+    box-shadow: 4px 3px 4px #5e2d2d;
+}
+
+select option:hover {
+    background-color: #99261f !important;
+    color: #fff !important;
+    box-shadow: inset 20px 20px #00f !important;
 }
 
 
