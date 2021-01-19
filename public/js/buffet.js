@@ -116,7 +116,7 @@ $(document).ready(function () {
 
   // click start timer btn to calculate bill and start timer
   $('#before-countdown').on('click', function () {
-    startTimer(15, display);
+    startTimer(serveTime, display);
     start.style.display = "none";
     display.style.display = "block";
     document.getElementById("order-list").style.display = "block";

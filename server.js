@@ -107,7 +107,7 @@ app.get('/menu.html/identification', async (req, res) => {
 
 // create order list
 app.post('/menu.html/CreateOrder', (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     const url = 'mongodb+srv://ksp:ksp123@cluster0.tqggl.mongodb.net/testinggg?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true';
     const client = new MongoClient(url);
     const dbName = "resturant"
@@ -130,13 +130,15 @@ app.post('/menu.html/CreateOrder', (req, res) => {
                     take_status: 0,
                     placed_status: 0,
                     deleted_status: 0,
-                    ordered_titles: req.body.ordered_titles,
-                    ordered_quantities: req.body.ordered_quantities,
+                    orders: req.body.orders,
+                    // ordered_titles: req.body.ordered_titles,
+                    // ordered_quantities: req.body.ordered_quantities,
                 },
             }]
 
             // Insert a single document, wait for promise so we can read it back
             const p = await col.insertMany(personDocument);
+
         } catch (err) {
             console.log(err.stack);
         }

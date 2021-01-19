@@ -80,6 +80,10 @@ if (menuType === menuTest) {
   dessert.style.display = "none";
   drink.style.display = "none";
 }
+
+function myTrim(x) {
+  return x.replace(/^\s+|\s+$/gm, '');
+}
 var numItems, items;
 $(document).ready(function () {
 
@@ -184,7 +188,8 @@ $(document).ready(function () {
       });
 
       $('.menu ul').append(result);
-
+      var itemsName = [];
+      var quantities = [];
       // click items into order list
       $(".menu ul li .row .btn-right .add-to-order").click(function () {
         // var itemTitle = $(this).parent().parent().parent().parent().find('.menu ul li .text-blo3 .row .item-title span').text();
@@ -200,12 +205,17 @@ $(document).ready(function () {
         //   var smallPrice = $(this).parent().parent().find('.column #small_item span').text();
         //   var changeInt = smallPrice.slice(0, -5);
         // }
+        var item = myTrim(itemTitle);
+        var qty = myTrim(itemQuantity);
+        console.log(item, qty)
         $(".order-list ul").append(`
         <li class="list-group-item order-item">
           <span class="left ordered-item ordered-title">${itemTitle}</span>
           <i class="fa fa-close close cancel-order right" id="close"></i>
           <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity}</span>
         </li>`);
+        itemsName.push(item);
+        quantities.push(qty);
         // console.log(changeInt)
 
         // clear item from order list
@@ -219,7 +229,6 @@ $(document).ready(function () {
 
       // click order btn
       $('#order-btn').click(function () {
-        $(".cancel-order").css('visibility', 'hidden');
         // $('#order_list').each(function () {
         //   var getOrderedTitles = $(this).find('li .ordered-title');
         //   var trim = getOrderedTitles.text().trim();
@@ -229,6 +238,7 @@ $(document).ready(function () {
         //   var orderedQuantities = getOrderedQuantities.text();
         //   console.log(orderedQuantities.split(","));
         // })
+        console.log(itemsName, quantities, itemsName.length);
         $('#order_list').each(function () {
           var date = new Date();
           var day = date.getDate();
@@ -243,19 +253,23 @@ $(document).ready(function () {
           if (minute < 10) minute = "0" + minute;
           if (second < 10) second = "0" + second;
           var orderedDate = year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
-
+          // var cancelOrder = document.getElementById("close");
           // var getOrderedValue = $(this).find('li .ordered-item');
           // var orderedItems = getOrderedValue.text()
-          var getOrderedTitles = $("#order_list #ordered_list_ul li .ordered-title ");
-          var orderedTitles = getOrderedTitles.map(function() {
-            return this.textContent.trim();
-          }).get();
-          console.log(orderedTitles);
-          var getOrderedQuantities = $("#order_list #ordered_list_ul li .ordered-qty ");
-          var orderedQuantities = getOrderedQuantities.map(function() {
-            return this.textContent.trim();
-          }).get();
-          console.log(orderedQuantities);
+          // if(cancelOrder.style.visibility === 'visible'){
+            // var getOrderedTitles = $("#order_list #ordered_list_ul li .ordered-title ");
+            // var orderedTitles = getOrderedTitles.map(function() {
+            //   return this.textContent.trim();
+            // }).get();
+            // // console.log(orderedTitles);
+            // var getOrderedQuantities = $("#order_list #ordered_list_ul li .ordered-qty ");
+            // var orderedQuantities = getOrderedQuantities.map(function() {
+            //   return this.textContent.trim();
+            // }).get();
+            // console.log(orderedQuantities);
+          // }else{
+          //   console.log("can't")
+          // }
           // var getOrderedQuantities = $(this).find('li .ordered-qty')
           // var orderedQuantities = getOrderedQuantities.text();
           // console.log(orderedQuantities.split(","));
@@ -269,10 +283,12 @@ $(document).ready(function () {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              ordered_titles: orderedTitles,
-              ordered_quantities: orderedQuantities,
+            orders:  {
+              ordered_titles: itemsName,
+              ordered_quantities: quantities,
               table_no: tableNo,
               ordered_at: orderedDate,
+            }
             })
           })
             .then(function (response) {
@@ -286,6 +302,10 @@ $(document).ready(function () {
             .catch(function (error) {
               console.log(error);
             });
+
+            $(".cancel-order").css('visibility', 'hidden');
+            itemsName = [];
+            quantities = [];
         })
       })
 
