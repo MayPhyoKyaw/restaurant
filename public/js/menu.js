@@ -288,7 +288,9 @@ $(document).ready(function () {
           // console.log(orderedQuantities.split(","));
 
           var tableNo = $( "#option option:selected" ).text();
-          
+          var orderedNo = $('#order-id').text();
+          console.log(orderedNo);
+          console.log(order_id);
           fetch('/menu.html/CreateOrder', {
             method: 'POST',
             headers: {
@@ -298,11 +300,11 @@ $(document).ready(function () {
             body: JSON.stringify({
               ordered_ID: order_id,
               orders:  {
-              ordered_titles: itemsName,
-              ordered_quantities: quantities,
-              table_no: tableNo,
-              ordered_at: orderedDate,
-            }
+                ordered_titles: itemsName,
+                ordered_quantities: quantities,
+                table_no: tableNo,
+                ordered_at: orderedDate,
+              }
             })
           })
             .then(function (response) {
