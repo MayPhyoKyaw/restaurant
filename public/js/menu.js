@@ -187,6 +187,18 @@ $(document).ready(function () {
         });
       });
 
+      var order_id;
+      var count = 0;
+      $('#before-countdown').on('click', function () {
+        // var date = new Date();
+        // var day = date.getDate();
+        count++;
+        order_id = `O-${count}`;
+        console.log(order_id);
+        document.getElementById("order-id").style.display = "block";
+        $('#order-id').html(`${order_id}`);
+      })
+
       $('.menu ul').append(result);
       var itemsName = [];
       var quantities = [];
@@ -239,6 +251,7 @@ $(document).ready(function () {
         //   console.log(orderedQuantities.split(","));
         // })
         console.log(itemsName, quantities, itemsName.length);
+        console.log(order_id)
         $('#order_list').each(function () {
           var date = new Date();
           var day = date.getDate();
@@ -275,7 +288,7 @@ $(document).ready(function () {
           // console.log(orderedQuantities.split(","));
 
           var tableNo = $( "#option option:selected" ).text();
-
+          
           fetch('/menu.html/CreateOrder', {
             method: 'POST',
             headers: {
@@ -283,7 +296,8 @@ $(document).ready(function () {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-            orders:  {
+              ordered_ID: order_id,
+              orders:  {
               ordered_titles: itemsName,
               ordered_quantities: quantities,
               table_no: tableNo,

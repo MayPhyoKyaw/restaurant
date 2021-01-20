@@ -107,7 +107,7 @@ app.get('/menu.html/identification', async (req, res) => {
 
 // create order list
 app.post('/menu.html/CreateOrder', (req, res) => {
-    // console.log(req.body)
+    console.log(req.body)
     const url = 'mongodb+srv://ksp:ksp123@cluster0.tqggl.mongodb.net/testinggg?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true';
     const client = new MongoClient(url);
     const dbName = "resturant"
@@ -121,11 +121,11 @@ app.post('/menu.html/CreateOrder', (req, res) => {
             const col = db.collection("transaction");
             // Construct a document
             let personDocument = [{
-                _id: (new ObjectId).toString(),
+                _id: ordered_ID,
                 order: {
                     ordered_at: req.body.ordered_at,
                     table_no: req.body.table_no,
-                    order_no: (new ObjectId).toString(),
+                    order_no: ordered_ID,
                     cooked_status: 0,
                     take_status: 0,
                     placed_status: 0,

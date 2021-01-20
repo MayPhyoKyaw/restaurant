@@ -2154,6 +2154,18 @@ p.paragraph {
     cursor: default;
 }
 
+.order-id {
+    padding: 4px 15px 4px 10px !important;
+    border: 2px solid rgb(128, 25, 25);
+    margin-right: 5px;
+    /* margin-bottom: 3px !important; */
+    box-shadow: 2px 1.5px 2px #5e2d2d;
+    border-radius: 5px;
+    cursor: default;
+    font-size: 12px;
+    color: black;
+}
+
 .before-timer {
     color: rgb(128, 25, 25);
     margin-right: 7%;

@@ -102,6 +102,7 @@ var focusInputForEdit = document.getElementById('focusE');
 
 var noOfCustomers = document.getElementById("input-number-mod");
 var tableNo = document.getElementById("option");
+var orderID = document.getElementById("order-id");
 
 $(document).ready(function () {
 
@@ -158,6 +159,7 @@ $(document).ready(function () {
   $('#choose').on('click', function () {
     choose.style.display = "none";
     start.style.display = "block";
+    orderID.style.display = "none";
     noOfCustomers.disabled = true;
     tableNo.disabled = true;
     // console.log("hello")
@@ -183,6 +185,7 @@ $(document).ready(function () {
             clearInterval(timeLeft);
             choose.style.display = "inline-block";
             display.style.display = "none";
+            orderID.style.display = "none";
             totalCost = '';
             $(".no-of-customers").html('');
             $(".total-cost").html(`${totalCost}`);
