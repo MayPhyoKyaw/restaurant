@@ -187,16 +187,16 @@ $(document).ready(function () {
         });
       });
 
-      var order_id;
-      var count = 0;
+      var trans_id;
+      var tCount = 0;
       $('#before-countdown').on('click', function () {
         // var date = new Date();
         // var day = date.getDate();
-        count++;
-        order_id = `O-${count}`;
-        console.log(order_id);
+        tCount++;
+        trans_id = `TRXN-${tCount}`;
+        console.log(trans_id);
         document.getElementById("order-id").style.display = "block";
-        $('#order-id').html(`${order_id}`);
+        $('#order-id').html(`${trans_id}`);
       })
 
       $('.menu ul').append(result);
@@ -251,8 +251,8 @@ $(document).ready(function () {
         //   console.log(orderedQuantities.split(","));
         // })
         console.log(itemsName, quantities, itemsName.length);
-        console.log(order_id)
-        $('#order_list').each(function () {
+        console.log(trans_id)
+        // $('#order_list').each(function () {
           var date = new Date();
           var day = date.getDate();
           var month = date.getMonth() + 1;
@@ -286,43 +286,143 @@ $(document).ready(function () {
           // var getOrderedQuantities = $(this).find('li .ordered-qty')
           // var orderedQuantities = getOrderedQuantities.text();
           // console.log(orderedQuantities.split(","));
-
           var tableNo = $( "#option option:selected" ).text();
-          var orderedNo = $('#order-id').text();
-          console.log(orderedNo);
-          console.log(order_id);
-          fetch('/menu.html/CreateOrder', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              ordered_ID: order_id,
-              orders:  {
-                ordered_titles: itemsName,
-                ordered_quantities: quantities,
-                table_no: tableNo,
-                ordered_at: orderedDate,
-              }
-            })
-          })
+          var transNo = $('#order-id').text();
+          var orderCount = 0;
+          function orderNo(){
+            orderCount++;
+            orders_no = `O-${orderCount}`;
+            return orders_no;
+          }
+          console.log(transNo);
+          console.log(trans_id);
+          orderedNo = orderNo();
+          var transID = [];
+          fetch('/menu.html/transaction', { method: 'GET' })
             .then(function (response) {
-              console.log(response)
-              if (response.ok) {
-                console.log('clicked!!');
-                return;
-              }
-              throw new Error('Failed!!');
+              if (response.ok) return response.json();
+              throw new Error('Request failed.');
+            })
+            .then(function (data) {
+              console.log(data)
+              data.forEach(txn => {
+                // console.log(txn._id);
+                transID.push(txn._id);
+              })
+              console.log(transID)
+              console.log(itemsName, quantities, itemsName.length);
             })
             .catch(function (error) {
               console.log(error);
             });
+            console.log(transID);
+            console.log(itemsName, quantities, itemsName.length);
+              fetch('/menu.html/CreateOrder', {
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  trans_ID: trans_id,
+                  orders:  {
+                    ordered_titles: itemsName,
+                    ordered_quantities: quantities,
+                    ordered_no: orderedNo,
+                    table_no: tableNo,
+                    ordered_at: orderedDate,
+                    cooked_status: 0,
+                    take_status: 0,
+                    placed_status: 0,
+                    deleted_status: 0,
+                  }
+                })
+              })
+                .then(function (response) {
+                  console.log(response)
+                  if (response.ok) {
+                    console.log('clicked!!');
+                    return;
+                  }
+                  throw new Error('Failed!!');
+                })
+                .catch(function (error) {
+                  console.log(error);
+                });
+              // if(txn._id === transNo){
+                // var transID = txn._id;
+                // fetch('/dishMenu.html/updateOrder', {
+                //   method: 'POST',
+                //   headers: {
+                //     'Accept': 'application/json',
+                //     'Content-Type': 'application/json'
+                //   },
+                //   body: JSON.stringify({
+                //     update_trans_id: transID,
+                //     order: {
+                //       ordered_titles: itemsName,
+                //       ordered_quantities: quantities,
+                //       ordered_no: orderedNo,
+                //       table_no: tableNo,
+                //       ordered_at: orderedDate,
+                //       cooked_status: 0,
+                //       take_status: 0,
+                //       placed_status: 0,
+                //       deleted_status: 0,
+                //     }
+                //   })
+                // })
+                //   .then(function (response) {
+                //     console.log(response)
+                //     if (response.ok) {
+                //       return;
+                //     }
+                //     throw new Error('Failed!!');
+                //   })
+                //   .catch(function (error) {
+                //     console.log(error);
+                //   });
+                // console.log(txn._id)
+              // }else{
+                // fetch('/menu.html/CreateOrder', {
+                //   method: 'POST',
+                //   headers: {
+                //     'Accept': 'application/json',
+                //     'Content-Type': 'application/json'
+                //   },
+                //   body: JSON.stringify({
+                //     trans_ID: trans_id,
+                //     orders:  {
+                //       ordered_titles: itemsName,
+                //       ordered_quantities: quantities,
+                //       ordered_no: orderedNo,
+                //       table_no: tableNo,
+                //       ordered_at: orderedDate,
+                //       cooked_status: 0,
+                //       take_status: 0,
+                //       placed_status: 0,
+                //       deleted_status: 0,
+                //     }
+                //   })
+                // })
+                //   .then(function (response) {
+                //     console.log(response)
+                //     if (response.ok) {
+                //       console.log('clicked!!');
+                //       return;
+                //     }
+                //     throw new Error('Failed!!');
+                //   })
+                //   .catch(function (error) {
+                //     console.log(error);
+                //   });
+              //   console.log(txn._id)
+              // }
 
             $(".cancel-order").css('visibility', 'hidden');
             itemsName = [];
             quantities = [];
-        })
+        // })
       })
 
       // for dish quantity

@@ -15,8 +15,8 @@ async function run() {
     // const options = { upsert: true };
     // create a document that sets the plot of the movie
     const updateDoc = {
-      $set: {
-        "order4": { "order_id": (new ObjectId).toString(), "table_id": "T1", "ordered_time": new Date(), "cooked_status": 0, "take_status": 0, "placed_status": 0, "delete_status": 0, "dishName": "Fried Rice", "langName": "ငါးသလဲထိုးကြေ", "Quantity": 2 },
+      $push: {
+        "orders": [{ "order_id": (new ObjectId).toString(), "table_id": "T1", "ordered_time": new Date(), "cooked_status": 0, "take_status": 0, "placed_status": 0, "delete_status": 0, "dishName": "Fried Rice", "langName": "ငါးသလဲထိုးကြေ", "Quantity": 2 }],
       },
     };
     // for update one

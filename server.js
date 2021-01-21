@@ -75,6 +75,24 @@ app.get('/menu.html/identification', async (req, res) => {
     });
 });
 
+app.get('/menu.html/transaction', async (req, res) => {
+    const mongo_url = 'mongodb+srv://ksp:ksp123@cluster0.tqggl.mongodb.net/testinggg?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true';
+    // const client = new MongoClient(url);
+    const db = "resturant";
+    // connect to your cluster
+    const client2 = await MongoClient.connect(mongo_url, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+    // specify the DB's name
+    const userdb = client2.db(db);
+    console.log("Connected correctly to server for selecting....");
+    userdb.collection('transaction').find().toArray((err, result) => {
+        if (err) return console.log(err);
+        res.send(result);
+    });
+});
+
 // create transaction
 // app.post('/menu.html', (req, res) => {
 //     console.log(req.body)
@@ -121,19 +139,16 @@ app.post('/menu.html/CreateOrder', (req, res) => {
             const col = db.collection("transaction");
             // Construct a document
             let personDocument = [{
-                _id: ordered_ID,
-                order: {
-                    ordered_at: req.body.ordered_at,
-                    table_no: req.body.table_no,
-                    order_no: ordered_ID,
-                    cooked_status: 0,
-                    take_status: 0,
-                    placed_status: 0,
-                    deleted_status: 0,
-                    orders: req.body.orders,
+                _id: req.body.trans_ID,
+                orders: [req.body.orders],
+                // order: {
+                    // ordered_at: req.body.ordered_at,
+                    // table_no: req.body.table_no,
+                    // order_no: req.body.ordered_ID,
+                    
                     // ordered_titles: req.body.ordered_titles,
                     // ordered_quantities: req.body.ordered_quantities,
-                },
+                // },
             }]
 
             // Insert a single document, wait for promise so we can read it back
@@ -185,4 +200,42 @@ app.post('/menu.html/DeleteOrder', (req, res) => {
         }
     }
     DeleteRun().catch(console.dir);
+});
+
+app.post('/menu.html/updateOrder', (req, res) => {
+    console.log(req.body)
+    const url = 'mongodb+srv://ksp:ksp123@cluster0.tqggl.mongodb.net/testinggg?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true';
+    const client = new MongoClient(url);
+    const db = "resturant"
+
+    async function UpdateRun() {
+        try {
+            await client.connect();
+            console.log("Connected correctly to server for editting....");
+            const database = client.db(db);
+            const collection = database.collection("transaction");
+            console.log(req.body.update_trans_id)
+            // create a filter for a movie to update
+            const filter = {
+                _id: req.body.update_trans_id,
+            };
+            var i=0;
+            i++;
+            // var newOrderName = `order${i}`
+            // update a document
+            const updateDoc = {
+                $push: {
+                    orders: req.body.order,                    
+                },
+            };
+            // for update many
+            const result = await collection.updateMany(filter, updateDoc);
+            console.log(
+                `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`,
+            );
+        } finally {
+            await client.close();
+        }
+    }
+    UpdateRun().catch(console.dir);
 });

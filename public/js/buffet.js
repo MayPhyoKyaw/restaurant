@@ -102,7 +102,7 @@ var focusInputForEdit = document.getElementById('focusE');
 
 var noOfCustomers = document.getElementById("input-number-mod");
 var tableNo = document.getElementById("option");
-var orderID = document.getElementById("order-id");
+var transID = document.getElementById("order-id");
 
 $(document).ready(function () {
 
@@ -159,7 +159,7 @@ $(document).ready(function () {
   $('#choose').on('click', function () {
     choose.style.display = "none";
     start.style.display = "block";
-    orderID.style.display = "none";
+    transID.style.display = "none";
     noOfCustomers.disabled = true;
     tableNo.disabled = true;
     // console.log("hello")
@@ -185,7 +185,7 @@ $(document).ready(function () {
             clearInterval(timeLeft);
             choose.style.display = "inline-block";
             display.style.display = "none";
-            orderID.style.display = "none";
+            transID.style.display = "none";
             totalCost = '';
             $(".no-of-customers").html('');
             $(".total-cost").html(`${totalCost}`);
@@ -196,7 +196,7 @@ $(document).ready(function () {
             // $('#order-btn').attr("disabled", false);
             // $('#edit-verification-btn').attr("disabled", false);
             $(".order-list ul").empty();
-
+            var transNo = $('#order-id').text();
             // delete rransaction table in db
             fetch('/menu.html/DeleteOrder', {
               method: 'POST',
@@ -205,7 +205,7 @@ $(document).ready(function () {
                 'Content-Type': 'application/json'
               },
               body: JSON.stringify({
-                delete_transaction_id: "60065f03d851130d90a1cfdf",
+                delete_transaction_id: transNo,
               })
             })
               .then(function (response) {
