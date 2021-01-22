@@ -193,8 +193,8 @@ $(document).ready(function () {
             noOfCustomers.value = 1;
             tableNo.disabled = false;
             tableNo.value = '';
-            // $('#order-btn').attr("disabled", false);
-            // $('#edit-verification-btn').attr("disabled", false);
+            $('#order-btn').attr("disabled", true);
+            $('#edit-verification-btn').attr("disabled", true);
             $(".order-list ul").empty();
             var transNo = $('#order-id').text();
             // delete rransaction table in db

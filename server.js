@@ -124,10 +124,10 @@ app.get('/menu.html/transaction', async (req, res) => {
 // });
 
 // create order list
-app.post('/menu.html/CreateOrder', (req, res) => {
+app.post('/menu.html/Orders', (req, res) => {
     console.log(req.body)
     const url = 'mongodb+srv://ksp:ksp123@cluster0.tqggl.mongodb.net/testinggg?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true';
-    const client = new MongoClient(url);
+    const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true});
     const dbName = "resturant"
 
     async function CreateRun() {
@@ -137,10 +137,15 @@ app.post('/menu.html/CreateOrder', (req, res) => {
             const db = client.db(dbName);
             // Use the collection "people"
             const col = db.collection("transaction");
-            // Construct a document
-            let personDocument = [{
+            console.log(req.body.trans_ID)
+
+            const filter = {
                 _id: req.body.trans_ID,
-                orders: [req.body.orders],
+            };
+            // Construct a document
+            // let personDocument = [{
+            //     _id: req.body.trans_ID,
+            //     orders: [req.body.orders],
                 // order: {
                     // ordered_at: req.body.ordered_at,
                     // table_no: req.body.table_no,
@@ -149,10 +154,21 @@ app.post('/menu.html/CreateOrder', (req, res) => {
                     // ordered_titles: req.body.ordered_titles,
                     // ordered_quantities: req.body.ordered_quantities,
                 // },
-            }]
+            // }]
+
+            const updateDoc = {
+                $push: {
+                    orders: [req.body.orders],                    
+                },
+            };
+            // for update many
+            const result = await col.findOneAndUpdate(filter, updateDoc, { upsert: true } );
+            console.log(
+                `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`,
+            );
 
             // Insert a single document, wait for promise so we can read it back
-            const p = await col.insertMany(personDocument);
+            // const p = await col.insertMany(personDocument);
             // const p = await col.insertMany(personDocument, function(err){
             //     if (err) return;
             //     // Object inserted successfully.
@@ -219,8 +235,8 @@ app.post('/menu.html/updateOrder', (req, res) => {
             const filter = {
                 _id: req.body.update_trans_id,
             };
-            var i=0;
-            i++;
+            // var i=0;
+            // i++;
             // var newOrderName = `order${i}`
             // update a document
             const updateDoc = {
@@ -229,7 +245,7 @@ app.post('/menu.html/updateOrder', (req, res) => {
                 },
             };
             // for update many
-            const result = await collection.updateMany(filter, updateDoc);
+            const result = await collection.updateMany(filter, updateDoc, { upsert: true } );
             console.log(
                 `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`,
             );

@@ -195,7 +195,7 @@ $(document).ready(function () {
         tCount++;
         trans_id = `TRXN-${tCount}`;
         console.log(trans_id);
-        document.getElementById("order-id").style.display = "block";
+        // document.getElementById("order-id").style.display = "block";
         $('#order-id').html(`${trans_id}`);
       })
 
@@ -237,8 +237,10 @@ $(document).ready(function () {
             $(".order-list").css('cssText', 'min-height: 200px !important;');
           }
         })
-      })
 
+        $('.input-count').val() = 1;
+      })
+      var orderCount = 0;
       // click order btn
       $('#order-btn').click(function () {
         // $('#order_list').each(function () {
@@ -251,7 +253,7 @@ $(document).ready(function () {
         //   console.log(orderedQuantities.split(","));
         // })
         console.log(itemsName, quantities, itemsName.length);
-        console.log(trans_id)
+        // console.log(trans_id)
         // $('#order_list').each(function () {
           var date = new Date();
           var day = date.getDate();
@@ -288,36 +290,38 @@ $(document).ready(function () {
           // console.log(orderedQuantities.split(","));
           var tableNo = $( "#option option:selected" ).text();
           var transNo = $('#order-id').text();
-          var orderCount = 0;
-          function orderNo(){
-            orderCount++;
-            orders_no = `O-${orderCount}`;
-            return orders_no;
-          }
-          console.log(transNo);
+          
+          // function orderNo(){
+            
+          //   return orders_no;
+          // }
+          orderCount++;
+          orders_no = `O-${orderCount}`;
+          // console.log(transNo);
           console.log(trans_id);
-          orderedNo = orderNo();
-          var transID = [];
-          fetch('/menu.html/transaction', { method: 'GET' })
-            .then(function (response) {
-              if (response.ok) return response.json();
-              throw new Error('Request failed.');
-            })
-            .then(function (data) {
-              console.log(data)
-              data.forEach(txn => {
-                // console.log(txn._id);
-                transID.push(txn._id);
-              })
-              console.log(transID)
-              console.log(itemsName, quantities, itemsName.length);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-            console.log(transID);
+          // orderedNo = orderNo();
+          console.log(orders_no)
+          // var transID = [];
+          // fetch('/menu.html/transaction', { method: 'GET' })
+          //   .then(function (response) {
+          //     if (response.ok) return response.json();
+          //     throw new Error('Request failed.');
+          //   })
+          //   .then(function (data) {
+          //     console.log(data)
+          //     data.forEach(txn => {
+          //       // console.log(txn._id);
+          //       transID.push(txn._id);
+          //     })
+          //     console.log(transID)
+          //     console.log(itemsName, quantities, itemsName.length);
+          //   })
+          //   .catch(function (error) {
+          //     console.log(error);
+          //   });
+            // console.log(transID);
             console.log(itemsName, quantities, itemsName.length);
-              fetch('/menu.html/CreateOrder', {
+              fetch('/menu.html/Orders', {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
@@ -328,7 +332,7 @@ $(document).ready(function () {
                   orders:  {
                     ordered_titles: itemsName,
                     ordered_quantities: quantities,
-                    ordered_no: orderedNo,
+                    ordered_no: orders_no,
                     table_no: tableNo,
                     ordered_at: orderedDate,
                     cooked_status: 0,
