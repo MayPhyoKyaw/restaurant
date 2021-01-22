@@ -86,13 +86,19 @@ p {
 .menu-row {
     width: 100%;
     padding-top: 8px;
-    padding-bottom: 5% !important;
+    /* padding-bottom: 8em !important; */
 }
 
-hr {
+/* .menu-row1 {
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 10px !important;
+} */
+
+.hr{
     border-top: 1px solid #dad0c1;
     width: 100%;
-    margin-top: 6.5em;
+    margin-top: 8.5em !important;
     /* margin-bottom: 3em; */
 }
 

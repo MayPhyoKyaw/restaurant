@@ -298,8 +298,8 @@ $(document).ready(function () {
         // console.log(dishMeat)
 
         var menuItem = `
-          <li class="blo3 flex-w flex-col-l-sm  menu-item">
-            <div class="row menu-row">
+          <li class="blo3 flex-w flex-col-l-sm menu-item">
+            <div class="row menu-row" id="menu-row">
               <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28 column left">
                   <a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU" height=150 /></a>
               </div>
@@ -341,7 +341,7 @@ $(document).ready(function () {
                 </div>
               </div>
             </div>
-            <hr>
+            <hr class="hr">
           </li>
         `
 
@@ -365,89 +365,8 @@ $(document).ready(function () {
             firstMenuLists.push(menuItem);
           }
         })
-      });
 
-      fetch('/menu.html/identification', { method: 'GET' })
-        .then(function (response) {
-          // console.log(response)
-          if (response.ok) return response.json();
-          throw new Error('Request failed.');
-        })
-        .then(function (data) {
-          // console.log(serveTime);
-          // console.log(data)
-          // console.log(data[0].password)
-          data.forEach(id => {
-            $('#verify-reset').click(function () {
-              console.log($('.reset-pwd').val(), id.password)
-              var pwdForReset = $('.reset-pwd').val();
-              if (id.password === pwdForReset) {
-                hideResetModal();
-                clearInterval(timeLeft);
-                choose.style.display = "inline-block";
-                display.style.display = "none";
-                transID.style.display = "none";
-                totalCost = '';
-                $(".no-of-customers").html('');
-                $(".total-cost").html(`${totalCost}`);
-                noOfCustomers.disabled = false;
-                noOfCustomers.value = 1;
-                tableNo.disabled = false;
-                tableNo.value = '';
-                $('#order-btn').attr("disabled", true);
-                $('#edit-verification-btn').attr("disabled", true);
-                $(".order-list ul").empty();
-                var transNo = $('#order-id').text();
-                $('#dishes').children('li:first-child').addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
-                // delete rransaction table in db
-                $('.menu ul').html('');
-                $('.menu ul').append(firstMenuLists)
-                fetch('/menu.html/DeleteOrder', {
-                  method: 'POST',
-                  headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify({
-                    delete_transaction_id: transNo,
-                  })
-                })
-                  .then(function (response) {
-                    console.log(response)
-                    if (response.ok) {
-                      console.log('clicked!!');
-                      return;
-                    }
-                    throw new Error('Failed!!');
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  });
-              } else {
-                msgForReset.style.display = "none";
-                warningForReset.style.display = "block";
-                focusInputForReset.focus();
-                focusInputForReset.value = '';
-              }
-            })
-            $('#verify-edit').click(function () {
-              console.log($('.edit-pwd').val(), id.password)
-              var pwdForEdit = $('.edit-pwd').val();
-              if (id.password === pwdForEdit) {
-                hideEditModal();
-                $(".cancel-order").css('visibility', 'visible');
-              } else {
-                msgForEdit.style.display = "none";
-                warningForEdit.style.display = "block";
-                focusInputForEdit.focus();
-                focusInputForEdit.value = '';
-              }
-            })
-          })
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      });
 
       var trans_id;
       var tCount = 0;
@@ -514,7 +433,6 @@ $(document).ready(function () {
         //   console.log(orderedQuantities.split(","));
         // })
         console.log(itemsName, quantities, itemsName.length);
-        // console.log(trans_id)
         // $('#order_list').each(function () {
           var date = new Date();
           var day = date.getDate();
@@ -673,6 +591,165 @@ $(document).ready(function () {
 
       //and show the first n (show_per_page) elements
       items.slice(0, show_per_page).css('display', 'block');
+
+      fetch('/menu.html/identification', { method: 'GET' })
+        .then(function (response) {
+          // console.log(response)
+          if (response.ok) return response.json();
+          throw new Error('Request failed.');
+        })
+        .then(function (data) {
+          // console.log(serveTime);
+          // console.log(data)
+          // console.log(data[0].password)
+          data.forEach(id => {
+            $('#verify-reset').click(function () {
+              console.log($('.reset-pwd').val(), id.password)
+              var pwdForReset = $('.reset-pwd').val();
+              if (id.password === pwdForReset) {
+                hideResetModal();
+                clearInterval(timeLeft);
+                choose.style.display = "inline-block";
+                display.style.display = "none";
+                transID.style.display = "none";
+                totalCost = '';
+                $(".no-of-customers").html('');
+                $(".total-cost").html(`${totalCost}`);
+                noOfCustomers.disabled = false;
+                tableNo.disabled = false;
+                noOfCustomers.value = 1;
+                tableNo.value = '';
+                $('#order-btn').attr("disabled", true);
+                $('#edit-verification-btn').attr("disabled", true);
+                $(".order-list ul").empty();
+                var transNo = $('#order-id').text();
+                $('#dishes').children('li:first-child').addClass("sec-nav-active").siblings().removeClass("sec-nav-active");
+                
+                  $('.menu ul').html('');
+                  $('.menu ul').append(firstMenuLists);
+                  $('.menu ul li').css("display", "block");
+                  result = [];
+                  firstMenuLists = [];
+
+                  $(".menu ul li .row .btn-right .add-to-order").click(function () {
+                    var itemTitle = $(this).parent().parent().parent().find(".row .item-title .lang-name").text();
+                    var itemQuantity = $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val();
+                    
+                    // add items to order list
+                    var item = myTrim(itemTitle);
+                    var qty = myTrim(itemQuantity);
+                    $(".order-list ul").append(`
+                    <li class="list-group-item order-item">
+                      <span class="left ordered-item ordered-title">${itemTitle}</span>
+                      <i class="fa fa-close close cancel-order right" id="close"></i>
+                      <span class="right m-g-r ordered-item  ordered-qty">${itemQuantity}</span>
+                    </li>`);
+          
+                    itemsName.push(item);
+                    quantities.push(qty);
+                    // clear item from order list
+                    $(".order-item .fa-close").click(function () {
+                      $(this).parent().remove();
+                      if ($(".order-list li").length < 5) {
+                        $(".order-list").css('cssText', 'min-height: 200px !important;');
+                      }
+                    })
+                    $(this).parent().parent().parent().find('.row .item-quantity .stepper input').val(1);
+                  })
+          
+                  var quantity = 0;
+                  $('.stepper .minus').click(function () {
+                    quantity = parseInt($(this).siblings('.input-count').val());
+                    quantity--;
+                    $(this).siblings('.input-count').val(quantity);
+                    if (quantity == 0) {
+                      $(this).siblings('.input-count').val(1);
+                    }
+                  })
+                  $('.stepper .plus').click(function () {
+                    quantity = parseInt($(this).siblings('.input-count').val());
+                    quantity++;
+                    $(this).siblings('.input-count').val(quantity);
+                    if (quantity == 100) {
+                      $(this).siblings('.input-count').val(100);
+                    }
+                  })
+          
+                  items = $(".list-wrapper .menu-item");
+                  // console.log(items);
+                  numItems = items.length;
+                  console.log(numItems);
+                  // Show Total Dish Menu Info
+                  document.getElementById("pagination-info").innerHTML = `Total ${numItems} ${menuType} Menu`;
+                  var show_per_page = 5;
+                  var number_of_items = numItems;
+                  var number_of_pages = Math.ceil(number_of_items / show_per_page);
+                  $('#current_page').val(0);
+                  $('#show_per_page').val(show_per_page);
+          
+                  var navigation_html = '<a class="previous_link" href="javascript:previous();">&laquo;</a>';
+                  var current_link = 0;
+                  while (number_of_pages > current_link) {
+                    navigation_html += '<a class="page_link" href="javascript:go_to_page(' + current_link + ')" longdesc="' + current_link + '">' + (current_link + 1) + '</a>';
+                    current_link++;
+                  }
+                  navigation_html += '<a class="next_link" href="javascript:next();">&raquo;</a>';
+          
+                  $('#pagination-container').html(navigation_html);
+          
+                  $('#pagination-container .page_link:first').addClass('active_page');
+          
+                  items.css('display', 'none');
+          
+                  items.slice(0, show_per_page).css('display', 'block');
+
+                  // delete rransaction table in 
+                  fetch('/menu.html/DeleteOrder', {
+                    method: 'POST',
+                    headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                      delete_transaction_id: transNo,
+                    })
+                  })
+                    .then(function (response) {
+                      console.log(response)
+                      if (response.ok) {
+                        console.log('clicked!!');
+                        return;
+                      }
+                      throw new Error('Failed!!');
+                    })
+                    .catch(function (error) {
+                      console.log(error);
+                    });
+              } else {
+                msgForReset.style.display = "none";
+                warningForReset.style.display = "block";
+                focusInputForReset.focus();
+                focusInputForReset.value = '';
+              }
+            })
+            $('#verify-edit').click(function () {
+              console.log($('.edit-pwd').val(), id.password)
+              var pwdForEdit = $('.edit-pwd').val();
+              if (id.password === pwdForEdit) {
+                hideEditModal();
+                $(".cancel-order").css('visibility', 'visible');
+              } else {
+                msgForEdit.style.display = "none";
+                warningForEdit.style.display = "block";
+                focusInputForEdit.focus();
+                focusInputForEdit.value = '';
+              }
+            })
+          })
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
 
       $("#dishes").on('click', 'li', function () {
         $('.menu ul').html('');
