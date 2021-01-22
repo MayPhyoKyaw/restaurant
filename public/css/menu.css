@@ -84,12 +84,16 @@ p {
 }
 
 .menu-row {
-    padding-bottom: 8em;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 5% !important;
 }
 
 hr {
     border-top: 1px solid #dad0c1;
     width: 100%;
+    margin-top: 6.5em;
+    /* margin-bottom: 3em; */
 }
 
 .header-item {
@@ -11489,6 +11493,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 
 #pagination-container {
     clear: both;
+    margin-top: 10px !important;
 }
 
 #pagination-container a {
@@ -11527,4 +11532,5 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
     padding-top: 0px;
     letter-spacing: -1px;
     font-weight: 900;
+    margin-top: 10px !important;
 }
