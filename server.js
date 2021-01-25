@@ -158,7 +158,7 @@ app.post('/menu.html/Orders', (req, res) => {
 
             const updateDoc = {
                 $push: {
-                    orders: [req.body.orders],                    
+                    orders: req.body.orders,                    
                 },
             };
             // for update many
